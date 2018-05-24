@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<elementList>
+    <!--
+    <element name="[name]" category="core|content|carrier|access|collection|admin" obligation="required|optional" repeatable="yes|no" controlled="yes|no">
+        <defaultLabel/>
+        <xpath/>
+        <definition/>
+        <mapping schema="marc|dc"/>
+        <governingStandard/>
+        <content>
+            <type>text|choice|date...</type>
+            <vocabulary authority="[uri]">
+                <enumeration value="[value]"/>
+            </vocabulary>
+        </content>
+        <usageNote/>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml/>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <attributes>
+            <attribute name="[name]" obligation="required|required if applicable|optional">
+                <value/>
+                <usageNote/>
+            </attribute>
+        </attributes>
+    </element>-->
+    
+    <element name="MODS" category="admin" obligation="required" repeatable="no" controlled="no">
+        <defaultLabel>[not displayed]</defaultLabel>
+        <xpath>mods:mods</xpath>
+        <governingStandard>MODS ver. 3</governingStandard>
+        <definition>Root element for a MODS record.</definition>
+        <usageNote>LDL practices require one XML record per file; &lt;mods&gt; must always be the
+            root element rather than &lt;modsCollection&gt;.</usageNote>
+        <inputGuidance>
+            <spreadsheet>The root element will be added automatically during conversion to
+                XML.</spreadsheet>
+            <webform>The root element will be added automatically during conversion to
+                XML.</webform>
+            <xml>Use as the root element. An XML file with &lt;modsCollection&gt; as the root
+                element wrapping multiple MODS records may be split using XSLT; contact the LSU
+                metadata librarian for assistance.</xml>
+        </inputGuidance>
+        <attributes>
+            <attribute name="xmlns" obligation="required">
+                <value>http://www.loc.gov/mods/v3</value>
+            </attribute>
+            <attribute name="xmlns:mods" obligation="required">
+                <value>http://www.loc.gov/mods/v3</value>
+            </attribute>
+            <attribute name="xmlns:xs" obligation="required">
+                <value>http://www.w3.org/2001/XMLSchema</value>
+            </attribute>
+            <attribute name="xmlns:xsi" obligation="required">
+                <value>http://www.w3.org/2001/XMLSchema-instance</value>
+            </attribute>
+            <attribute name="xsi:schemaLocation" obligation="required">
+                <value>http://www.loc.gov/mods/v3
+                    http://www.loc.gov/standards/mods/v3/mods-3-7.xsd</value>
+            </attribute>
+            <attribute name="xlink" obligation="required">
+                <value>http://www.w3.org/1999/xlink</value>
+            </attribute>
+            <attribute name="version" obligation="required">
+                <value>3.7</value>
+            </attribute>
+        </attributes>
+    </element>
+    
+    
+    
+    <element name="Type of Resource" category="carrier" obligation="required" repeatable="yes" controlled="yes">
+        <defaultLabel>Type of Resource</defaultLabel>
+        <xpath>mods:mods/mods:typeOfResource</xpath>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/typeofresource.html">A term
+            that specifies the characteristics and general type of content of the
+            resource.</definition>
+        <mapping schema="marc">Leader/06</mapping>
+        <mapping schema="dc">Type</mapping>
+        <governingStandard>MODS ver. 3</governingStandard>
+        <content>
+            <type>choice</type>
+            <vocabulary authority="http://www.loc.gov/standards/mods//userguide/typeofresource.html">
+                <enumeration value="text"/>
+                <enumeration value="cartographic"/>
+                <enumeration value="notated music"/>
+                <enumeration value="sound recording"/>
+                <enumeration value="sound recording-musical"/>
+                <enumeration value="sound recording-nonmusical"/>
+                <enumeration value="still image"/>
+                <enumeration value="moving image"/>
+                <enumeration value="three dimensional object"/>
+                <enumeration value="software, multimedia"/>
+                <enumeration value="mixed material"/>
+            </vocabulary>
+        </content>
+        <usageNote>Use all lowercase letters without punctuation.</usageNote>
+        <usageNote>Use 'collection' attribute to distinguish collection-level records.</usageNote>
+        <inputGuidance>
+            <spreadsheet>Use the drop down menu to select an authorized MODS value characterizing the resource’s format.</spreadsheet>
+            <webform>Use the drop down menu to select an authorized MODS value characterizing the resource’s format.</webform>
+            <xml/>
+        </inputGuidance>
+        <example>&lt;typeOfResource&gt;still image&lt;/typeOfResource&gt;</example>
+        <example>&lt;typeOfResource collection="yes"&gt;mixed material&lt;/typeOfResource&gt;</example>
+        <attributes>
+            <attribute name="collection" obligation="required if applicable">
+                <value>yes</value>
+            </attribute>
+        </attributes>
+    </element>    
+
+</elementList>
