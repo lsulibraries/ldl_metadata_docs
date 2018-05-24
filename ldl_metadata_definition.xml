@@ -36,14 +36,14 @@
         <xpath>mods:mods</xpath>
         <governingStandard>MODS ver. 3</governingStandard>
         <definition>Root element for a MODS record.</definition>
-        <usageNote>LDL practices require one XML record per file; &lt;mods&gt; must always be the
-            root element rather than &lt;modsCollection&gt;.</usageNote>
+        <usageNote>LDL practices require one XML record per file; `&lt;mods&gt;` must always be the
+            root element rather than `&lt;modsCollection&gt;`.</usageNote>
         <inputGuidance>
             <spreadsheet>The root element will be added automatically during conversion to
                 XML.</spreadsheet>
             <webform>The root element will be added automatically during conversion to
                 XML.</webform>
-            <xml>Use as the root element. An XML file with &lt;modsCollection&gt; as the root
+            <xml>Use as the root element. An XML file with `&lt;modsCollection&gt;` as the root
                 element wrapping multiple MODS records may be split using XSLT; contact the LSU
                 metadata librarian for assistance.</xml>
         </inputGuidance>
@@ -107,8 +107,8 @@
             <webform>Use the drop down menu to select an authorized MODS value characterizing the resource’s format.</webform>
             <xml/>
         </inputGuidance>
-        <example>&lt;typeOfResource&gt;still image&lt;/typeOfResource&gt;</example>
-        <example>&lt;typeOfResource collection="yes"&gt;mixed material&lt;/typeOfResource&gt;</example>
+        <example>`&lt;typeOfResource&gt;still image&lt;/typeOfResource&gt;`</example>
+        <example>`&lt;typeOfResource collection="yes"&gt;mixed material&lt;/typeOfResource&gt;`</example>
         <attributes>
             <attribute name="collection" obligation="required if applicable">
                 <value>yes</value>

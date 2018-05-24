@@ -105,15 +105,16 @@
     
     <xsl:template match="attributes">
         <xsl:text>### Attributes  &#xa;</xsl:text>
-        <xsl:text>&lt;tr&gt;&lt;th&gt;Attribute&lt;/th&gt;&lt;th&gt;Obligation&lt;/th&gt;&lt;th&gt;Values&lt;/th&gt;&lt;/tr&gt;  &#xa;</xsl:text>
+        <xsl:text>&#xa;| Attribute | Obligation | Values |  &#xa;</xsl:text>
+        <xsl:text>| --- | --- | --- |  &#xa;</xsl:text>
         <xsl:for-each select="attribute">
-            <xsl:text>&lt;tr&gt;&lt;td&gt;</xsl:text>
+            <xsl:text>| </xsl:text>
             <xsl:value-of select="@name"/>
-            <xsl:text>&lt;/td&gt;&lt;td&gt;</xsl:text>
+            <xsl:text> | </xsl:text>
             <xsl:value-of select="@obligation"/>
-            <xsl:text>&lt;/td&gt;&lt;td&gt;</xsl:text>
-            <xsl:value-of select="value"/>
-            <xsl:text>&lt;/td&gt;&lt;/tr&gt;  &#xa;</xsl:text>
+            <xsl:text> | </xsl:text>
+            <xsl:value-of select="normalize-space(value)"/>
+            <xsl:text> |  &#xa;</xsl:text>
         </xsl:for-each>
     </xsl:template>
 
