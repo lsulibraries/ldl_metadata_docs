@@ -2,10 +2,10 @@
 
 <elementList>
     <!--
-    <element name="[name]" category="core|content|carrier|access|collection|admin" obligation="required|optional" repeatable="yes|no" controlled="yes|no">
+    <element name="[name]" category="core|content|carrier|access|collection|admin" obligation="required|required if applicable|optional" repeatable="yes|no" controlled="yes|no">
         <defaultLabel/>
         <xpath/>
-        <definition/>
+        <definition ref="[uri]"/>
         <mapping schema="marc|dc"/>
         <governingStandard/>
         <content>
@@ -23,14 +23,20 @@
         </inputGuidance>
         <example/>
         <legacyVariation collection="[collection namespace]"/>
+        <subelements>
+            <subelement name="[name]" obligation="required|required if applicable|optional" repeatable="yes|no" controlled="yes|no">
+                <xpath/>
+                <definition/>
+                <value/>
+            </subelement>
+        </subelements>
         <attributes>
             <attribute name="[name]" obligation="required|required if applicable|optional">
                 <value/>
-                <usageNote/>
             </attribute>
         </attributes>
     </element>-->
-    
+
     <element name="MODS" category="admin" obligation="required" repeatable="no" controlled="no">
         <defaultLabel>[not displayed]</defaultLabel>
         <xpath>mods:mods</xpath>
@@ -72,17 +78,63 @@
             </attribute>
         </attributes>
     </element>
-    
-    
-    
-    <element name="Type of Resource" category="carrier" obligation="required" repeatable="yes" controlled="yes">
+
+    <element name="Title" category="core" obligation="required" repeatable="yes" controlled="no">
+        <defaultLabel>Title</defaultLabel>
+        <xpath>mods:mods/mods:titleInfo</xpath>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/titleinfo.html">A word,
+            phrase, character, or group of characters, normally appearing in a resource, that names
+            it or the work contained in it.</definition>
+        <mapping schema="marc">245; also 210, 242, 246, 130, 240, 730, 740</mapping>
+        <mapping schema="dc">dc:title</mapping>
+        <governingStandard>RDA 2.3</governingStandard>
+        <content>
+            <type>text</type>
+        </content>
+        <usageNote>Use “Untitled” only when the resource is explicitly named “Untitled.” If no title exists, construct one using accepted standards.</usageNote>
+        <usageNote>For additional titles, use a the type attribute and/or display label.</usageNote>
+        <usageNote>Titles are used by the system to order items alphabetically within collections.</usageNote>
+        <usageNote>Titles must always appear first in an item's displayed metadata.</usageNote>
+        <usageNote>Contents of `&lt;nonSort&gt;`, `&lt;title&gt;`, and `&lt;subTitle&gt;` will be concatenated in display, with a space automatically inserted between NonSort and Title, and a colon and space automatically inserted between Title and Subtitle.</usageNote>
+        <inputGuidance>
+            <spreadsheet>XSLT will automatically place "a", "an", "the", and most leading punctuation into `&lt;nonSort&gt;` subelement.</spreadsheet>
+            <webform/>
+            <xml/>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <subelements>
+            <subelement name="Title" obligation="required" repeatable="yes" controlled="no">
+                <xpath>mods:mods/mods:titleInfo/mods:title</xpath>
+                <definition>The core title of the resource.</definition>
+                <value>uncontrolled text</value>
+            </subelement>
+            <subelement name="NonSort" obligation="required if applicable" repeatable="no" controlled="no">
+                <xpath>mods:mods/mods:titleInfo/mods:nonSort</xpath>
+                <definition>Leading characters that should be ignored for indexing of titles.</definition>
+                <value>uncontrolled text; typically articles or punctuation.</value>
+            </subelement>
+            <subelement name="SubTitle" obligation="required if applicable" repeatable="yes" controlled="no">
+                <xpath>mods:mods/mods:titleInfo/mods:subTitle</xpath>
+                <definition></definition>
+            </subelement>
+        </subelements>
+        <attributes>
+            <attribute name="[name]" obligation="required|required if applicable|optional">
+                <value/>
+            </attribute>
+        </attributes>
+    </element>
+
+    <element name="Type of Resource" category="carrier" obligation="required" repeatable="yes"
+        controlled="yes">
         <defaultLabel>Type of Resource</defaultLabel>
         <xpath>mods:mods/mods:typeOfResource</xpath>
         <definition ref="http://www.loc.gov/standards/mods//userguide/typeofresource.html">A term
             that specifies the characteristics and general type of content of the
             resource.</definition>
         <mapping schema="marc">Leader/06</mapping>
-        <mapping schema="dc">Type</mapping>
+        <mapping schema="dc">dc:type</mapping>
         <governingStandard>MODS ver. 3</governingStandard>
         <content>
             <type>choice</type>
@@ -103,17 +155,20 @@
         <usageNote>Use all lowercase letters without punctuation.</usageNote>
         <usageNote>Use 'collection' attribute to distinguish collection-level records.</usageNote>
         <inputGuidance>
-            <spreadsheet>Use the drop down menu to select an authorized MODS value characterizing the resource’s format.</spreadsheet>
-            <webform>Use the drop down menu to select an authorized MODS value characterizing the resource’s format.</webform>
+            <spreadsheet>Use the drop down menu to select an authorized MODS value characterizing
+                the resource’s format.</spreadsheet>
+            <webform>Use the drop down menu to select an authorized MODS value characterizing the
+                resource’s format.</webform>
             <xml/>
         </inputGuidance>
         <example>`&lt;typeOfResource&gt;still image&lt;/typeOfResource&gt;`</example>
-        <example>`&lt;typeOfResource collection="yes"&gt;mixed material&lt;/typeOfResource&gt;`</example>
+        <example>`&lt;typeOfResource collection="yes"&gt;mixed
+            material&lt;/typeOfResource&gt;`</example>
         <attributes>
             <attribute name="collection" obligation="required if applicable">
                 <value>yes</value>
             </attribute>
         </attributes>
-    </element>    
+    </element>
 
 </elementList>
