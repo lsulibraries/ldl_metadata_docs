@@ -418,4 +418,80 @@
         </attributes>
     </element>
 
+    <element name="Form" category="metaSetCarrier" obligation="optional" repeatable="yes" controlled="yes">
+        <defaultLabel>Form</defaultLabel>
+        <encoding>mods:mods/mods:physicalDescription/mods:form</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/physicaldescription.html#form">A designation of a particular physical presentation of a resource, including the physical form or medium of material for a resource.</definition>
+        <mapping schema="marc">007; 008</mapping>
+        <mapping schema="dc">dc:format</mapping>
+        <governingStandard/>
+        <content>
+            <type>text</type>
+            <vocabulary authority="aat" ref="http://www.getty.edu/research/tools/vocabularies/aat/"/>
+        </content>
+        <instruction>Enter a generic term for the form of the original resource.</instruction>
+        <usageNote>Choose applicable terms from the Getty Art and Architecture Thesaurus (AAT), particularly terms denoted as "...by internal form". Other vocabularies, including local ones, may be used with consultation from a metadata librarian.</usageNote>
+        <usageNote>The Form field should be used to describe the physical characteristics of the resource rather than its content, which would be Genre.</usageNote>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml/>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <attributes>
+            <attribute name="type" obligation="optional">
+                <value>material; technique</value>
+            </attribute>
+            <attribute name="authority" obligation="required">
+                <value>aat; local</value>
+            </attribute>
+        </attributes>
+    </element>
+
+    <!--<element name="Medium" category="metaSetCarrier" obligation="optional" repeatable="yes" controlled="no">
+        <defaultLabel>Medium</defaultLabel>
+        <encoding>mods:mods/mods:physicalDescription/mods:note[@type=’medium’]</encoding>
+        <definition ref="[uri]"/>
+        <mapping schema="marc"/>
+        <mapping schema="dc"/>
+        <governingStandard/>
+        <content>
+            <type>text|choice|date...</type>
+            <vocabulary authority="[name]" ref="[uri]">
+                <enumeration inst="[institution code]" value="[value]"/>
+            </vocabulary>
+        </content>
+        <instruction/>
+        <usageNote/>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml/>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <subelements>
+            The following subelements are grouped together in the displayed metadata record.
+            <subelement name="[name]" obligation="required|required if applicable|optional" repeatable="yes|no" controlled="yes|no">
+                <encoding/>
+                <definition/>
+                <content>
+                    <type>text|choice|date...</type>
+                    <vocabulary authority="[name]" ref="[uri]">
+                        <enumeration inst="[institution code]" value="[value]"/>
+                    </vocabulary>
+                </content>
+                <usageNote/>
+            </subelement>
+        </subelements>
+        <attributes>
+            <attribute name="[name]" obligation="required|required if applicable|optional">
+                <value>list of literals with semicolon delimiting or [uncontrolled; if omitted, the default label will be used]</value>
+            </attribute>
+        </attributes>
+    </element>-->
+
 </elementList>

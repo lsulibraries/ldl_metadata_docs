@@ -12,6 +12,7 @@
 [Note](#note)  
 [Type of Resource](#type-of-resource)  
 [Genre](#genre)  
+[Form](#form)  
 - - -
 ## MODS  
 ### About  
@@ -331,5 +332,35 @@
 | Attribute | Values | Obligation |  
 | --- | --- | --- |  
 | authority | aat; lcgft; lcsh; local | required |  
+
+- - -
+## Form  
+### About  
+- __LDL Label:__ Form  
+- __MODS Element:__ mods/physicalDescription/form  
+- __Definition:__ A designation of a particular physical presentation of a resource, including the physical form or medium of material for a resource. ([source](http://www.loc.gov/standards/mods//userguide/physicaldescription.html#form))  
+- __Obligation:__ optional  
+- __Repeatable:__ yes  
+- __Controlled:__ yes  
+- __Governing Standard:__   
+- __MARC:__ 007; 008  
+- __DC:__ dc:format  
+  
+### Usage  
+- __Instructions:__ Enter a generic term for the form of the original resource.  
+- __Type:__ text  
+- __Authority:__ [aat](http://www.getty.edu/research/tools/vocabularies/aat/)  
+- __Usage Notes:__  
+    - Choose applicable terms from the Getty Art and Architecture Thesaurus (AAT), particularly terms denoted as "...by internal form". Other vocabularies, including local ones, may be used with consultation from a metadata librarian.  
+    - The Form field should be used to describe the physical characteristics of the resource rather than its content, which would be Genre.  
+- __Examples:__  
+    -   
+  
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| type | material; technique | optional |  
+| authority | aat; local | required |  
 
 - - -
