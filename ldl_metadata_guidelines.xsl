@@ -39,11 +39,11 @@
             <xsl:value-of select="defaultLabel"/>
             <xsl:text>  &#xa;</xsl:text>
         </xsl:if>
-        <xsl:if test="encoding">
+        <xsl:for-each select="encoding">
             <xsl:text>- __MODS Element:__ </xsl:text>
-            <xsl:value-of select="replace(encoding,'mods:','')"/>
+            <xsl:value-of select="replace(.,'mods:','')"/>
             <xsl:text>  &#xa;</xsl:text>
-        </xsl:if>
+        </xsl:for-each>
         <xsl:if test="definition">
             <xsl:text>- __Definition:__ </xsl:text>
             <xsl:value-of select="normalize-space(definition)"/>
@@ -79,6 +79,11 @@
 
     <xsl:template name="Usage">
         <xsl:text>### Usage  &#xa;</xsl:text>
+        <xsl:for-each select="instruction">
+            <xsl:text>- __Instructions:__ </xsl:text>
+            <xsl:value-of select="normalize-space(.)"/>
+            <xsl:text>  &#xa;</xsl:text>
+        </xsl:for-each>
         <xsl:for-each select="content/type">
             <xsl:text>- __Type:__ </xsl:text>
             <xsl:value-of select="."/>
@@ -89,11 +94,11 @@
                 <xsl:text>- __Authority:__ </xsl:text>
                 <xsl:choose>
                     <xsl:when test="@ref">
-                        <xsl:text>&lt;a href="</xsl:text>
-                        <xsl:value-of select="normalize-space(@ref)"/>
-                        <xsl:text>"&gt;</xsl:text>
+                        <xsl:text>[</xsl:text>
                         <xsl:value-of select="@authority"/>
-                        <xsl:text>&lt;a&gt;</xsl:text>
+                        <xsl:text>](</xsl:text>
+                        <xsl:value-of select="normalize-space(@ref)"/>
+                        <xsl:text>)</xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="@authority"/>
@@ -170,15 +175,15 @@
     
     <xsl:template match="attributes">
         <xsl:text>### Attributes  &#xa;</xsl:text>
-        <xsl:text>&#xa;| Attribute | Obligation | Values |  &#xa;</xsl:text>
+        <xsl:text>&#xa;| Attribute | Values | Obligation |  &#xa;</xsl:text>
         <xsl:text>| --- | --- | --- |  &#xa;</xsl:text>
         <xsl:for-each select="attribute">
             <xsl:text>| </xsl:text>
             <xsl:value-of select="@name"/>
             <xsl:text> | </xsl:text>
-            <xsl:value-of select="@obligation"/>
-            <xsl:text> | </xsl:text>
             <xsl:value-of select="normalize-space(value)"/>
+            <xsl:text> | </xsl:text>
+            <xsl:value-of select="@obligation"/>
             <xsl:text> |  &#xa;</xsl:text>
         </xsl:for-each>
     </xsl:template>
