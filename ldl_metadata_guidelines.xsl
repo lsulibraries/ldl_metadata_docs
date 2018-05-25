@@ -23,7 +23,7 @@
         <xsl:for-each select="element">
             <xsl:text>[</xsl:text>
             <xsl:value-of select="@name"/>
-            <xsl:text>](</xsl:text>
+            <xsl:text>](#</xsl:text>
             <xsl:value-of select="replace(lower-case(@name),' ','-')"/>
             <xsl:text>)  &#xa;</xsl:text>
         </xsl:for-each>
