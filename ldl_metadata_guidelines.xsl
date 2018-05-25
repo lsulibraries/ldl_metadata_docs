@@ -35,13 +35,9 @@
         <xsl:value-of select="@name"/>
         <xsl:text>  &#xa;</xsl:text>
         <xsl:call-template name="About"/>
-        <xsl:text>  &#xa;</xsl:text>
         <xsl:call-template name="Usage"/>    
-        <xsl:text>  &#xa;</xsl:text>
         <xsl:apply-templates select="subelements"/>    
-        <xsl:text>  &#xa;</xsl:text>
         <xsl:apply-templates select="attributes"/>    
-        <xsl:text>  &#xa;&#xa;</xsl:text>
     </xsl:template>
     
     <xsl:template name="About">
@@ -87,6 +83,7 @@
             <xsl:value-of select="."/>
             <xsl:text>  &#xa;</xsl:text>
         </xsl:for-each>
+        <xsl:text>  &#xa;</xsl:text>
     </xsl:template>
 
     <xsl:template name="Usage">
@@ -145,6 +142,7 @@
                 <xsl:text>  &#xa;</xsl:text>
             </xsl:for-each>
         </xsl:if>
+        <xsl:text>  &#xa;</xsl:text>
     </xsl:template>
     
     <xsl:template match="subelements">
@@ -164,6 +162,7 @@
             <xsl:value-of select="@controlled"/>
             <xsl:text> |  &#xa;</xsl:text>
         </xsl:for-each>
+        <xsl:text>  &#xa;</xsl:text>
         <xsl:for-each select="subelement">
             <xsl:text>#### </xsl:text>
             <xsl:value-of select="@name"/>
@@ -198,6 +197,7 @@
             <xsl:value-of select="@obligation"/>
             <xsl:text> |  &#xa;</xsl:text>
         </xsl:for-each>
+        <xsl:text>&#xa;</xsl:text>
     </xsl:template>
 
 </xsl:stylesheet>
