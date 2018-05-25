@@ -315,24 +315,40 @@
             <xml/>
         </inputGuidance>
         <example/>
-        <legacyVariation collection="[collection namespace]"/>
-        <subelements>
-            The following subelements are grouped together in the displayed metadata record.
-            <subelement name="[name]" obligation="required|required if applicable|optional" repeatable="yes|no" controlled="yes|no">
-                <encoding/>
-                <definition/>
-                <content>
-                    <type>text|choice|date...</type>
-                    <vocabulary authority="[name]" ref="[uri]">
-                        <enumeration inst="[institution code]" value="[value]"/>
-                    </vocabulary>
-                </content>
-                <usageNote/>
-            </subelement>
-        </subelements>
         <attributes>
-            <attribute name="[name]" obligation="required|required if applicable|optional">
-                <value>list of literals with semicolon delimiting or [uncontrolled; if omitted, the default label will be used]</value>
+            <attribute name="encoding" obligation="optional">
+                <value>w3cdtf [recommended]</value>
+            </attribute>
+            <attribute name="qualifier" obligation="required if applicable">
+                <value>approximate; inferred; questionable</value>
+            </attribute>
+        </attributes>
+    </element>
+
+    <element name="Abstract" category="metaSetContent" obligation="optional" repeatable="yes" controlled="no">
+        <defaultLabel>Description</defaultLabel>
+        <encoding>mods:mods/mods:abstract</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/abstract.html">A summary of the content of the resource.</definition>
+        <mapping schema="marc">520</mapping>
+        <mapping schema="dc">dc:description</mapping>
+        <governingStandard>RDA 7.10</governingStandard>
+        <content>
+            <type>text</type>
+        </content>
+        <instruction>Enter a summary, abstract, scope and content note, or other description of the resource.</instruction>
+        <usageNote>Incorporate keywords in order to provide additional access points for searching.</usageNote>
+        <usageNote>It is recommended that different display labels are used if repeating the Abstract field.</usageNote>
+        <enrichment>This element provides end users with information about the digital resource that assists them in making a judgment about its likely usefulness, and also provides context, if needed, for controlled vocabulary used in the record.</enrichment>
+        <inputGuidance>
+            <spreadsheet>If repeating the field, add a new column with a distinctive header.</spreadsheet>
+            <webform/>
+            <xml/>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <attributes>
+            <attribute name="displayLabel" obligation="optional">
+                <value>[uncontrolled; if omitted, the default label will be used; other suggested values are "Summary" or "Scope and Content"]</value>
             </attribute>
         </attributes>
     </element>

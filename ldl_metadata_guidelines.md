@@ -9,6 +9,7 @@
 [Publisher](#publisher)  
 [Date](#date)  
 [Date Captured](#date-captured)  
+[Abstract](#abstract)  
 - - -
 ## MODS  
 ### About  
@@ -247,24 +248,43 @@
 - __Examples:__  
     -   
   
-### Subelements  
-
-| Subelement | Encoding | Obligation | Repeatable | Controlled |  
-| --- | --- | --- | --- | --- |  
-| [name] |  | required|required if applicable|optional | yes|no | yes|no |  
-#### [name]  
-- __Definition:__   
-
-- __Authority:__ [name]  
-
-- __Usage Notes:__   
-
   
 ### Attributes  
 
 | Attribute | Values | Obligation |  
 | --- | --- | --- |  
-| [name] | list of literals with semicolon delimiting or [uncontrolled; if omitted, the default label will be used] | required|required if applicable|optional |  
+| encoding | w3cdtf [recommended] | optional |  
+| qualifier | approximate; inferred; questionable | required if applicable |  
+  
+
+- - -
+## Abstract  
+### About  
+- __LDL Label:__ Description  
+- __MODS Element:__ mods/abstract  
+- __Definition:__ A summary of the content of the resource. ([source](http://www.loc.gov/standards/mods//userguide/abstract.html))  
+- __Obligation:__ optional  
+- __Repeatable:__ yes  
+- __Controlled:__ no  
+- __Governing Standard:__ RDA 7.10  
+- __MARC:__ 520  
+- __DC:__ dc:description  
+  
+### Usage  
+- __Instructions:__ Enter a summary, abstract, scope and content note, or other description of the resource.  
+- __Type:__ text  
+- __Usage Notes:__  
+    - Incorporate keywords in order to provide additional access points for searching.  
+    - It is recommended that different display labels are used if repeating the Abstract field.  
+- __Examples:__  
+    -   
+  
+  
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| displayLabel | [uncontrolled; if omitted, the default label will be used; other suggested values are "Summary" or "Scope and Content"] | optional |  
   
 
 - - -
