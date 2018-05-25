@@ -161,49 +161,6 @@
     
     <element name="Title Part"/>
     
-    <element name="Type of Resource" category="metaSetCarrier" obligation="required" repeatable="yes"
-        controlled="yes">
-        <defaultLabel>Type of Resource</defaultLabel>
-        <encoding>mods:mods/mods:typeOfResource</encoding>
-        <definition ref="http://www.loc.gov/standards/mods//userguide/typeofresource.html">A term
-            that specifies the characteristics and general type of content of the
-            resource.</definition>
-        <mapping schema="marc">Leader/06</mapping>
-        <mapping schema="dc">dc:type</mapping>
-        <governingStandard>MODS ver. 3</governingStandard>
-        <content>
-            <type>choice</type>
-            <vocabulary authority="MODS TypeOfResource Values" ref="http://www.loc.gov/standards/mods//userguide/typeofresource.html">
-                <enumeration value="text"/>
-                <enumeration value="cartographic"/>
-                <enumeration value="notated music"/>
-                <enumeration value="sound recording"/>
-                <enumeration value="sound recording-musical"/>
-                <enumeration value="sound recording-nonmusical"/>
-                <enumeration value="still image"/>
-                <enumeration value="moving image"/>
-                <enumeration value="three dimensional object"/>
-                <enumeration value="software, multimedia"/>
-                <enumeration value="mixed material"/>
-            </vocabulary>
-        </content>
-        <instruction>Select an authorized MODS value characterizing the resource’s format.</instruction>
-        <usageNote>Use all lowercase letters without punctuation.</usageNote>
-        <usageNote>Use 'collection' attribute to distinguish collection-level records.</usageNote>
-        <inputGuidance>
-            <spreadsheet>Use the drop down menu provided.</spreadsheet>
-            <webform>Use the drop down menu provided.</webform>
-            <xml/>
-        </inputGuidance>
-        <example>`&lt;typeOfResource&gt;still image&lt;/typeOfResource&gt;`</example>
-        <example>`&lt;typeOfResource collection="yes"&gt;mixed material&lt;/typeOfResource&gt;`</example>
-        <attributes>
-            <attribute name="collection" obligation="required if applicable">
-                <value>yes</value>
-            </attribute>
-        </attributes>
-    </element>
-
     <element name="Place of Origin" category="metaSetCore" obligation="optional" repeatable="yes" controlled="no">
         <defaultLabel>Place of Origin</defaultLabel>
         <encoding>mods:mods/mods:originInfo/mods:place/mods:placeTerm</encoding>
@@ -349,6 +306,114 @@
         <attributes>
             <attribute name="displayLabel" obligation="optional">
                 <value>[uncontrolled; if omitted, the default label will be used; other suggested values are "Summary" or "Scope and Content"]</value>
+            </attribute>
+        </attributes>
+    </element>
+    
+    <element name="Note" category="metaSetContent" obligation="optional" repeatable="yes" controlled="no">
+        <defaultLabel>Note</defaultLabel>
+        <encoding>mods:mods/mods:note</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/note.html">General textual information relating to a resource.</definition>
+        <mapping schema="marc">5XX</mapping>
+        <mapping schema="dc">dc:description</mapping>
+        <governingStandard>RDA 2.2</governingStandard>
+        <content>
+            <type>text</type>
+        </content>
+        <instruction>Enter notes pertaining to the content of the resource that do not fit in a more specific field.</instruction>
+        <usageNote>Record each note in a separate Note field.</usageNote>
+        <usageNote>The type attribute designates the type of note, with the default for general notes about the resource as type="content". Select from MODS list of note types at https://www.loc.gov/standards/mods/mods-notes.html. Other note types present in the LDL include "biographical/historical", "performers", "thesis", "date".</usageNote>
+        <usageNote>Use this space to transcribe anything handwritten, stamped, or printed on the image, mat, or case.</usageNote>
+        <usageNote>Include any descriptive information accompanying the item and any pertinent information not represented in other fields.</usageNote>
+        <usageNote>Notes relating to physical description should be recorded in a Physical Description Note.</usageNote>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet>Add columns as needed; use column headers to specify display label.</spreadsheet>
+            <webform/>
+            <xml/>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <attributes>
+            <attribute name="type" obligation="required">
+                <value>[uncontrolled; if omitted, "content" will be used; select from MODS list of note types.]</value>
+            </attribute>
+            <attribute name="displayLabel" obligation="optional">
+                <value>[uncontrolled; if omitted, the default label will be used; other suggested values are "Summary" or "Scope and Content"]</value>
+            </attribute>
+        </attributes>
+    </element>
+
+    <element name="Type of Resource" category="metaSetCarrier" obligation="required" repeatable="yes"
+        controlled="yes">
+        <defaultLabel>Type of Resource</defaultLabel>
+        <encoding>mods:mods/mods:typeOfResource</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/typeofresource.html">A term
+            that specifies the characteristics and general type of content of the
+            resource.</definition>
+        <mapping schema="marc">Leader/06</mapping>
+        <mapping schema="dc">dc:type</mapping>
+        <governingStandard>MODS ver. 3</governingStandard>
+        <content>
+            <type>choice</type>
+            <vocabulary authority="MODS TypeOfResource Values" ref="http://www.loc.gov/standards/mods//userguide/typeofresource.html">
+                <enumeration value="text"/>
+                <enumeration value="cartographic"/>
+                <enumeration value="notated music"/>
+                <enumeration value="sound recording"/>
+                <enumeration value="sound recording-musical"/>
+                <enumeration value="sound recording-nonmusical"/>
+                <enumeration value="still image"/>
+                <enumeration value="moving image"/>
+                <enumeration value="three dimensional object"/>
+                <enumeration value="software, multimedia"/>
+                <enumeration value="mixed material"/>
+            </vocabulary>
+        </content>
+        <instruction>Select an authorized MODS value characterizing the resource’s format.</instruction>
+        <usageNote>Use all lowercase letters without punctuation.</usageNote>
+        <usageNote>Use 'collection' attribute to distinguish collection-level records.</usageNote>
+        <inputGuidance>
+            <spreadsheet>Use the drop down menu provided.</spreadsheet>
+            <webform>Use the drop down menu provided.</webform>
+            <xml/>
+        </inputGuidance>
+        <example>`&lt;typeOfResource&gt;still image&lt;/typeOfResource&gt;`</example>
+        <example>`&lt;typeOfResource collection="yes"&gt;mixed material&lt;/typeOfResource&gt;`</example>
+        <attributes>
+            <attribute name="collection" obligation="required if applicable">
+                <value>yes</value>
+            </attribute>
+        </attributes>
+    </element>
+
+    <element name="Genre" category="metaSetContent" obligation="optional" repeatable="yes" controlled="yes">
+        <defaultLabel>Genre</defaultLabel>
+        <encoding>mods:mods/mods:genre</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/genre.html">A term or terms that designate a category characterizing a particular style, form, or content, such as artistic, musical, literary composition, etc.</definition>
+        <mapping schema="marc">008; 336; 6XX</mapping>
+        <mapping schema="dc">dc:type</mapping>
+        <governingStandard>RDA 6.9</governingStandard>
+        <content>
+            <type>text</type>
+            <vocabulary authority="aat" ref="http://www.getty.edu/research/tools/vocabularies/aat/"/>
+            <vocabulary authority="lcgft" ref="http://id.loc.gov/authorities/genreForms.html"/>
+            <vocabulary atuhority="lcsh" ref="http://id.loc.gov/authorities/subjects.html"/>
+        </content>
+        <instruction>Enter a term for the genre of the resource that characterizes its content.</instruction>
+        <usageNote>Choose applicable genre terms from the Getty Art and Architecture Thesaurus (AAT), particularly terms denoted as "genre". Other vocabularies, including local ones, may be used with consultation from a metadata librarian.</usageNote>
+        <usageNote>The Genre field should be used to characterize the content of the resource rather than the resource itself or its physical characteristics, which would be Form.</usageNote>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml/>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <attributes>
+            <attribute name="authority" obligation="required">
+                <value>aat; lcgft; lcsh; local</value>
             </attribute>
         </attributes>
     </element>

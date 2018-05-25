@@ -4,12 +4,14 @@
 [MODS](#mods)  
 [Title](#title)  
 [Title Part](#title-part)  
-[Type of Resource](#type-of-resource)  
 [Place of Origin](#place-of-origin)  
 [Publisher](#publisher)  
 [Date](#date)  
 [Date Captured](#date-captured)  
 [Abstract](#abstract)  
+[Note](#note)  
+[Type of Resource](#type-of-resource)  
+[Genre](#genre)  
 - - -
 ## MODS  
 ### About  
@@ -25,7 +27,6 @@
 - __Usage Notes:__  
     - LDL practices require one XML record per file; `<mods>` must always be the root element rather than `<modsCollection>`.  
   
-  
 ### Attributes  
 
 | Attribute | Values | Obligation |  
@@ -37,7 +38,6 @@
 | xsi:schemaLocation | http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd | required |  
 | xlink | http://www.w3.org/1999/xlink | required |  
 | version | 3.7 | required |  
-  
 
 - - -
 ## Title  
@@ -71,6 +71,7 @@
 | Title | mods/titleInfo/title | required | yes | no |  
 | NonSort | mods/titleInfo/nonSort | required if applicable | no | no |  
 | SubTitle | mods/titleInfo/subTitle | optional | yes | no |  
+  
 #### Title  
 - __Definition:__ The core title of the resource.  
 
@@ -84,14 +85,12 @@
 
 - __Usage Notes:__ A colon will be inserted automatically in the display.  
 
-  
 ### Attributes  
 
 | Attribute | Values | Obligation |  
 | --- | --- | --- |  
 | type | abbreviated; alternative; translated; uniform | required if applicable |  
 | displayLabel | [uncontrolled; if omitted, the default label will be used] | optional |  
-  
 
 - - -
 ## Title Part  
@@ -99,42 +98,6 @@
   
 ### Usage  
   
-  
-  
-
-- - -
-## Type of Resource  
-### About  
-- __LDL Label:__ Type of Resource  
-- __MODS Element:__ mods/typeOfResource  
-- __Definition:__ A term that specifies the characteristics and general type of content of the resource. ([source](http://www.loc.gov/standards/mods//userguide/typeofresource.html))  
-- __Obligation:__ required  
-- __Repeatable:__ yes  
-- __Controlled:__ yes  
-- __Governing Standard:__ MODS ver. 3  
-- __MARC:__ Leader/06  
-- __DC:__ dc:type  
-  
-### Usage  
-- __Instructions:__ Select an authorized MODS value characterizing the resource’s format.  
-- __Type:__ choice  
-- __Authority:__ [MODS TypeOfResource Values](http://www.loc.gov/standards/mods//userguide/typeofresource.html)  
-- __Values:__ text; cartographic; notated music; sound recording; sound recording-musical; sound recording-nonmusical; still image; moving image; three dimensional object; software, multimedia; mixed material  
-- __Usage Notes:__  
-    - Use all lowercase letters without punctuation.  
-    - Use 'collection' attribute to distinguish collection-level records.  
-- __Examples:__  
-    - `<typeOfResource>still image</typeOfResource>`  
-    - `<typeOfResource collection="yes">mixed material</typeOfResource>`  
-  
-  
-### Attributes  
-
-| Attribute | Values | Obligation |  
-| --- | --- | --- |  
-| collection | yes | required if applicable |  
-  
-
 - - -
 ## Place of Origin  
 ### About  
@@ -158,13 +121,11 @@
 - __Examples:__  
     -   
   
-  
 ### Attributes  
 
 | Attribute | Values | Obligation |  
 | --- | --- | --- |  
 | type | text | required |  
-  
 
 - - -
 ## Publisher  
@@ -187,9 +148,6 @@
 - __Examples:__  
     -   
   
-  
-  
-
 - - -
 ## Date  
 ### About  
@@ -216,7 +174,6 @@
 - __Examples:__  
     -   
   
-  
 ### Attributes  
 
 | Attribute | Values | Obligation |  
@@ -225,7 +182,6 @@
 | encoding | w3cdtf [recommended] | optional |  
 | point | start; end | required if applicable |  
 | qualifier | approximate; inferred; questionable | required if applicable |  
-  
 
 - - -
 ## Date Captured  
@@ -248,14 +204,12 @@
 - __Examples:__  
     -   
   
-  
 ### Attributes  
 
 | Attribute | Values | Obligation |  
 | --- | --- | --- |  
 | encoding | w3cdtf [recommended] | optional |  
 | qualifier | approximate; inferred; questionable | required if applicable |  
-  
 
 - - -
 ## Abstract  
@@ -279,12 +233,103 @@
 - __Examples:__  
     -   
   
-  
 ### Attributes  
 
 | Attribute | Values | Obligation |  
 | --- | --- | --- |  
 | displayLabel | [uncontrolled; if omitted, the default label will be used; other suggested values are "Summary" or "Scope and Content"] | optional |  
+
+- - -
+## Note  
+### About  
+- __LDL Label:__ Note  
+- __MODS Element:__ mods/note  
+- __Definition:__ General textual information relating to a resource. ([source](http://www.loc.gov/standards/mods//userguide/note.html))  
+- __Obligation:__ optional  
+- __Repeatable:__ yes  
+- __Controlled:__ no  
+- __Governing Standard:__ RDA 2.2  
+- __MARC:__ 5XX  
+- __DC:__ dc:description  
   
+### Usage  
+- __Instructions:__ Enter notes pertaining to the content of the resource that do not fit in a more specific field.  
+- __Type:__ text  
+- __Usage Notes:__  
+    - Record each note in a separate Note field.  
+    - The type attribute designates the type of note, with the default for general notes about the resource as type="content". Select from MODS list of note types at https://www.loc.gov/standards/mods/mods-notes.html. Other note types present in the LDL include "biographical/historical", "performers", "thesis", "date".  
+    - Use this space to transcribe anything handwritten, stamped, or printed on the image, mat, or case.  
+    - Include any descriptive information accompanying the item and any pertinent information not represented in other fields.  
+    - Notes relating to physical description should be recorded in a Physical Description Note.  
+- __Examples:__  
+    -   
+  
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| type | [uncontrolled; if omitted, "content" will be used; select from MODS list of note types.] | required |  
+| displayLabel | [uncontrolled; if omitted, the default label will be used; other suggested values are "Summary" or "Scope and Content"] | optional |  
+
+- - -
+## Type of Resource  
+### About  
+- __LDL Label:__ Type of Resource  
+- __MODS Element:__ mods/typeOfResource  
+- __Definition:__ A term that specifies the characteristics and general type of content of the resource. ([source](http://www.loc.gov/standards/mods//userguide/typeofresource.html))  
+- __Obligation:__ required  
+- __Repeatable:__ yes  
+- __Controlled:__ yes  
+- __Governing Standard:__ MODS ver. 3  
+- __MARC:__ Leader/06  
+- __DC:__ dc:type  
+  
+### Usage  
+- __Instructions:__ Select an authorized MODS value characterizing the resource’s format.  
+- __Type:__ choice  
+- __Authority:__ [MODS TypeOfResource Values](http://www.loc.gov/standards/mods//userguide/typeofresource.html)  
+- __Values:__ text; cartographic; notated music; sound recording; sound recording-musical; sound recording-nonmusical; still image; moving image; three dimensional object; software, multimedia; mixed material  
+- __Usage Notes:__  
+    - Use all lowercase letters without punctuation.  
+    - Use 'collection' attribute to distinguish collection-level records.  
+- __Examples:__  
+    - `<typeOfResource>still image</typeOfResource>`  
+    - `<typeOfResource collection="yes">mixed material</typeOfResource>`  
+  
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| collection | yes | required if applicable |  
+
+- - -
+## Genre  
+### About  
+- __LDL Label:__ Genre  
+- __MODS Element:__ mods/genre  
+- __Definition:__ A term or terms that designate a category characterizing a particular style, form, or content, such as artistic, musical, literary composition, etc. ([source](http://www.loc.gov/standards/mods//userguide/genre.html))  
+- __Obligation:__ optional  
+- __Repeatable:__ yes  
+- __Controlled:__ yes  
+- __Governing Standard:__ RDA 6.9  
+- __MARC:__ 008; 336; 6XX  
+- __DC:__ dc:type  
+  
+### Usage  
+- __Instructions:__ Enter a term for the genre of the resource that characterizes its content.  
+- __Type:__ text  
+- __Authority:__ [aat](http://www.getty.edu/research/tools/vocabularies/aat/)  
+- __Authority:__ [lcgft](http://id.loc.gov/authorities/genreForms.html)  
+- __Usage Notes:__  
+    - Choose applicable genre terms from the Getty Art and Architecture Thesaurus (AAT), particularly terms denoted as "genre". Other vocabularies, including local ones, may be used with consultation from a metadata librarian.  
+    - The Genre field should be used to characterize the content of the resource rather than the resource itself or its physical characteristics, which would be Form.  
+- __Examples:__  
+    -   
+  
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| authority | aat; lcgft; lcsh; local | required |  
 
 - - -
