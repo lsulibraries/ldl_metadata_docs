@@ -94,13 +94,22 @@
         </xsl:for-each>
         <xsl:text>  &#xa;</xsl:text>
     </xsl:if>
-    <xsl:for-each select="usageNote|example">
-        <xsl:text>- __</xsl:text>
-        <xsl:value-of select="replace(replace(name(), 'usageNote','Usage Note'),'example','Example')"/>
-        <xsl:text>:__ </xsl:text>
-        <xsl:value-of select="normalize-space(.)"/>
-        <xsl:text>  &#xa;</xsl:text>
-    </xsl:for-each>
+    <xsl:if test="usageNote">
+        <xsl:text>- __Usage Notes:__  &#xa;</xsl:text>
+        <xsl:for-each select="usageNote">
+            <xsl:text>    - </xsl:text>
+            <xsl:value-of select="normalize-space(.)"/>
+            <xsl:text>  &#xa;</xsl:text>
+        </xsl:for-each>
+    </xsl:if>
+    <xsl:if test="example">
+        <xsl:text>- __Examples:__  &#xa;</xsl:text>
+        <xsl:for-each select="example">
+            <xsl:text>    - </xsl:text>
+            <xsl:value-of select="normalize-space(.)"/>
+            <xsl:text>  &#xa;</xsl:text>
+        </xsl:for-each>
+    </xsl:if>
 </xsl:template>
     
     <xsl:template match="attributes">
