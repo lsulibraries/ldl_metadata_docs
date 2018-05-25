@@ -19,12 +19,12 @@
 - __Repeatable:__ no  
 - __Controlled:__ no  
 - __Governing Standard:__ MODS ver. 3  
-  
+
 ### Usage  
 - __Usage Notes:__  
     - LDL practices require one XML record per file; `<mods>` must always be the root element rather than `<modsCollection>`.  
-  
-  
+
+
 ### Attributes  
 
 | Attribute | Values | Obligation |  
@@ -36,7 +36,7 @@
 | xsi:schemaLocation | http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd | required |  
 | xlink | http://www.w3.org/1999/xlink | required |  
 | version | 3.7 | required |  
-  
+
 
 - - -
 ## Title  
@@ -50,7 +50,7 @@
 - __Governing Standard:__ RDA 2.3  
 - __MARC:__ 245; also 210, 242, 246, 130, 240, 730, 740  
 - __DC:__ dc:title  
-  
+
 ### Usage  
 - __Instructions:__ Enter the title of the resource. All items must have a title.  
 - __Type:__ text  
@@ -62,7 +62,7 @@
     - The repository will order items within a collection alphabetically by their main title, using the ASCII values of the characters in the title. Capitalization and punctuation will change the filing order. Numbers will file alphabetically as well, meaning a collection of 12 items with titles such as "Photo 1", "Photo 2", etc. will fall in the order Photo 1, Photo 10, Photo 11, Photo 12, Photo 2, Photo 3, Photo 4, Photo 5, Photo 6, Photo 7, Photo 8, Photo 9. To avoid unintended sort order results in your collection, be consistent with the use of capitalization and punctuation, carefully consider how dates are used as portions of titles, and when using numbers in titles, add leading zeros so that all numbers have the same amount of digits (if there are fewer than 10 items, you can use 1-9; if there are between 10-99, use 01-09; if there are 100-999, use 001-099; etc.)  
 - __Examples:__  
     -   
-  
+
 ### Subelements  
 
 | Subelement | Encoding | Obligation | Repeatable | Controlled |  
@@ -83,23 +83,23 @@
 
 - __Usage Notes:__ A colon will be inserted automatically in the display.  
 
-  
+
 ### Attributes  
 
 | Attribute | Values | Obligation |  
 | --- | --- | --- |  
 | type | abbreviated; alternative; translated; uniform | required if applicable |  
 | displayLabel | [uncontrolled; if omitted, the default label will be used] | optional |  
-  
+
 
 - - -
 ## Title Part  
 ### About  
-  
+
 ### Usage  
-  
-  
-  
+
+
+
 
 - - -
 ## Type of Resource  
@@ -113,7 +113,7 @@
 - __Governing Standard:__ MODS ver. 3  
 - __MARC:__ Leader/06  
 - __DC:__ dc:type  
-  
+
 ### Usage  
 - __Instructions:__ Select an authorized MODS value characterizing the resource’s format.  
 - __Type:__ choice  
@@ -125,14 +125,14 @@
 - __Examples:__  
     - `<typeOfResource>still image</typeOfResource>`  
     - `<typeOfResource collection="yes">mixed material</typeOfResource>`  
-  
-  
+
+
 ### Attributes  
 
 | Attribute | Values | Obligation |  
 | --- | --- | --- |  
 | collection | yes | required if applicable |  
-  
+
 
 - - -
 ## Place of Origin  
@@ -146,7 +146,7 @@
 - __Governing Standard:__ RDA 2.8  
 - __MARC:__ 260a / 260c  
 - __DC:__ dc:publisher  
-  
+
 ### Usage  
 - __Instructions:__ For formally published materials, enter the place of publication as it appears on the resource. For a resource with no formal publication, optionally, enter the place the resource originated.  
 - __Type:__ text  
@@ -156,14 +156,14 @@
     - Places as subjects of a resource are recorded under Subject - Geographic.  
 - __Examples:__  
     -   
-  
-  
+
+
 ### Attributes  
 
 | Attribute | Values | Obligation |  
 | --- | --- | --- |  
 | type | text | required |  
-  
+
 
 - - -
 ## Publisher  
@@ -177,7 +177,7 @@
 - __Governing Standard:__ RDA 2.8  
 - __MARC:__ 260b  
 - __DC:__ dc:publisher  
-  
+
 ### Usage  
 - __Instructions:__ For a published resource, enter the publisher’s name as it appears on the resource.  
 - __Type:__ text  
@@ -185,9 +185,9 @@
     - Uploading to the LDL is not considered formal publication; credit to the repository for making the resource available is implied under Source.  
 - __Examples:__  
     -   
-  
-  
-  
+
+
+
 
 - - -
 ## Date  
@@ -202,7 +202,7 @@
 - __Governing Standard:__ RDA 2.11  
 - __MARC:__ 260c / 260g  
 - __DC:__ dc:date  
-  
+
 ### Usage  
 - __Instructions:__ For formally published materials, enter the date of publication as a dateIssued element. For unpublished materials, enter the date for the creation of resource as a dateCreated element. Use the W3C date format YYYY-MM-DD for complete dates, or YYYY-MM or YYYY for partial dates (W3CDTF).  
 - __Type:__ date  
@@ -214,8 +214,8 @@
     - When only a decade is known, enter a date range for the entire decade and mark the date as questionable. When only a century is known, enter a date range for the entire century and mark the date as questionable. Do not enter "Unknown," "No date," or similar.  
 - __Examples:__  
     -   
-  
-  
+
+
 ### Attributes  
 
 | Attribute | Values | Obligation |  
@@ -224,7 +224,7 @@
 | encoding | w3cdtf [recommended] | optional |  
 | point | start; end | required if applicable |  
 | qualifier | approximate; inferred; questionable | required if applicable |  
-  
+
 
 - - -
 ## Date Captured  
@@ -238,7 +238,7 @@
 - __Governing Standard:__ W3CDTF  
 - __MARC:__ 033  
 - __DC:__ dc:date  
-  
+
 ### Usage  
 - __Instructions:__ Enter the date of digitization for the resource in the W3CDTF format YYYY-MM-DD.  
 - __Type:__ date  
@@ -259,12 +259,12 @@
 
 - __Usage Notes:__   
 
-  
+
 ### Attributes  
 
 | Attribute | Values | Obligation |  
 | --- | --- | --- |  
 | [name] | list of literals with semicolon delimiting or [uncontrolled; if omitted, the default label will be used] | required|required if applicable|optional |  
-  
+
 
 - - -
