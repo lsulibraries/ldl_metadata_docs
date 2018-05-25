@@ -57,7 +57,7 @@
 ### Subelements  
 
 | Subelement | Encoding | Obligation | Repeatable | Controlled |  
-| --- | --- | --- | --- |  
+| --- | --- | --- | --- | --- |  
 | Title | mods/titleInfo/title | required | yes | no |  
 | NonSort | mods/titleInfo/nonSort | required if applicable | no | no |  
 | SubTitle | mods/titleInfo/subTitle | optional | yes | no |  
