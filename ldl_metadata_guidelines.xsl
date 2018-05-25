@@ -77,13 +77,29 @@
 
 <xsl:template name="Usage">
     <xsl:text>### Usage  &#xa;</xsl:text>
-    <xsl:for-each select="(content/type)|(content/vocabulary/@authority)">
-        <xsl:text>- __</xsl:text>
-        <xsl:value-of select="concat(upper-case(substring(name(),1,1)),substring(name(),2))"/>
-        <xsl:text>:__ </xsl:text>
+    <xsl:for-each select="content/type">
+        <xsl:text>- __Type:__ </xsl:text>
         <xsl:value-of select="."/>
         <xsl:text>  &#xa;</xsl:text>
     </xsl:for-each>
+        <xsl:for-each select="content/vocabulary">
+            <xsl:if test="@authority">
+                <xsl:text>- __Authority:__ </xsl:text>
+                <xsl:choose>
+                    <xsl:when test="@ref">
+                        <xsl:text>&lt;a href="</xsl:text>
+                        <xsl:value-of select="normalize-space(@ref)"/>
+                        <xsl:text>"&gt;</xsl:text>
+                        <xsl:value-of select="@authority"/>
+                        <xsl:text>&lt;a&gt;</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="@authority"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+                <xsl:text>  &#xa;</xsl:text>
+            </xsl:if>
+        </xsl:for-each>
     <xsl:if test="content/vocabulary/enumeration">
         <xsl:text>- __Values:__ </xsl:text>
         <xsl:for-each select="content/vocabulary/enumeration">

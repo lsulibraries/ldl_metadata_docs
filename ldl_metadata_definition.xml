@@ -10,7 +10,7 @@
         <governingStandard/>
         <content>
             <type>text|choice|date...</type>
-            <vocabulary authority="[uri]">
+            <vocabulary authority="[name]" ref="[uri]">
                 <enumeration value="[value]"/>
             </vocabulary>
         </content>
@@ -27,6 +27,7 @@
             <subelement name="[name]" obligation="required|required if applicable|optional" repeatable="yes|no" controlled="yes|no">
                 <xpath/>
                 <definition/>
+                <authority/>
                 <value/>
             </subelement>
         </subelements>
@@ -138,7 +139,7 @@
         <governingStandard>MODS ver. 3</governingStandard>
         <content>
             <type>choice</type>
-            <vocabulary authority="http://www.loc.gov/standards/mods//userguide/typeofresource.html">
+            <vocabulary authority="MODS TypeOfResource Values" ref="http://www.loc.gov/standards/mods//userguide/typeofresource.html">
                 <enumeration value="text"/>
                 <enumeration value="cartographic"/>
                 <enumeration value="notated music"/>
