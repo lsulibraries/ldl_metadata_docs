@@ -137,8 +137,8 @@
     
     <xsl:template match="subelements">
         <xsl:text>### Subelements  &#xa;</xsl:text>
-        <xsl:text>&#xa;| Subelement | Encoding | Obligation | Repeatable | Controlled | &#xa;</xsl:text>
-        <xsl:text>| --- | --- | --- | --- |  &#xa;</xsl:text>
+        <xsl:text>&#xa;| Subelement | Encoding | Obligation | Repeatable | Controlled |  &#xa;</xsl:text>
+        <xsl:text>| --- | --- | --- | --- | --- |  &#xa;</xsl:text>
         <xsl:for-each select="subelement">
             <xsl:text>| </xsl:text>
             <xsl:value-of select="@name"/>
