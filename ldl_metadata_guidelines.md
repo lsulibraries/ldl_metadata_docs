@@ -1,5 +1,14 @@
 # LDL Metadata Fields  
 
+## Contents  
+[MODS](mods)  
+[Title](title)  
+[Title Part](title-part)  
+[Type of Resource](type-of-resource)  
+[Place of Origin](place-of-origin)  
+[Publisher](publisher)  
+[Date](date)  
+[Date Captured](date-captured)  
 - - -
 ## MODS  
 ### About  
@@ -57,7 +66,7 @@
 ### Subelements  
 
 | Subelement | Encoding | Obligation | Repeatable | Controlled |  
-| --- | --- | --- | --- |  
+| --- | --- | --- | --- | --- |  
 | Title | mods/titleInfo/title | required | yes | no |  
 | NonSort | mods/titleInfo/nonSort | required if applicable | no | no |  
 | SubTitle | mods/titleInfo/subTitle | optional | yes | no |  
@@ -126,9 +135,9 @@
   
 
 - - -
-## Place  
+## Place of Origin  
 ### About  
-- __LDL Label:__ Place of Publication / Place of Origin  
+- __LDL Label:__ Place of Origin  
 - __MODS Element:__ mods/originInfo/place/placeTerm  
 - __Definition:__ Name of a place associated with the publication or origin of a resource. ([source](http://www.loc.gov/standards/mods//userguide/origininfo.html#place))  
 - __Obligation:__ optional  
@@ -202,8 +211,7 @@
     - If distinct dates of creation and publication exist for the resource, use both dateCreated and dateIssued. In this case, it is recommended that the publication date has the keyDate attribute  
     - For a date range, repeat the date* field and use the point attributes to mark the start and end point.  
     - When a date is uncertain or supplied, indicate this through the use of the qualifier attribute rather than inserting characters such as "ca.", brackets, or a question mark as part of the field contents.  
-    - When only a decade is known, enter a date range for the entire decade and mark the date as questionable. When only a century is known, enter a date range for the entire century and mark the date as questionable.  
-    - Do not enter "Unknown," "No date," or similar. Enter an approximate year range, with a qualifier, to the best of your ability, even if only the century, e.g. 1801-1900.  
+    - When only a decade is known, enter a date range for the entire decade and mark the date as questionable. When only a century is known, enter a date range for the entire century and mark the date as questionable. Do not enter "Unknown," "No date," or similar.  
 - __Examples:__  
     -   
   
@@ -216,6 +224,47 @@
 | encoding | w3cdtf [recommended] | optional |  
 | point | start; end | required if applicable |  
 | qualifier | approximate; inferred; questionable | required if applicable |  
+  
+
+- - -
+## Date Captured  
+### About  
+- __LDL Label:__ Date Captured  
+- __MODS Element:__ mods/originInfo/dateCaptured  
+- __Definition:__ The date on which the resource was digitized or a subsequent snapshot was taken. ([source](http://www.loc.gov/standards/mods//userguide/origininfo.html#datecaptured))  
+- __Obligation:__ optional  
+- __Repeatable:__ no  
+- __Controlled:__ no  
+- __Governing Standard:__ W3CDTF  
+- __MARC:__ 033  
+- __DC:__ dc:date  
+  
+### Usage  
+- __Instructions:__ Enter the date of digitization for the resource in the W3CDTF format YYYY-MM-DD.  
+- __Type:__ date  
+- __Usage Notes:__  
+    - Use a single date only.  
+- __Examples:__  
+    -   
+  
+### Subelements  
+
+| Subelement | Encoding | Obligation | Repeatable | Controlled |  
+| --- | --- | --- | --- | --- |  
+| [name] |  | required|required if applicable|optional | yes|no | yes|no |  
+#### [name]  
+- __Definition:__   
+
+- __Authority:__ [name]  
+
+- __Usage Notes:__   
+
+  
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| [name] | list of literals with semicolon delimiting or [uncontrolled; if omitted, the default label will be used] | required|required if applicable|optional |  
   
 
 - - -

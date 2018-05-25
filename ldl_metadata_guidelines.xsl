@@ -13,8 +13,20 @@
     
     <xsl:template match="@*|*">
         <xsl:copy>
+            <xsl:call-template name="toc"/>
             <xsl:apply-templates select="@*|*" />
         </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template name="toc">
+        <xsl:text>## Contents  &#xa;</xsl:text>
+        <xsl:for-each select="element">
+            <xsl:text>[</xsl:text>
+            <xsl:value-of select="@name"/>
+            <xsl:text>](</xsl:text>
+            <xsl:value-of select="replace(lower-case(@name),' ','-')"/>
+            <xsl:text>)  &#xa;</xsl:text>
+        </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="element">

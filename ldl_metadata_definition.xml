@@ -204,8 +204,8 @@
         </attributes>
     </element>
 
-    <element name="Place" category="metaSetCore" obligation="optional" repeatable="yes" controlled="no">
-        <defaultLabel>Place of Publication / Place of Origin</defaultLabel>
+    <element name="Place of Origin" category="metaSetCore" obligation="optional" repeatable="yes" controlled="no">
+        <defaultLabel>Place of Origin</defaultLabel>
         <encoding>mods:mods/mods:originInfo/mods:place/mods:placeTerm</encoding>
         <definition ref="http://www.loc.gov/standards/mods//userguide/origininfo.html#place">Name of a place associated with the publication or origin of a resource.</definition>
         <mapping schema="marc">260a / 260c</mapping>
@@ -271,8 +271,7 @@
         <usageNote>If distinct dates of creation and publication exist for the resource, use both dateCreated and dateIssued. In this case, it is recommended that the publication date has the keyDate attribute</usageNote>
         <usageNote>For a date range, repeat the date* field and use the point attributes to mark the start and end point.</usageNote>
         <usageNote>When a date is uncertain or supplied, indicate this through the use of the qualifier attribute rather than inserting characters such as "ca.", brackets, or a question mark as part of the field contents.</usageNote>
-        <usageNote>When only a decade is known, enter a date range for the entire decade and mark the date as questionable. When only a century is known, enter a date range for the entire century and mark the date as questionable.</usageNote>
-        <usageNote>Do not enter "Unknown," "No date," or similar. Enter an approximate year range, with a qualifier, to the best of your ability, even if only the century, e.g. 1801-1900.</usageNote>
+        <usageNote>When only a decade is known, enter a date range for the entire decade and mark the date as questionable. When only a century is known, enter a date range for the entire century and mark the date as questionable. Do not enter "Unknown," "No date," or similar.</usageNote>
         <enrichment/>
         <inputGuidance>
             <spreadsheet>Follow the formats in the conversion table, which can be converted to properly formatted W3CDTF MODS dates using existing XSLT.</spreadsheet>
@@ -293,6 +292,47 @@
             </attribute>
             <attribute name="qualifier" obligation="required if applicable">
                 <value>approximate; inferred; questionable</value>
+            </attribute>
+        </attributes>
+    </element>
+    
+    <element name="Date Captured" category="metaSetAdmin" obligation="optional" repeatable="no" controlled="no">
+        <defaultLabel>Date Captured</defaultLabel>
+        <encoding>mods:mods/mods:originInfo/mods:dateCaptured</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/origininfo.html#datecaptured">The date on which the resource was digitized or a subsequent snapshot was taken.</definition>
+        <mapping schema="marc">033</mapping>
+        <mapping schema="dc">dc:date</mapping>
+        <governingStandard>W3CDTF</governingStandard>
+        <content>
+            <type>date</type>
+        </content>
+        <instruction>Enter the date of digitization for the resource in the W3CDTF format YYYY-MM-DD.</instruction>
+        <usageNote>Use a single date only.</usageNote>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml/>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <subelements>
+            The following subelements are grouped together in the displayed metadata record.
+            <subelement name="[name]" obligation="required|required if applicable|optional" repeatable="yes|no" controlled="yes|no">
+                <encoding/>
+                <definition/>
+                <content>
+                    <type>text|choice|date...</type>
+                    <vocabulary authority="[name]" ref="[uri]">
+                        <enumeration inst="[institution code]" value="[value]"/>
+                    </vocabulary>
+                </content>
+                <usageNote/>
+            </subelement>
+        </subelements>
+        <attributes>
+            <attribute name="[name]" obligation="required|required if applicable|optional">
+                <value>list of literals with semicolon delimiting or [uncontrolled; if omitted, the default label will be used]</value>
             </attribute>
         </attributes>
     </element>
