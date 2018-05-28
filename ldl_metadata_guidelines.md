@@ -17,6 +17,7 @@
 [Extent](#extent)  
 [Internet Media Type](#internet-media-type)  
 [Digital Origin](#digital-origin)  
+[Language](#language)  
 - - -
 ## MODS  
 ### About  
@@ -83,7 +84,7 @@
 #### NonSort  
 - __Definition:__ Any initial article that should not be used for alphabetical arrangement or database searches.  
 
-- __Usage Notes:__ Enter articles or punctuation that fall at the beginning of the title. Do not duplicate the contents of `<nonSort>` within the `<title>` subelement.  
+- __Usage Notes:__ Use for articles or punctuation that fall at the beginning of the title. Do not duplicate the contents of `<nonSort>` within the `<title>` subelement.  
 
 #### SubTitle  
 - __Definition:__ The remainder of title information following the core title.  
@@ -434,7 +435,7 @@
 - __Instructions:__ Select from the controlled list of terms available from the MIME Media Types list.  
 - __Type:__ choice  
 - __Authority:__ [MIME Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml)  
-- __Values:__ application/pdf; image/jp2; audio/mpeg; video/mp4  
+- __Values:__ image/jp2; application/pdf; audio/mpeg; video/mp4  
 - __Usage Notes:__  
     - The enumerated values cover present LDL standards. Contact a metadata librarian if using file types not listed.  
     - For objects containing multiple file types, use a separate `<internetMediaType>` field for each.  
@@ -465,4 +466,51 @@
 - __Examples:__  
     -   
   
+- - -
+## Language  
+### About  
+- __LDL Default Label:__ Language  
+- __MODS Element:__ mods/language  
+- __Definition:__ A designation of the language in which the content of a resource is expressed. ([source](http://www.loc.gov/standards/mods//userguide/language.html))  
+- __Obligation:__ optional  
+- __Repeatable:__ yes  
+- __Controlled:__ yes  
+- __Governing Standard:__ RDA 6.11  
+- __MARC:__ 008/35-37; 041  
+- __DC:__ dc:language  
+  
+### Usage  
+- __Instructions:__ Enter the authorized text term from ISO 639-2 for the language used within the resource in a `<languageTerm>` field with type="text". Enter the alpha-3 language code from ISO 639-2 for the language used within the resource in a `<languageTerm>` field with type="code".  
+- __Usage Notes:__  
+    - For the Code term, use all lowercase letters without punctuation.  
+    - For multiple languages present in a resource, repeat the `<language>` element, each with two `<languageTerm>` subelements for text and code.  
+    - The Language field should not be used for resources that do not have a language component (such as many photographs).  
+    - "English"/"eng" is not to be omitted and/or understood as a default.  
+- __Examples:__  
+    - `<language><languageTerm type="text">English</languageTerm><languageTerm type="code" authority="iso639-2b">eng</languageTerm></language>`  
+    - `<language><languageTerm type="text">French</languageTerm><languageTerm type="code" authority="iso639-2b">fre</languageTerm></language>`  
+    - `<language><languageTerm type="text">Spanish</languageTerm><languageTerm type="code" authority="iso639-2b">spa</languageTerm></language>`  
+  
+### Subelements  
+
+| Subelement | Encoding | Obligation | Repeatable | Controlled |  
+| --- | --- | --- | --- | --- |  
+| Language Term | mods/language/languageTerm | required | yes | yes |  
+  
+#### Language Term  
+- __Definition:__ Contains the textual or coded form for the language of the content of the resource.  
+
+- __Authority:__ ISO 639-2  
+
+- __Usage Notes:__ All attributes below are applied to the `<languageTerm>` subelement.  
+
+- __Usage Notes:__ Use the type attribute on the `<languageTerm>` subelement to designate text and code values. The `<languageTerm>` subelement with attribute type="code" must have an authority attribute with the value "iso639-2b".  
+
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| type | text; code | required |  
+| authority | iso639-2b | required if applicable |  
+
 - - -
