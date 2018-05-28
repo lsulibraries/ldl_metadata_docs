@@ -566,9 +566,9 @@
         <governingStandard>RDA 6.11</governingStandard>
         <instruction>Enter the authorized text term from ISO 639-2 for the language used within the resource in a `&lt;languageTerm&gt;` field with type="text". Enter the alpha-3 language code from ISO 639-2 for the language used within the resource in a `&lt;languageTerm&gt;` field with type="code".</instruction>
         <usageNote>For the Code term, use all lowercase letters without punctuation.</usageNote>
-        <usageNote>For multiple languages present in a resource, repeat the `&lt;language&gt;` element, each with two `&lt;languageTerm&gt;` subelements for text and code.</usageNote>
-        <usageNote>The Language field should not be used for resources that do not have a language component (such as many photographs).</usageNote>
-        <usageNote>"English"/"eng" is not to be omitted and/or understood as a default.</usageNote>
+        <usageNote>For multiple languages present in a resource, repeat the `&lt;language&gt;` wrapper element, each with a pair of `&lt;languageTerm&gt;` subelements for text and code.</usageNote>
+        <usageNote>The Language field is not recommended for resources that do not have a language component (such as photographs).</usageNote>
+        <usageNote>"English"/"eng" as a Language value is not to be omitted and/or understood as a default.</usageNote>
         <enrichment/>
         <inputGuidance>
             <spreadsheet/>
@@ -599,6 +599,92 @@
                 <value>iso639-2b</value>
             </attribute>
         </attributes>
+    </element>
+    
+    <element name="Digital Collection" category="metaSetCollection" obligation="required" repeatable="no" controlled="yes">
+        <defaultLabel>Digital Collection</defaultLabel>
+        <encoding>mods:mods/mods:relatedItem[@type="host"]/mods:titleInfo/mods:title</encoding>
+        <definition>The name of the LDL digital collection to which the resource belongs.</definition>
+        <mapping schema="marc">773</mapping>
+        <mapping schema="dc">dc:relation</mapping>
+        <governingStandard>RDA 25.1</governingStandard>
+        <content>
+            <type>text</type>
+        </content>
+        <instruction>Enter the title of the digital collection.</instruction>
+        <usageNote>Use the full title as it appears in the collection level metadata. The value should be consistent throughout the collection.</usageNote>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml>A displayLabel attribute with value "Digital Collection" should be used on the `&lt;titleInfo&gt;` element.</xml>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+    </element>
+    
+    <element name="Relation" category="metaSetCollection" obligation="required" repeatable="no" controlled="yes">
+        <defaultLabel>[not displayed]</defaultLabel>
+        <encoding>mods:mods/mods:relatedItem[@type="host"]/mods:location/mods:url</encoding>
+        <definition>The URL of the home page of the LDL digital collection to which the resource belongs.</definition>
+        <mapping schema="marc">773</mapping>
+        <mapping schema="dc">dc:relation</mapping>
+        <governingStandard>RDA 25.1</governingStandard>
+        <content>
+            <type>url</type>
+        </content>
+        <instruction>Enter the URL of the digital collection landing page.</instruction>
+        <usageNote>The format is: http://louisianadigitallibrary.org/islandora/object/[collection_namespace]:collection. The collection_namespace is the institution code (namespace prefix), hyphen, collection code (alias) for the collection.</usageNote>
+        <usageNote>This value should be consistent throughout the collection.</usageNote>
+        <usageNote>Enter the URL only; any helper text will cause the MODS record to fail validation.</usageNote>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml>A displayLabel attribute with value "Relation" should be used on the `&lt;url&gt;` element.</xml>
+        </inputGuidance>
+        <example/>
+    </element>
+    
+    <element name="Repository Collection" category="metaSetCollection" obligation="optional" repeatable="yes" controlled="yes">
+        <defaultLabel>Repository Collection</defaultLabel>
+        <encoding>mods:mods/mods:relatedItem[@type="host"]/mods:titleInfo[@type="alternative]"/mods:title</encoding>
+        <definition>The name of the repository collection to which the original physical resource belongs.</definition>
+        <mapping schema="marc">773</mapping>
+        <mapping schema="dc">dc:relation</mapping>
+        <governingStandard>RDA 25.1</governingStandard>
+        <content>
+            <type>text</type>
+        </content>
+        <instruction>Enter the title of the repository collection.</instruction>
+        <usageNote>Use this field when the name of the digital collection differs markedly from the repository collection, or when a digital collection is composed of materials from multiple repository collections.</usageNote>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml>A displayLabel attribute with value "Repository Collection" should be used on the `&lt;titleInfo&gt;` element.</xml>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+    </element>
+    
+    <element name="Repository Collection Guide" category="metaSetCollection" obligation="optional" repeatable="yes" controlled="yes">
+        <defaultLabel>Repository Collection Guide</defaultLabel>
+        <encoding>mods:mods/mods:relatedItem[@type="host"]/mods:location/mods:url</encoding>
+        <definition>The URL of a finding aid or other guide for understanding and accessing the repository collection to which the resource belongs.</definition>
+        <mapping schema="marc">773</mapping>
+        <mapping schema="dc">dc:relation</mapping>
+        <governingStandard>RDA 25.1</governingStandard>
+        <content>
+            <type>url</type>
+        </content>
+        <instruction>Enter the URL of the finding aid or repository collection guide.</instruction>
+        <usageNote>Enter the URL only; any helper text will cause the MODS record to fail validation.</usageNote>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml>A displayLabel attribute with value "Repository Collection Guide" should be used on the `&lt;url&gt;` element.</xml>
+        </inputGuidance>
+        <example/>
     </element>
     
 </elementList>

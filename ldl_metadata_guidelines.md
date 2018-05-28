@@ -18,6 +18,10 @@
 [Internet Media Type](#internet-media-type)  
 [Digital Origin](#digital-origin)  
 [Language](#language)  
+[Digital Collection](#digital-collection)  
+[Relation](#relation)  
+[Repository Collection](#repository-collection)  
+[Repository Collection Guide](#repository-collection-guide)  
 - - -
 ## MODS  
 ### About  
@@ -483,9 +487,9 @@
 - __Instructions:__ Enter the authorized text term from ISO 639-2 for the language used within the resource in a `<languageTerm>` field with type="text". Enter the alpha-3 language code from ISO 639-2 for the language used within the resource in a `<languageTerm>` field with type="code".  
 - __Usage Notes:__  
     - For the Code term, use all lowercase letters without punctuation.  
-    - For multiple languages present in a resource, repeat the `<language>` element, each with two `<languageTerm>` subelements for text and code.  
-    - The Language field should not be used for resources that do not have a language component (such as many photographs).  
-    - "English"/"eng" is not to be omitted and/or understood as a default.  
+    - For multiple languages present in a resource, repeat the `<language>` wrapper element, each with a pair of `<languageTerm>` subelements for text and code.  
+    - The Language field is not recommended for resources that do not have a language component (such as photographs).  
+    - "English"/"eng" as a Language value is not to be omitted and/or understood as a default.  
 - __Examples:__  
     - `<language><languageTerm type="text">English</languageTerm><languageTerm type="code" authority="iso639-2b">eng</languageTerm></language>`  
     - `<language><languageTerm type="text">French</languageTerm><languageTerm type="code" authority="iso639-2b">fre</languageTerm></language>`  
@@ -513,4 +517,90 @@
 | type | text; code | required |  
 | authority | iso639-2b | required if applicable |  
 
+- - -
+## Digital Collection  
+### About  
+- __LDL Default Label:__ Digital Collection  
+- __MODS Element:__ mods/relatedItem[@type="host"]/titleInfo/title  
+- __Definition:__ The name of the LDL digital collection to which the resource belongs.  
+- __Obligation:__ required  
+- __Repeatable:__ no  
+- __Controlled:__ yes  
+- __Governing Standard:__ RDA 25.1  
+- __MARC:__ 773  
+- __DC:__ dc:relation  
+  
+### Usage  
+- __Instructions:__ Enter the title of the digital collection.  
+- __Type:__ text  
+- __Usage Notes:__  
+    - Use the full title as it appears in the collection level metadata. The value should be consistent throughout the collection.  
+- __Examples:__  
+    -   
+  
+- - -
+## Relation  
+### About  
+- __LDL Default Label:__ [not displayed]  
+- __MODS Element:__ mods/relatedItem[@type="host"]/location/url  
+- __Definition:__ The URL of the home page of the LDL digital collection to which the resource belongs.  
+- __Obligation:__ required  
+- __Repeatable:__ no  
+- __Controlled:__ yes  
+- __Governing Standard:__ RDA 25.1  
+- __MARC:__ 773  
+- __DC:__ dc:relation  
+  
+### Usage  
+- __Instructions:__ Enter the URL of the digital collection landing page.  
+- __Type:__ url  
+- __Usage Notes:__  
+    - The format is: http://louisianadigitallibrary.org/islandora/object/[collection_namespace]:collection. The collection_namespace is the institution code (namespace prefix), hyphen, collection code (alias) for the collection.  
+    - This value should be consistent throughout the collection.  
+    - Enter the URL only; any helper text will cause the MODS record to fail validation.  
+- __Examples:__  
+    -   
+  
+- - -
+## Repository Collection  
+### About  
+- __LDL Default Label:__ Repository Collection  
+- __MODS Element:__ mods/relatedItem[@type="host"]/titleInfo[@type="alternative]"/title  
+- __Definition:__ The name of the repository collection to which the original physical resource belongs.  
+- __Obligation:__ optional  
+- __Repeatable:__ yes  
+- __Controlled:__ yes  
+- __Governing Standard:__ RDA 25.1  
+- __MARC:__ 773  
+- __DC:__ dc:relation  
+  
+### Usage  
+- __Instructions:__ Enter the title of the repository collection.  
+- __Type:__ text  
+- __Usage Notes:__  
+    - Use this field when the name of the digital collection differs markedly from the repository collection, or when a digital collection is composed of materials from multiple repository collections.  
+- __Examples:__  
+    -   
+  
+- - -
+## Repository Collection Guide  
+### About  
+- __LDL Default Label:__ Repository Collection Guide  
+- __MODS Element:__ mods/relatedItem[@type="host"]/location/url  
+- __Definition:__ The URL of a finding aid or other guide for understanding and accessing the repository collection to which the resource belongs.  
+- __Obligation:__ optional  
+- __Repeatable:__ yes  
+- __Controlled:__ yes  
+- __Governing Standard:__ RDA 25.1  
+- __MARC:__ 773  
+- __DC:__ dc:relation  
+  
+### Usage  
+- __Instructions:__ Enter the URL of the finding aid or repository collection guide.  
+- __Type:__ url  
+- __Usage Notes:__  
+    - Enter the URL only; any helper text will cause the MODS record to fail validation.  
+- __Examples:__  
+    -   
+  
 - - -
