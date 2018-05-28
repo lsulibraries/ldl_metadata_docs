@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ldc>
+    
+    <member inst="dcc">
+        <officialName>Delgado Community College</officialName>
+        <source>Delgado Community College ( http://www.dcc.edu/ )</source>
+        <physicalLocation>Delgado Community College</physicalLocation>
+        <oclc>LDC</oclc>
+        <institutionWebSite>http://www.dcc.edu/</institutionWebSite>
+    </member>
+
+    <member inst="ebrpl">
+        <officialName>East Baton Rouge Parish Library</officialName>
+        <source>East Baton Rouge Parish Library ( https://www.ebrpl.com/ )</source>
+        <physicalLocation>East Baton Rouge Parish Library</physicalLocation>
+        <oclc>LEB</oclc>
+        <institutionWebSite>https://www.ebrpl.com/</institutionWebSite>
+    </member>
+    
+    <member inst="hnoc">
+        <officialName>The Historic New Orleans Collection</officialName>
+        <source>The Historic New Orleans Collection ( http://www.hnoc.org )</source>
+        <physicalLocation>The Historic New Orleans Collection</physicalLocation>
+        <department>Williams Research Center</department>
+        <oclc>LHC</oclc>
+        <institutionWebSite>http://www.hnoc.org</institutionWebSite>
+    </member>
+    
+    <member inst="lasc">
+        <officialName>Law Library of Louisiana</officialName>
+        <source>Law Library of Louisiana ( https://www.lasc.org/law_library/library_information.asp )</source>
+        <physicalLocation>Law Library of Louisiana</physicalLocation>
+        <oclc>LNL</oclc>
+        <institutionWebSite>https://www.lasc.org/law_library/library_information.asp</institutionWebSite>
+    </member>
+    
+    <member inst="latech">
+        <officialName>Louisiana Tech University</officialName>
+        <source>Louisiana Tech University ( http://www.latech.edu/tech/library )</source>
+        <physicalLocation>Louisiana Tech University: Prescott Memorial Library</physicalLocation>
+        <department>Special Collections</department>
+        <oclc>LRT</oclc>
+        <institutionWebSite>http://www.latech.edu/library/</institutionWebSite>
+    </member>
+    
+    <member inst="loyno">
+        <officialName>Loyola University New Orleans</officialName>
+        <source>Loyola University New Orleans Special Collections and Archives, New Orleans, LA. ( http://library.loyno.edu/research/speccoll/ )</source>
+        <physicalLocation>Loyola University New Orleans: Monroe Library</physicalLocation>
+        <department>Special Collections and Archives</department>
+        <oclc>LLM</oclc>
+        <institutionWebSite>http://library.loyno.edu/</institutionWebSite>
+    </member>
+    
+    <member inst="lsm">
+        <officialName>Louisiana State Museum</officialName>
+        <source>Louisiana State Museum ( http://lsm.crt.state.la.us/ )</source>
+        <physicalLocation>Louisiana State Museum</physicalLocation>
+        <oclc>SOLSM</oclc>
+        <institutionWebSite>http://www.crt.state.la.us/louisiana-state-museum/index</institutionWebSite>
+    </member>
+    
+    <member inst="lsu">
+        <officialName>Louisiana State University</officialName>
+        <sub inst="lsu-ag">
+            <officialName>LSU Agricultural Center</officialName>
+            <source></source>
+            <physicalLocation/>
+            <department></department>
+            <oclc/>
+            <institutionWebSite/>
+        </sub>
+        <sub inst="lsu-cic">
+            <officialName>LSU Cartographic Information Center</officialName>
+            <source>Cartographic Information Center, Department of Geography &amp; Anthropology, College of Humanities and Social Sciences, Louisiana State University ( http://www.cic.lsu.edu/ )</source>
+            <physicalLocation>Louisiana State University: Cartographic Information Center</physicalLocation>
+            <oclc/>
+            <institutionWebSite/>
+        </sub>
+        <sub inst="lsu-govdocs">
+            <officialName>LSU Libraries Government Documents</officialName>
+            <source></source>
+            <physicalLocation/>
+            <department/>
+            <oclc/>
+            <institutionWebSite/>
+        </sub>
+        <sub inst="lsu-moa">
+            <officialName>LSU Museum of Art</officialName>
+            <source></source>
+            <physicalLocation>Louisiana State University: LSU Museum of Art, Shaw Center for the
+                Arts, Baton Rouge, LA</physicalLocation>
+            <department/>
+            <oclc/>
+            <institutionWebSite/>
+        </sub>
+        <sub inst="lsu-music">
+            <officialName>Carter Music Resources Center</officialName>
+            <source></source>
+            <physicalLocation/>
+            <department/>
+            <oclc/>
+            <institutionWebSite/>
+        </sub>
+        <sub inst="lsu-sc">
+            <officialName>LSU Libraries Special Collections</officialName>
+            <source>Louisiana State University Libraries, Special Collections ( http://www.lib.lsu.edu/special )</source>
+            <physicalLocation>Louisiana State University: LSU Libraries</physicalLocation>
+            <department>Hill Memorial Library: Special Collections</department>
+            <oclc>LUU</oclc>
+            <institutionWebSite>http://lib.lsu.edu</institutionWebSite>
+        </sub>
+        <sub inst="lsu-sea">
+            <officialName>Louisiana Sea Grant</officialName>
+            <source></source>
+            <physicalLocation/>
+            <department/>
+            <oclc/>
+            <institutionWebSite/>
+        </sub>
+        <sub inst="lsu-thwcoh">
+            <officialName>T. Harry Williams Center for Oral History</officialName>
+            <source>T. Harry Williams Center for Oral History, a division of Louisiana State University Libraries Special Collections ( http://www.lib.lsu.edu/oralhistory )</source>
+            <physicalLocation>Louisiana State University: LSU Libraries</physicalLocation>
+            <department>T. Harry Williams Center for Oral History</department>
+            <oclc>LUU</oclc>
+            <institutionWebSite>http://lib.lsu.edu</institutionWebSite>
+        </sub>
+        <sub inst="lsu-ua">
+            <officialName>LSU University Archives</officialName>
+            <source></source>
+            <physicalLocation/>
+            <department/>
+            <oclc/>
+            <institutionWebSite/>
+        </sub>
+    </member>
+    
+    <member inst="lsua">
+        <officialName>LSU of Alexandria</officialName>
+        <source>LSU of Alexandria ( http://www.lsua.edu/library )</source>
+        <physicalLocation>LSU of Alexandria: James C. Bolton Library</physicalLocation>
+        <department>University Archives &amp; Special Collections</department>
+        <oclc>LAZ</oclc>
+        <institutionWebSite>http://www.lsua.edu/library</institutionWebSite>    
+    </member>
+    
+    <member inst="lsuhsc">
+        <officialName>Louisiana State University Health New Orleans</officialName>
+        <source>LSU Health Sciences Center New Orleans ( http://www.lsuhsc.edu/library/ )</source>
+        <physicalLocation>LSU Health New Orleans: John P. Isché Library</physicalLocation>
+        <oclc>LNM</oclc>
+        <institutionWebSite>http://www.lsuhsc.edu/library/</institutionWebSite>
+    </member>
+    
+    <member inst="lsuhscs">
+        <officialName>Louisiana State University Health Shreveport</officialName>
+        <source>Louisiana State University Health Sciences Center-Shreveport Medical Library ( http://lib.sh.lsuhsc.edu )</source>
+        <physicalLocation>LSU Health Shreveport: Health Sciences Library</physicalLocation>
+        <oclc>LMS</oclc>
+        <institutionWebSite>http://lib.sh.lsuhsc.edu</institutionWebSite>
+    </member>
+    
+    <member inst="lsus">
+        <officialName>Louisiana State University Shreveport</officialName>
+        <source>Louisiana State University Shreveport ( http://www.lsus.edu/offices-and-services/noel-memorial-library )</source>
+        <physicalLocation>Louisiana State University Shreveport: Noel Memorial Library</physicalLocation>
+        <department>Archives and Special Collections</department>
+        <oclc>LUS</oclc>
+        <institutionWebSite>http://www.lsus.edu/offices-and-services/noel-memorial-library</institutionWebSite>
+    </member>
+    
+    <member inst="mcneese">
+        <officialName>McNeese State University</officialName>
+        <source>McNeese State University ( http://libguides.mcneese.edu/archives )</source>
+        <physicalLocation>McNeese State University: Frazar Memorial Library</physicalLocation>
+        <department>McNeese Archives</department>
+        <oclc>LHA</oclc>
+        <institutionWebSite>http://library.mcneese.edu/</institutionWebSite>
+    </member>
+    
+    <member inst="nicholls">
+        <officialName>Nicholls State University</officialName>
+        <source>Nicholls State University ( http://www.nicholls.edu/library )</source>
+        <physicalLocation>Nicholls State University: Ellender Memorial Library</physicalLocation>
+        <oclc>LNS</oclc>
+        <institutionWebSite>http://www.nicholls.edu/library</institutionWebSite>
+    </member>
+    
+    <member inst="nsu">
+        <officialName>Northwestern State University</officialName>
+        <source>Northwestern State University of Louisiana ( http://library.nsula.edu/ )</source>
+        <physicalLocation>Northwestern State University of Louisiana: University
+            Libraries</physicalLocation>
+        <department>The Cammie G Henry Research Center</department>
+        <oclc>LNW</oclc>
+        <institutionWebSite>http://library.nsula.edu/</institutionWebSite>
+    </member>
+    
+    <member inst="state">
+        <officialName>State Library of Louisiana</officialName>
+        <source>State Library of Louisiana ( http://www.state.lib.la.us )</source>
+        <physicalLocation>State Library of Louisiana</physicalLocation>
+        <oclc>LSL</oclc>
+        <institutionWebSite>http://www.state.lib.la.us/</institutionWebSite>
+    </member>
+    
+    <member inst="subr">
+        <officialName>Southern University and A&amp;M College</officialName>
+        <source>Southern University, John B Cade Library, Archives Department ( http://subr.libguides.com/c.php?g=413211 )</source>
+        <physicalLocation>Southern University: John B Cade Library</physicalLocation>
+        <department>Archives Department</department>
+        <oclc>LSB</oclc>
+        <institutionWebSite>http://subr.libguides.com/c.php?g=413211</institutionWebSite>
+    </member>
+    
+    <member inst="tulane">
+        <officialName>Tulane University</officialName>
+        <source>Howard-Tilton Memorial Library, Tulane University ( http://library.tulane.edu/ )</source>
+        <physicalLocation>Tulane University</physicalLocation>
+        <oclc>LRU</oclc>
+        <institutionWebSite>http://library.tulane.edu/</institutionWebSite>
+    </member>
+    
+    <member inst="ull">
+        <officialName>University of Louisiana at Lafayette</officialName>
+        <source>University of Louisiana at Lafayette ( http://library.louisiana.edu/ )</source>
+        <physicalLocation>University of Louisiana at Lafayette: University
+            Libraries</physicalLocation>
+        <oclc>LWA</oclc>
+        <institutionWebSite>http://library.louisiana.edu/</institutionWebSite>
+        <sub inst="ull-cls">
+            <officialName>Center for Louisiana Studies</officialName>
+            <source>Center for Louisiana Studies ( http://cls.louisiana.edu/ )</source>
+            <physicalLocation>University of Louisiana at Lafayette: Center for Louisiana
+                Studies</physicalLocation>
+            <oclc>LWA</oclc>
+            <institutionWebSite>http://cls.louisiana.edu/</institutionWebSite>
+        </sub>
+        <sub inst="ull-ejgc">
+            <officialName>Ernest J. Gaines Center</officialName>
+            <source>The Ernest J. Gaines Center at the University of Louisiana at Lafayette ( https://ernestgaines.louisiana.edu/ )</source>
+            <physicalLocation>University of Louisiana at Lafayette: Ernest J. Gaines Center</physicalLocation>
+            <oclc>LWA</oclc>
+            <institutionWebSite>https://ernestgaines.louisiana.edu/</institutionWebSite>
+        </sub>
+    </member>
+    
+    <member inst="ulm">
+        <officialName>University of Louisiana Monroe</officialName>
+        <source>University of Louisiana at Monroe Library ( http://ulm.edu/library )</source>
+        <physicalLocation>University of Louisiana Monroe: ULM Library</physicalLocation>
+        <oclc>LNE</oclc>
+        <institutionWebSite>http://ulm.edu/library</institutionWebSite>
+    </member>
+    
+    <member inst="uno">
+        <officialName>University of New Orleans</officialName>
+        <source>University of New Orleans ( http://library.uno.edu )</source>
+        <physicalLocation>University of New Orleans: Earl K Long Library</physicalLocation>
+        <department>Louisiana &amp; Special Collections</department>
+        <oclc>LNU</oclc>
+        <institutionWebSite>http://library.uno.edu</institutionWebSite>
+        <sub inst="uno-midlo">
+            <officialName>Midlo Center for New Orleans Studies</officialName>
+            <source>Midlo Center for New Orleans Studies ( http://www.uno.edu/cola/history/midlo/ )</source>
+            <physicalLocation>University of New Orleans: Midlo Center for New Orleans Studies</physicalLocation>
+            <oclc>LNU</oclc>
+            <institutionWebSite>http://www.uno.edu/cola/history/midlo/</institutionWebSite>
+        </sub>
+        <sub inst="uno-omsa">
+            <officialName>Ogden Museum of Southern Art</officialName>
+            <source>Ogden Museum of Southern Art ( http://www.ogdenmuseum.org )</source>
+            <physicalLocation>University of New Orleans: Ogden Museum of Southern Art</physicalLocation>
+            <oclc>SOLOM</oclc>
+            <institutionWebSite>http://ogdenmuseum.org/</institutionWebSite>
+        </sub>
+    </member>
+    
+    <member inst="vville">
+        <officialName>Vermilionville Living History Museum and Folk Life Park</officialName>
+        <source>Vermilionville Living History and Folk Life Park ( http://www.vermilionville.org/ )</source>
+        <physicalLocation>Vermilionville Living History Museum and Folk Life Park</physicalLocation>
+        <institutionWebSite>http://www.vermilionville.org/</institutionWebSite>
+    </member>
+    
+    <member inst="webster">
+        <officialName>Webster Parish Library</officialName>
+        <source>Webster Parish Library ( http://www.websterparishlibrary.org/ )</source>
+        <physicalLocation>Webster Parish Library</physicalLocation>
+        <oclc>LU3</oclc>
+        <institutionWebSite>http://www.websterparishlibrary.org/</institutionWebSite>
+    </member>
+
+</ldc>
