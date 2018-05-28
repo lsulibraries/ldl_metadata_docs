@@ -14,6 +14,9 @@
 [Genre](#genre)  
 [Form](#form)  
 [Physical Description Note](#physical-description-note)  
+[Extent](#extent)  
+[Internet Media Type](#internet-media-type)  
+[Digital Origin](#digital-origin)  
 - - -
 ## MODS  
 ### About  
@@ -393,4 +396,73 @@
 | type | [uncontrolled; if omitted, "medium" will be used; other suggested values are "physical details", "condition," or "technique"] | required |  
 | displayLabel | [uncontrolled; if omitted, the value of the type attribute will be used] | optional |  
 
+- - -
+## Extent  
+### About  
+- __LDL Default Label:__ Size  
+- __MODS Element:__ mods/physicalDescription/extent  
+- __Definition:__ A statement of the number and specific material of the units of the resource that express physical extent. ([source](http://www.loc.gov/standards/mods//userguide/physicaldescription.html#extent))  
+- __Obligation:__ optional  
+- __Repeatable:__ yes  
+- __Controlled:__ no  
+- __Governing Standard:__ RDA 3.4  
+- __MARC:__ 300, 306  
+- __DC:__ dc:format  
+  
+### Usage  
+- __Instructions:__ Enter a statement of size or number and specific material of the units of the resource.  
+- __Type:__ text  
+- __Usage Notes:__  
+    - Typically used to describe the original physical resource.  
+- __Examples:__  
+    -   
+  
+- - -
+## Internet Media Type  
+### About  
+- __LDL Default Label:__ Media Type  
+- __MODS Element:__ mods/physicalDescription/internetMediaType  
+- __Definition:__ An identification of the electronic format type, or the data representation of the resource. ([source](http://www.loc.gov/standards/mods//userguide/physicaldescription.html#internetmediatype))  
+- __Obligation:__ required if applicable  
+- __Repeatable:__ yes  
+- __Controlled:__ yes  
+- __Governing Standard:__   
+- __MARC:__ 856  
+- __DC:__ dc:format  
+  
+### Usage  
+- __Instructions:__ Select from the controlled list of terms available from the MIME Media Types list.  
+- __Type:__ choice  
+- __Authority:__ [MIME Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml)  
+- __Values:__ application/pdf; image/jp2; audio/mpeg; video/mp4  
+- __Usage Notes:__  
+    - The enumerated values cover present LDL standards. Contact a metadata librarian if using file types not listed.  
+    - For objects containing multiple file types, use a separate `<internetMediaType>` field for each.  
+- __Examples:__  
+    -   
+  
+- - -
+## Digital Origin  
+### About  
+- __LDL Default Label:__ Digital Origin  
+- __MODS Element:__ mods/physicalDescription/digitalOrigin  
+- __Definition:__ The method by which a resource achieved digital form. ([source](http://www.loc.gov/standards/mods//userguide/physicaldescription.html#digitalorigin))  
+- __Obligation:__ required if applicable  
+- __Repeatable:__ no  
+- __Controlled:__ yes  
+- __Governing Standard:__   
+- __MARC:__ 007/11  
+- __DC:__ dc:format  
+  
+### Usage  
+- __Instructions:__ Select a controlled term from the MODS vocabulary describing the source of the digital file.  
+- __Type:__ choice  
+- __Authority:__ [MODS DigitalOrigin Values](http://www.loc.gov/standards/mods//userguide/physicaldescription.html#digitalorigin)  
+- __Values:__ born digital; reformatted digital; digitized microfilm; digitized other analog  
+- __Usage Notes:__  
+    - Required for any repository object that has a content file. In other words, this field is not required for compound parent objects, but is required for compound child objects, as well as simple objects.  
+    - Most LDL content will be "reformatted digital". Use "digitized other analog" only when the digital resource was created by digitizing an intermediate form other than microform, such as a photocopy, of the original. See MODS User Guide for more on the definitions of values.  
+- __Examples:__  
+    -   
+  
 - - -

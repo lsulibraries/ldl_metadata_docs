@@ -481,4 +481,80 @@
         </attributes>
     </element>
 
+    <element name="Extent" category="metaSetCarrier" obligation="optional" repeatable="yes" controlled="no">
+        <defaultLabel>Size</defaultLabel>
+        <encoding>mods:mods/mods:physicalDescription/mods:extent</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/physicaldescription.html#extent">A statement of the number and specific material of the units of the resource that express physical extent.</definition>
+        <mapping schema="marc">300, 306</mapping>
+        <mapping schema="dc">dc:format</mapping>
+        <governingStandard>RDA 3.4</governingStandard>
+        <content>
+            <type>text</type>
+        </content>
+        <instruction>Enter a statement of size or number and specific material of the units of the resource.</instruction>
+        <usageNote>Typically used to describe the original physical resource.</usageNote>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml/>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+    </element>
+
+    <element name="Internet Media Type" category="metaSetAdmin" obligation="required if applicable" repeatable="yes" controlled="yes">
+        <defaultLabel>Media Type</defaultLabel>
+        <encoding>mods:mods/mods:physicalDescription/mods:internetMediaType</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/physicaldescription.html#internetmediatype">An identification of the electronic format type, or the data representation of the resource.</definition>
+        <mapping schema="marc">856</mapping>
+        <mapping schema="dc">dc:format</mapping>
+        <governingStandard/>
+        <content>
+            <type>choice</type>
+            <vocabulary authority="MIME Media Types" ref="https://www.iana.org/assignments/media-types/media-types.xhtml">
+                <enumeration value="application/pdf"/>
+                <enumeration value="image/jp2"/>
+                <enumeration value="audio/mpeg"/>
+                <enumeration value="video/mp4"/>
+            </vocabulary>
+        </content>
+        <instruction>Select from the controlled list of terms available from the MIME Media Types list.</instruction>
+        <usageNote>The enumerated values cover present LDL standards. Contact a metadata librarian if using file types not listed.</usageNote>
+        <usageNote>For objects containing multiple file types, use a separate `&lt;internetMediaType&gt;` field for each.</usageNote>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml/>
+        </inputGuidance>
+        <example/>
+    </element>
+    
+    <element name="Digital Origin" category="metaSetAdmin" obligation="required if applicable" repeatable="no" controlled="yes">
+        <defaultLabel>Digital Origin</defaultLabel>
+        <encoding>mods:mods/mods:physicalDescription/mods:digitalOrigin</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/physicaldescription.html#digitalorigin">The method by which a resource achieved digital form.</definition>
+        <mapping schema="marc">007/11</mapping>
+        <mapping schema="dc">dc:format</mapping>
+        <governingStandard/>
+        <content>
+            <type>choice</type>
+            <vocabulary authority="MODS DigitalOrigin Values" ref="http://www.loc.gov/standards/mods//userguide/physicaldescription.html#digitalorigin">
+                <enumeration value="born digital"/>
+                <enumeration value="reformatted digital"/>
+                <enumeration value="digitized microfilm"/>
+                <enumeration value="digitized other analog"/>
+            </vocabulary>
+        </content>
+        <instruction>Select a controlled term from the MODS vocabulary describing the source of the digital file.</instruction>
+        <usageNote>Required for any repository object that has a content file. In other words, this field is not required for compound parent objects, but is required for compound child objects, as well as simple objects.</usageNote>
+        <usageNote>Most LDL content will be "reformatted digital". Use "digitized other analog" only when the digital resource was created by digitizing an intermediate form other than microform, such as a photocopy, of the original. See MODS User Guide for more on the definitions of values.</usageNote>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml/>
+        </inputGuidance>
+        <example/>
+    </element>
+    
 </elementList>
