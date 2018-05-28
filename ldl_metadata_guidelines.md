@@ -22,6 +22,9 @@
 [Relation](#relation)  
 [Repository Collection](#repository-collection)  
 [Repository Collection Guide](#repository-collection-guide)  
+[Physical Location](#physical-location)  
+[OCLC Member Symbol](#oclc-member-symbol)  
+[Institution Web Site](#institution-web-site)  
 - - -
 ## MODS  
 ### About  
@@ -599,6 +602,79 @@
 - __Instructions:__ Enter the URL of the finding aid or repository collection guide.  
 - __Type:__ url  
 - __Usage Notes:__  
+    - Enter the URL only; any helper text will cause the MODS record to fail validation.  
+- __Examples:__  
+    -   
+  
+- - -
+## Physical Location  
+### About  
+- __LDL Default Label:__ Physical Location  
+- __MODS Element:__ mods/location/physicalLocation  
+- __Definition:__ The institution or repository that holds the resource or where it is available. ([source](http://www.loc.gov/standards/mods//userguide/location.html))  
+- __Obligation:__ required  
+- __Repeatable:__ no  
+- __Controlled:__ yes  
+- __Governing Standard:__   
+- __MARC:__ 852  
+- __DC:__ none  
+  
+### Usage  
+- __Instructions:__ Select the name of the institution or repository that holds the physical resource from the locally-controlled list.  
+- __Type:__ choice  
+- __Authority:__ local  
+- __Usage Notes:__  
+    - If the physical resource is housed at a different institution from the LDC member institution providing it to the LDL, consult a metadata librarian for guidance.  
+- __Examples:__  
+    -   
+  
+- - -
+## OCLC Member Symbol  
+### About  
+- __LDL Default Label:__ OCLC Member Symbol  
+- __MODS Element:__ mods/location/physicalLocation  
+- __Definition:__ The institution or repository that holds the resource or where it is available. ([source](http://www.loc.gov/standards/mods//userguide/location.html))  
+- __Obligation:__ required if applicable  
+- __Repeatable:__ no  
+- __Controlled:__ yes  
+- __Governing Standard:__   
+- __MARC:__ 852  
+- __DC:__ none  
+  
+### Usage  
+- __Instructions:__ Select the OCLC Member Symbol of the institution or repository that holds the physical resource from the locally-controlled list.  
+- __Type:__ choice  
+- __Authority:__ local  
+- __Usage Notes:__  
+    - If the physical resource is housed at a different institution from the LDC member institution providing it to the LDL, consult a metadata librarian for guidance.  
+- __Examples:__  
+    -   
+  
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| authority | oclcorg | required |  
+
+- - -
+## Institution Web Site  
+### About  
+- __LDL Default Label:__ Institution Web Site  
+- __MODS Element:__ mods/location/url  
+- __Definition:__ Contains the Uniform Resource Location of the resource; an electronic location from which the resource is available. ([source](http://www.loc.gov/standards/mods//userguide/location.html))  
+- __Obligation:__ required  
+- __Repeatable:__ no  
+- __Controlled:__ yes  
+- __Governing Standard:__   
+- __MARC:__ 856u  
+- __DC:__ dc:identifier  
+  
+### Usage  
+- __Instructions:__ Select the URL for the home page of the institution or repository that holds the physical resource from the locally-controlled list.  
+- __Type:__ choice  
+- __Authority:__ local  
+- __Usage Notes:__  
+    - If the physical resource is housed at a different institution from the LDC member institution providing it to the LDL, consult a metadata librarian for guidance.  
     - Enter the URL only; any helper text will cause the MODS record to fail validation.  
 - __Examples:__  
     -   

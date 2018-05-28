@@ -687,4 +687,79 @@
         <example/>
     </element>
     
+    <element name="Physical Location" category="metaSetAccess" obligation="required" repeatable="no" controlled="yes">
+        <defaultLabel>Physical Location</defaultLabel>
+        <encoding>mods:mods/mods:location/mods:physicalLocation</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/location.html">The institution or repository that holds the resource or where it is available.</definition>
+        <mapping schema="marc">852</mapping>
+        <mapping schema="dc">none</mapping>
+        <governingStandard/>
+        <content>
+            <type>choice</type>
+            <vocabulary authority="local"/>
+        </content>
+        <instruction>Select the name of the institution or repository that holds the physical resource from the locally-controlled list.</instruction>
+        <usageNote>If the physical resource is housed at a different institution from the LDC member institution providing it to the LDL, consult a metadata librarian for guidance.</usageNote>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml>A displayLabel attribute with value "Physical Location" should be used on the `&lt;physicalLocation&gt;` element.</xml>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+    </element>
+    
+    <element name="OCLC Member Symbol" category="metaSetAccess" obligation="required if applicable" repeatable="no" controlled="yes">
+        <defaultLabel>OCLC Member Symbol</defaultLabel>
+        <encoding>mods:mods/mods:location/mods:physicalLocation</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/location.html">The institution or repository that holds the resource or where it is available.</definition>
+        <mapping schema="marc">852</mapping>
+        <mapping schema="dc">none</mapping>
+        <governingStandard/>
+        <content>
+            <type>choice</type>
+            <vocabulary authority="local"/>
+        </content>
+        <instruction>Select the OCLC Member Symbol of the institution or repository that holds the physical resource from the locally-controlled list.</instruction>
+        <usageNote>If the physical resource is housed at a different institution from the LDC member institution providing it to the LDL, consult a metadata librarian for guidance.</usageNote>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml>A displayLabel attribute with value "OCLC Member Symbol" should be used on the `&lt;physicalLocation&gt;` element.</xml>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <attributes>
+            <attribute name="authority" obligation="required">
+                <value>oclcorg</value>
+            </attribute>
+        </attributes>
+    </element>
+    
+    <element name="Institution Web Site" category="metaSetAccess" obligation="required" repeatable="no" controlled="yes">
+        <defaultLabel>Institution Web Site</defaultLabel>
+        <encoding>mods:mods/mods:location/mods:url</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/location.html">Contains the Uniform Resource Location of the resource; an electronic location from which the resource is available.</definition>
+        <mapping schema="marc">856u</mapping>
+        <mapping schema="dc">dc:identifier</mapping>
+        <governingStandard/>
+        <content>
+            <type>choice</type>
+            <vocabulary authority="local"/>
+        </content>
+        <instruction>Select the URL for the home page of the institution or repository that holds the physical resource from the locally-controlled list.</instruction>
+        <usageNote>If the physical resource is housed at a different institution from the LDC member institution providing it to the LDL, consult a metadata librarian for guidance.</usageNote>
+        <usageNote>Enter the URL only; any helper text will cause the MODS record to fail validation.</usageNote>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml>A displayLabel attribute with value "Institution Web Site" should be used on the `&lt;url&gt;` element.</xml>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+    </element>
+    
 </elementList>
