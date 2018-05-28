@@ -43,7 +43,7 @@
     <xsl:template name="About">
         <xsl:text>### About  &#xa;</xsl:text>
         <xsl:if test="defaultLabel">
-            <xsl:text>- __LDL Label:__ </xsl:text>
+            <xsl:text>- __LDL Default Label:__ </xsl:text>
             <xsl:value-of select="defaultLabel"/>
             <xsl:text>  &#xa;</xsl:text>
         </xsl:if>

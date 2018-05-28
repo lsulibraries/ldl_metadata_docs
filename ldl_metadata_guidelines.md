@@ -13,10 +13,11 @@
 [Type of Resource](#type-of-resource)  
 [Genre](#genre)  
 [Form](#form)  
+[Physical Description Note](#physical-description-note)  
 - - -
 ## MODS  
 ### About  
-- __LDL Label:__ [not displayed]  
+- __LDL Default Label:__ [not displayed]  
 - __MODS Element:__ mods  
 - __Definition:__ Root element for a MODS record.  
 - __Obligation:__ required  
@@ -43,7 +44,7 @@
 - - -
 ## Title  
 ### About  
-- __LDL Label:__ Title  
+- __LDL Default Label:__ Title  
 - __MODS Element:__ mods/titleInfo  
 - __Definition:__ A word, phrase, character, or group of characters, normally appearing in a resource, that names it or the work contained in it. ([source](http://www.loc.gov/standards/mods//userguide/titleinfo.html))  
 - __Obligation:__ required  
@@ -59,7 +60,7 @@
 - __Usage Notes:__  
     - The title should describe the item in basic terms, but should not attempt to supply an exhaustive description. If no title exists, construct one using accepted standards; use “Untitled” only when the resource is explicitly named “Untitled.” Use information provided on or with the original materials if available.  
     - For additional titles, use a type attribute and/or distinguishing displayLabel attribute.  
-    - Contents of `<nonSort>`, `<title>`, and `<subTitle>` will be concatenated in display, with a space automatically inserted between NonSort and Title, and a colon and space automatically inserted between Title and Subtitle.  
+    - Contents of subelements `<nonSort>`, `<title>`, and `<subTitle>` will be concatenated in display, with a space automatically inserted between NonSort and Title, and a colon and space automatically inserted between Title and Subtitle.  
     - Titles must always appear first in an item's displayed metadata.  
     - The repository will order items within a collection alphabetically by their main title, using the ASCII values of the characters in the title. Capitalization and punctuation will change the filing order. Numbers will file alphabetically as well, meaning a collection of 12 items with titles such as "Photo 1", "Photo 2", etc. will fall in the order Photo 1, Photo 10, Photo 11, Photo 12, Photo 2, Photo 3, Photo 4, Photo 5, Photo 6, Photo 7, Photo 8, Photo 9. To avoid unintended sort order results in your collection, be consistent with the use of capitalization and punctuation, carefully consider how dates are used as portions of titles, and when using numbers in titles, add leading zeros so that all numbers have the same amount of digits (if there are fewer than 10 items, you can use 1-9; if there are between 10-99, use 01-09; if there are 100-999, use 001-099; etc.)  
 - __Examples:__  
@@ -79,12 +80,12 @@
 #### NonSort  
 - __Definition:__ Any initial article that should not be used for alphabetical arrangement or database searches.  
 
-- __Usage Notes:__ Enter articles or punctuation that fall at the beginning of the title. Do not duplicate articles or punctuation within the `<title>` subelement.  
+- __Usage Notes:__ Enter articles or punctuation that fall at the beginning of the title. Do not duplicate the contents of `<nonSort>` within the `<title>` subelement.  
 
 #### SubTitle  
-- __Definition:__ Remainder of the title information after the title proper.  
+- __Definition:__ The remainder of title information following the core title.  
 
-- __Usage Notes:__ A colon will be inserted automatically in the display.  
+- __Usage Notes:__ A colon and space will be inserted automatically in the display, and do not need to be entered.  
 
 ### Attributes  
 
@@ -102,7 +103,7 @@
 - - -
 ## Place of Origin  
 ### About  
-- __LDL Label:__ Place of Origin  
+- __LDL Default Label:__ Place of Origin  
 - __MODS Element:__ mods/originInfo/place/placeTerm  
 - __Definition:__ Name of a place associated with the publication or origin of a resource. ([source](http://www.loc.gov/standards/mods//userguide/origininfo.html#place))  
 - __Obligation:__ optional  
@@ -131,7 +132,7 @@
 - - -
 ## Publisher  
 ### About  
-- __LDL Label:__ Publisher  
+- __LDL Default Label:__ Publisher  
 - __MODS Element:__ mods/originInfo/publisher  
 - __Definition:__ The name of the entity that published, printed, distributed, released, issued, or produced the resource. ([source](http://www.loc.gov/standards/mods//userguide/origininfo.html#publisher))  
 - __Obligation:__ optional  
@@ -152,7 +153,7 @@
 - - -
 ## Date  
 ### About  
-- __LDL Label:__ Date Created / Date Published  
+- __LDL Default Label:__ Date Created / Date Published  
 - __MODS Element:__ mods/originInfo/dateIssued  
 - __MODS Element:__ mods/originInfo/dateCreated  
 - __Definition:__ Either the date that the resource was published, released, or issued; or, the date of creation of the resource. ([source](http://www.loc.gov/standards/mods//userguide/origininfo.html))  
@@ -187,7 +188,7 @@
 - - -
 ## Date Captured  
 ### About  
-- __LDL Label:__ Date Captured  
+- __LDL Default Label:__ Date Captured  
 - __MODS Element:__ mods/originInfo/dateCaptured  
 - __Definition:__ The date on which the resource was digitized or a subsequent snapshot was taken. ([source](http://www.loc.gov/standards/mods//userguide/origininfo.html#datecaptured))  
 - __Obligation:__ optional  
@@ -215,7 +216,7 @@
 - - -
 ## Abstract  
 ### About  
-- __LDL Label:__ Description  
+- __LDL Default Label:__ Description  
 - __MODS Element:__ mods/abstract  
 - __Definition:__ A summary of the content of the resource. ([source](http://www.loc.gov/standards/mods//userguide/abstract.html))  
 - __Obligation:__ optional  
@@ -243,7 +244,7 @@
 - - -
 ## Note  
 ### About  
-- __LDL Label:__ Note  
+- __LDL Default Label:__ Note  
 - __MODS Element:__ mods/note  
 - __Definition:__ General textual information relating to a resource. ([source](http://www.loc.gov/standards/mods//userguide/note.html))  
 - __Obligation:__ optional  
@@ -275,7 +276,7 @@
 - - -
 ## Type of Resource  
 ### About  
-- __LDL Label:__ Type of Resource  
+- __LDL Default Label:__ Type of Resource  
 - __MODS Element:__ mods/typeOfResource  
 - __Definition:__ A term that specifies the characteristics and general type of content of the resource. ([source](http://www.loc.gov/standards/mods//userguide/typeofresource.html))  
 - __Obligation:__ required  
@@ -306,7 +307,7 @@
 - - -
 ## Genre  
 ### About  
-- __LDL Label:__ Genre  
+- __LDL Default Label:__ Genre  
 - __MODS Element:__ mods/genre  
 - __Definition:__ A term or terms that designate a category characterizing a particular style, form, or content, such as artistic, musical, literary composition, etc. ([source](http://www.loc.gov/standards/mods//userguide/genre.html))  
 - __Obligation:__ optional  
@@ -336,7 +337,7 @@
 - - -
 ## Form  
 ### About  
-- __LDL Label:__ Form  
+- __LDL Default Label:__ Form  
 - __MODS Element:__ mods/physicalDescription/form  
 - __Definition:__ A designation of a particular physical presentation of a resource, including the physical form or medium of material for a resource. ([source](http://www.loc.gov/standards/mods//userguide/physicaldescription.html#form))  
 - __Obligation:__ optional  
@@ -362,5 +363,34 @@
 | --- | --- | --- |  
 | type | material; technique | optional |  
 | authority | aat; local | required |  
+
+- - -
+## Physical Description Note  
+### About  
+- __LDL Default Label:__ Medium  
+- __MODS Element:__ mods/physicalDescription/note  
+- __Definition:__ General textual information about the physical description of a resource. ([source](http://www.loc.gov/standards/mods//userguide/physicaldescription.html#note))  
+- __Obligation:__ optional  
+- __Repeatable:__ yes  
+- __Controlled:__ no  
+- __Governing Standard:__   
+- __MARC:__ 340  
+- __DC:__ dc:format  
+  
+### Usage  
+- __Instructions:__ Enter a description of the medium/media used in the creation of the physical resource, or (changing the Type attribute) other details about the physical object not captured in controlled fields.  
+- __Type:__ text  
+- __Usage Notes:__  
+    - The type attribute designates the type of note, with the default usage of this field in the LDL being type="medium". Select from MODS list of note types at http://www.loc.gov/standards/mods/mods-notes.html. Other note types present in the LDL include "condition", "marks", "technique", and "physical details".  
+    - Terminology may be drawn from AAT, but this field is not controlled or faceted. Use the Form field to enter controlled vocabulary terms.  
+- __Examples:__  
+    -   
+  
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| type | [uncontrolled; if omitted, "medium" will be used; other suggested values are "physical details", "condition," or "technique"] | required |  
+| displayLabel | [uncontrolled; if omitted, the value of the type attribute will be used] | optional |  
 
 - - -

@@ -104,7 +104,7 @@
         <instruction>Enter the title of the resource. All items must have a title.</instruction>
         <usageNote>The title should describe the item in basic terms, but should not attempt to supply an exhaustive description. If no title exists, construct one using accepted standards; use “Untitled” only when the resource is explicitly named “Untitled.” Use information provided on or with the original materials if available.</usageNote>
         <usageNote>For additional titles, use a type attribute and/or distinguishing displayLabel attribute.</usageNote>
-        <usageNote>Contents of `&lt;nonSort&gt;`, `&lt;title&gt;`, and `&lt;subTitle&gt;` will be concatenated in display, with a space automatically inserted between NonSort and Title, and a colon and space automatically inserted between Title and Subtitle.</usageNote>
+        <usageNote>Contents of subelements `&lt;nonSort&gt;`, `&lt;title&gt;`, and `&lt;subTitle&gt;` will be concatenated in display, with a space automatically inserted between NonSort and Title, and a colon and space automatically inserted between Title and Subtitle.</usageNote>
         <usageNote>Titles must always appear first in an item's displayed metadata.</usageNote>
         <usageNote>The repository will order items within a collection alphabetically by their main
             title, using the ASCII values of the characters in the title. Capitalization and
@@ -138,15 +138,15 @@
                 <content>
                     <type>text</type>
                 </content>
-                <usageNote>Enter articles or punctuation that fall at the beginning of the title. Do not duplicate articles or punctuation within the `&lt;title&gt;` subelement.</usageNote>
+                <usageNote>Enter articles or punctuation that fall at the beginning of the title. Do not duplicate the contents of `&lt;nonSort&gt;` within the `&lt;title&gt;` subelement.</usageNote>
             </subelement>
             <subelement name="SubTitle" obligation="optional" repeatable="yes" controlled="no">
                 <encoding>mods:mods/mods:titleInfo/mods:subTitle</encoding>
-                <definition>Remainder of the title information after the title proper.</definition>
+                <definition>The remainder of title information following the core title.</definition>
                 <content>
                     <type>text</type>
                 </content>
-                <usageNote>A colon will be inserted automatically in the display.</usageNote>
+                <usageNote>A colon and space will be inserted automatically in the display, and do not need to be entered.</usageNote>
             </subelement>
         </subelements>
         <attributes>
@@ -450,21 +450,19 @@
         </attributes>
     </element>
 
-    <!--<element name="Medium" category="metaSetCarrier" obligation="optional" repeatable="yes" controlled="no">
+    <element name="Physical Description Note" category="metaSetCarrier" obligation="optional" repeatable="yes" controlled="no">
         <defaultLabel>Medium</defaultLabel>
-        <encoding>mods:mods/mods:physicalDescription/mods:note[@type=’medium’]</encoding>
-        <definition ref="[uri]"/>
-        <mapping schema="marc"/>
-        <mapping schema="dc"/>
+        <encoding>mods:mods/mods:physicalDescription/mods:note</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/physicaldescription.html#note">General textual information about the physical description of a resource.</definition>
+        <mapping schema="marc">340</mapping>
+        <mapping schema="dc">dc:format</mapping>
         <governingStandard/>
         <content>
-            <type>text|choice|date...</type>
-            <vocabulary authority="[name]" ref="[uri]">
-                <enumeration inst="[institution code]" value="[value]"/>
-            </vocabulary>
+            <type>text</type>
         </content>
-        <instruction/>
-        <usageNote/>
+        <instruction>Enter a description of the medium/media used in the creation of the physical resource, or (changing the Type attribute) other details about the physical object not captured in controlled fields.</instruction>
+        <usageNote>The type attribute designates the type of note, with the default usage of this field in the LDL being type="medium". Select from MODS list of note types at http://www.loc.gov/standards/mods/mods-notes.html. Other note types present in the LDL include "condition", "marks", "technique", and "physical details".</usageNote>
+        <usageNote>Terminology may be drawn from AAT, but this field is not controlled or faceted. Use the Form field to enter controlled vocabulary terms.</usageNote>
         <enrichment/>
         <inputGuidance>
             <spreadsheet/>
@@ -473,25 +471,14 @@
         </inputGuidance>
         <example/>
         <legacyVariation collection="[collection namespace]"/>
-        <subelements>
-            The following subelements are grouped together in the displayed metadata record.
-            <subelement name="[name]" obligation="required|required if applicable|optional" repeatable="yes|no" controlled="yes|no">
-                <encoding/>
-                <definition/>
-                <content>
-                    <type>text|choice|date...</type>
-                    <vocabulary authority="[name]" ref="[uri]">
-                        <enumeration inst="[institution code]" value="[value]"/>
-                    </vocabulary>
-                </content>
-                <usageNote/>
-            </subelement>
-        </subelements>
         <attributes>
-            <attribute name="[name]" obligation="required|required if applicable|optional">
-                <value>list of literals with semicolon delimiting or [uncontrolled; if omitted, the default label will be used]</value>
+            <attribute name="type" obligation="required">
+                <value>[uncontrolled; if omitted, "medium" will be used; other suggested values are "physical details", "condition," or "technique"]</value>
+            </attribute>
+            <attribute name="displayLabel" obligation="optional">
+                <value>[uncontrolled; if omitted, the value of the type attribute will be used]</value>
             </attribute>
         </attributes>
-    </element>-->
+    </element>
 
 </elementList>
