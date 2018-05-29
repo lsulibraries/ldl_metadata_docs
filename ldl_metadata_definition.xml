@@ -161,6 +161,38 @@
     
     <element name="Title Part"/>
     
+    <element name="Identifier" category="metaSetCore" obligation="required" repeatable="yes" controlled="no">
+        <defaultLabel>Item Number</defaultLabel>
+        <encoding>mods:mods/mods:identifier</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/identifier.html">Contains a unique standard number or code that distinctively identifies a resource.</definition>
+        <mapping schema="marc">024; 0XX depending on "type" attribute</mapping>
+        <mapping schema="dc">dc:identifier</mapping>
+        <governingStandard>RDA 2.15</governingStandard>
+        <content>
+            <type>text</type>
+        </content>
+        <instruction>Enter the local item number or other identifier associated with the physical item.</instruction>
+        <usageNote>The local file name of the content file may be recorded in this field.</usageNote>
+        <usageNote>The type attribute designates the type of identifer, with the default for local item number or file name as type="local". Select from Standard Identifier Source Codes at http://www.loc.gov/standards/sourcelist/standard-identifier.html.</usageNote>
+        <usageNote>The Identifier field is repeatable with different display labels and/or types.</usageNote>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml/>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <attributes>
+            <attribute name="type" obligation="optional">
+                <value>[uncontrolled; if omitted, "local" will be used]</value>
+            </attribute>
+            <attribute name="displayLabel" obligation="optional">
+                <value>[uncontrolled; if omitted, the default label will be used]</value>
+            </attribute>
+        </attributes>
+    </element>
+    
     <element name="Place of Origin" category="metaSetCore" obligation="optional" repeatable="yes" controlled="no">
         <defaultLabel>Place of Origin</defaultLabel>
         <encoding>mods:mods/mods:originInfo/mods:place/mods:placeTerm</encoding>
@@ -820,7 +852,6 @@
         </content>
         <instruction>Enter the rights statement for accessing the resource.</instruction>
         <usageNote>Either the legacy "Rights" field or the "Standardized Rights Statement" field is required, with the latter strongly recommended.</usageNote>
-        <usageNote/>
         <enrichment/>
         <inputGuidance>
             <spreadsheet/>
@@ -868,69 +899,24 @@
         </attributes>
     </element>
     
-    <element name="Contact Information" category="metaSetCore|metaSetContent|metaSetCarrier|metaSetAccess|metaSetCollection|metaSetAdmin" obligation="required|required if applicable|optional" repeatable="yes|no" controlled="yes|no">
+    <element name="Contact Information" category="metaSetAccess" obligation="required" repeatable="yes" controlled="no">
         <defaultLabel>Contact Information</defaultLabel>
         <encoding>mods:mods/mods:accessCondition</encoding>
-        <definition ref="http://www.loc.gov/standards/mods//userguide/accesscondition.html">Information about restrictions imposed on access to a resource.</definition>
+        <definition>Information provided to users in order to contact the repository about a resource.</definition>
         <mapping schema="marc">540</mapping>
-        <mapping schema="dc">dc:contact</mapping>
-        <governingStandard/>
-        <content>
-            <type>text|choice|date...</type>
-            <vocabulary authority="[name]" ref="[uri]">
-                <enumeration inst="[institution code]" value="[value]"/>
-            </vocabulary>
-        </content>
-        <instruction/>
-        <usageNote/>
-        <enrichment/>
-        <inputGuidance>
-            <spreadsheet/>
-            <webform/>
-            <xml/>
-        </inputGuidance>
-        <example/>
-        <legacyVariation collection="[collection namespace]"/>
-        <subelements>
-            The following subelements are grouped together in the displayed metadata record.
-            <subelement name="[name]" obligation="required|required if applicable|optional" repeatable="yes|no" controlled="yes|no">
-                <encoding/>
-                <definition/>
-                <content>
-                    <type>text|choice|date...</type>
-                    <vocabulary authority="[name]" ref="[uri]">
-                        <enumeration inst="[institution code]" value="[value]"/>
-                    </vocabulary>
-                </content>
-                <usageNote/>
-            </subelement>
-        </subelements>
-        <attributes>
-            <attribute name="[name]" obligation="required|required if applicable|optional">
-                <value>list of literals with semicolon delimiting or [uncontrolled; if omitted, the default label will be used]</value>
-            </attribute>
-        </attributes>
-    </element>
-    
-    
-    <element name="Restriction on Access" category="metaSetAccess" obligation="required if applicable" repeatable="yes" controlled="no">
-        <defaultLabel>Restriction</defaultLabel>
-        <encoding>mods:mods/mods:accessCondition</encoding>
-        <definition ref="http://www.loc.gov/standards/mods//userguide/accesscondition.html">Information about restrictions imposed on access to a resource.</definition>
-        <mapping schema="marc">506</mapping>
         <mapping schema="dc">dc:rights</mapping>
         <governingStandard>RDA 4.5</governingStandard>
         <content>
             <type>text</type>
         </content>
-        <instruction>Enter the rights statement for accessing the resource.</instruction>
-        <usageNote>Either the legacy "Rights" field or the "Standardized Rights Statement" field is required, with the latter strongly recommended.</usageNote>
-        <usageNote/>
+        <instruction>Enter contact information for the owning repository.</instruction>
+        <usageNote>Include at least one of an institutional email address or a URL for a dedicated website pertaining to reproduction and reuse.</usageNote>
+        <usageNote>This field may include other information instructing users how to make a request for reuse or reproduction.</usageNote>
         <enrichment/>
         <inputGuidance>
             <spreadsheet/>
             <webform/>
-            <xml>A displayLabel attribute with value "Rights" should be used on the `&lt;accessCondition&gt;` element.</xml>
+            <xml>A displayLabel attribute with value "Contact Information" should be used on the `&lt;accessCondition&gt;` element.</xml>
         </inputGuidance>
         <example/>
         <legacyVariation collection="[collection namespace]"/>
@@ -941,5 +927,58 @@
         </attributes>
     </element>
     
+    <element name="Restriction on Access" category="metaSetAccess" obligation="required if applicable" repeatable="yes" controlled="no">
+        <defaultLabel>Restriction on Access</defaultLabel>
+        <encoding>mods:mods/mods:accessCondition</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/accesscondition.html">Information about restrictions imposed on access to a resource.</definition>
+        <mapping schema="marc">506</mapping>
+        <mapping schema="dc">dc:rights</mapping>
+        <governingStandard>RDA 4.5</governingStandard>
+        <content>
+            <type>text</type>
+        </content>
+        <instruction>Enter the terms of any restrictions on access to the resource.</instruction>
+        <usageNote>This may include IP range limitations and/or embargoed materials.</usageNote>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml>A displayLabel attribute with value "Restriction on Access" should be used on the `&lt;accessCondition&gt;` element.</xml>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <attributes>
+            <attribute name="type" obligation="required">
+                <value>restriction on access</value>
+            </attribute>
+        </attributes>
+    </element>
+    
+    <element name="Preferred Citation" category="metaSetAccess" obligation="optional" repeatable="yes" controlled="no">
+        <defaultLabel>Preferred Citation</defaultLabel>
+        <encoding>mods:mods/mods:note[@type="preferred citation"]</encoding>
+        <definition>A formatted bibliographic citation for the resource.</definition>
+        <mapping schema="marc">524</mapping>
+        <mapping schema="dc">none</mapping>
+        <governingStandard/>
+        <content>
+            <type>text</type>
+        </content>
+        <instruction>Enter a formatted bibliographic citation for the collection or item.</instruction>
+        <usageNote/>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml>A displayLabel attribute with value "Preferred Citation" should be used on the `&lt;note&gt;` element.</xml>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <attributes>
+            <attribute name="type" obligation="required">
+                <value>preferred citation</value>
+            </attribute>
+        </attributes>
+    </element>
     
 </elementList>

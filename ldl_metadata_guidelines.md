@@ -9,6 +9,7 @@ _Insert introductory text about this document here._
 1. [MODS](#mods)  
 1. [Title](#title)  
 1. [Title Part](#title-part)  
+1. [Identifier](#identifier)  
 1. [Place of Origin](#place-of-origin)  
 1. [Publisher](#publisher)  
 1. [Date](#date)  
@@ -32,6 +33,11 @@ _Insert introductory text about this document here._
 1. [Institution Web Site](#institution-web-site)  
 1. [Sublocation](#sublocation)  
 1. [Shelf Location](#shelf-location)  
+1. [Rights](#rights)  
+1. [Standardized Rights Statement](#standardized-rights-statement)  
+1. [Contact Information](#contact-information)  
+1. [Restriction on Access](#restriction-on-access)  
+1. [Preferred Citation](#preferred-citation)  
 - - -
 ## MODS  
 ### About  
@@ -122,6 +128,38 @@ _Insert introductory text about this document here._
   
 ### Usage  
   
+[Back to Contents](#contents)  
+
+- - -
+## Identifier  
+### About  
+- __LDL Default Label:__ Item Number  
+- __MODS Element:__ mods/identifier  
+- __Definition:__ Contains a unique standard number or code that distinctively identifies a resource. ([source](http://www.loc.gov/standards/mods//userguide/identifier.html))  
+- __Obligation:__ required  
+- __Repeatable:__ yes  
+- __Controlled:__ no  
+- __Governing Standard:__ RDA 2.15  
+- __MARC:__ 024; 0XX depending on "type" attribute  
+- __DC:__ dc:identifier  
+  
+### Usage  
+- __Instructions:__ Enter the local item number or other identifier associated with the physical item.  
+- __Type:__ text  
+- __Usage Notes:__  
+    - The local file name of the content file may be recorded in this field.  
+    - The type attribute designates the type of identifer, with the default for local item number or file name as type="local". Select from Standard Identifier Source Codes at http://www.loc.gov/standards/sourcelist/standard-identifier.html.  
+    - The Identifier field is repeatable with different display labels and/or types.  
+- __Examples:__  
+    -   
+  
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| type | [uncontrolled; if omitted, "local" will be used] | optional |  
+| displayLabel | [uncontrolled; if omitted, the default label will be used] | optional |  
+
 [Back to Contents](#contents)  
 
 - - -
@@ -780,6 +818,155 @@ _Insert introductory text about this document here._
 - __Examples:__  
     - `<location> <shelfLocator>Manuscripts Number 600, Box 4, Folder 12</shelfLocator> </location>`  
   
+[Back to Contents](#contents)  
+
+- - -
+## Rights  
+### About  
+- __LDL Default Label:__ Rights  
+- __MODS Element:__ mods/accessCondition  
+- __Definition:__ Information about restrictions imposed on access to a resource. ([source](http://www.loc.gov/standards/mods//userguide/accesscondition.html))  
+- __Obligation:__ required if applicable  
+- __Repeatable:__ no  
+- __Controlled:__ no  
+- __Governing Standard:__ RDA 4.5  
+- __MARC:__ 540  
+- __DC:__ dc:rights  
+  
+### Usage  
+- __Instructions:__ Enter the rights statement for accessing the resource.  
+- __Type:__ text  
+- __Usage Notes:__  
+    - Either the legacy "Rights" field or the "Standardized Rights Statement" field is required, with the latter strongly recommended.  
+- __Examples:__  
+    -   
+  
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| type | use and reproduction | required |  
+
+[Back to Contents](#contents)  
+
+- - -
+## Standardized Rights Statement  
+### About  
+- __LDL Default Label:__ Standardized Rights Statement  
+- __MODS Element:__ mods/accessCondition  
+- __Definition:__ [A standardized license or statement] about restrictions imposed on access to a resource. ([source](http://www.loc.gov/standards/mods//userguide/accesscondition.html))  
+- __Obligation:__ required if applicable  
+- __Repeatable:__ yes  
+- __Controlled:__ yes  
+- __Governing Standard:__ RDA 4.5  
+- __MARC:__ 540  
+- __DC:__ dc:rights  
+  
+### Usage  
+- __Instructions:__ Select the applicable statement from RightsStatement.org; record the statement's URI in the "xlink:href" attribute, and the statement text as the field value.  
+- __Type:__ text  
+- __Type:__ URI  
+- __Authority:__ [RightsStatements.org](http://rightsstatements.org/page/1.0/?language=en)  
+- __Usage Notes:__  
+    - Either the legacy "Rights" field or the "Standardized Rights Statement" field is required, with the latter strongly recommended.  
+- __Examples:__  
+    -   
+  
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| type | use and reproduction | required |  
+| xlink:href | [URI of statement] | required |  
+
+[Back to Contents](#contents)  
+
+- - -
+## Contact Information  
+### About  
+- __LDL Default Label:__ Contact Information  
+- __MODS Element:__ mods/accessCondition  
+- __Definition:__ Information provided to users in order to contact the repository about a resource.  
+- __Obligation:__ required  
+- __Repeatable:__ yes  
+- __Controlled:__ no  
+- __Governing Standard:__ RDA 4.5  
+- __MARC:__ 540  
+- __DC:__ dc:rights  
+  
+### Usage  
+- __Instructions:__ Enter contact information for the owning repository.  
+- __Type:__ text  
+- __Usage Notes:__  
+    - Include at least one of an institutional email address or a URL for a dedicated website pertaining to reproduction and reuse.  
+    - This field may include other information instructing users how to make a request for reuse or reproduction.  
+- __Examples:__  
+    -   
+  
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| type | use and reproduction | required |  
+
+[Back to Contents](#contents)  
+
+- - -
+## Restriction on Access  
+### About  
+- __LDL Default Label:__ Restriction on Access  
+- __MODS Element:__ mods/accessCondition  
+- __Definition:__ Information about restrictions imposed on access to a resource. ([source](http://www.loc.gov/standards/mods//userguide/accesscondition.html))  
+- __Obligation:__ required if applicable  
+- __Repeatable:__ yes  
+- __Controlled:__ no  
+- __Governing Standard:__ RDA 4.5  
+- __MARC:__ 506  
+- __DC:__ dc:rights  
+  
+### Usage  
+- __Instructions:__ Enter the terms of any restrictions on access to the resource.  
+- __Type:__ text  
+- __Usage Notes:__  
+    - This may include IP range limitations and/or embargoed materials.  
+- __Examples:__  
+    -   
+  
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| type | restriction on access | required |  
+
+[Back to Contents](#contents)  
+
+- - -
+## Preferred Citation  
+### About  
+- __LDL Default Label:__ Preferred Citation  
+- __MODS Element:__ mods/note[@type="preferred citation"]  
+- __Definition:__ A formatted bibliographic citation for the resource.  
+- __Obligation:__ optional  
+- __Repeatable:__ yes  
+- __Controlled:__ no  
+- __Governing Standard:__   
+- __MARC:__ 524  
+- __DC:__ none  
+  
+### Usage  
+- __Instructions:__ Enter a formatted bibliographic citation for the collection or item.  
+- __Type:__ text  
+- __Usage Notes:__  
+    -   
+- __Examples:__  
+    -   
+  
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| type | preferred citation | required |  
+
 [Back to Contents](#contents)  
 
 - - -
