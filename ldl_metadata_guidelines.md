@@ -9,6 +9,7 @@ _Insert introductory text about this document here._
 1. [MODS](#mods)  
 1. [Title](#title)  
 1. [Title Part](#title-part)  
+1. [Part](#part)  
 1. [Identifier](#identifier)  
 1. [Place of Origin](#place-of-origin)  
 1. [Publisher](#publisher)  
@@ -38,6 +39,7 @@ _Insert introductory text about this document here._
 1. [Contact Information](#contact-information)  
 1. [Restriction on Access](#restriction-on-access)  
 1. [Preferred Citation](#preferred-citation)  
+1. [Record Info](#record-info)  
 - - -
 ## MODS  
 ### About  
@@ -124,6 +126,14 @@ _Insert introductory text about this document here._
 
 - - -
 ## Title Part  
+### About  
+  
+### Usage  
+  
+[Back to Contents](#contents)  
+
+- - -
+## Part  
 ### About  
   
 ### Usage  
@@ -966,6 +976,67 @@ _Insert introductory text about this document here._
 | Attribute | Values | Obligation |  
 | --- | --- | --- |  
 | type | preferred citation | required |  
+
+[Back to Contents](#contents)  
+
+- - -
+## Record Info  
+### About  
+- __LDL Default Label:__ [not displayed]  
+- __MODS Element:__ mods/recordInfo  
+- __Definition:__ Information about the metadata record. ([source](http://www.loc.gov/standards/mods//userguide/recordinfo.html))  
+- __Obligation:__ required  
+- __Repeatable:__ no  
+- __Controlled:__ no  
+- __Governing Standard:__   
+- __MARC:__ 00X  
+- __DC:__ none  
+  
+### Usage  
+- __Instructions:__ Enter information about the creation of or changes to the metadata record in the corresponding subelements.  
+- __Usage Notes:__  
+    - All records should have either a Record Origin or Record Content Source subfield within Record Info.  
+- __Examples:__  
+    - `<recordInfo> <languageTerm type="text">English</languageTerm> <languageTerm type="code" authority="iso639-2b">eng</languageTerm> </language>`  
+    - `<recordInfo> <languageTerm type="text">French</languageTerm> <languageTerm type="code" authority="iso639-2b">fre</languageTerm> </language>`  
+    - `<recordInfo> <languageTerm type="text">Spanish</languageTerm> <languageTerm type="code" authority="iso639-2b">spa</languageTerm> </language>`  
+  
+### Subelements  
+
+| Subelement | Encoding | Obligation | Repeatable | Controlled |  
+| --- | --- | --- | --- | --- |  
+| Record Content Source | mods/recordInfo/recordContentSource | required if applicable | yes | yes |  
+| Record Origin | mods/recordInfo/recordOrigin | required if applicable | no | no |  
+| Record Creation Date | mods/recordInfo/recordCreationDate | required | no | no |  
+| Record Change Date | mods/recordInfo/recordChangeDate | required if applicable | yes | no |  
+| Language of Cataloging | mods/recordInfo/languageOfCataloging/languageTerm | required | yes | yes |  
+  
+#### Record Content Source  
+- __Definition:__   
+
+- __Authority:__ local  
+
+- __Usage Notes:__ For original metadata records, enter the creator of the record in the format "institution_code/cataloger_initials", e.g. lsu/cmk. Use an authority attribute with value "local". Optional for records which have a Record Origin field.  
+
+#### Record Origin  
+- __Definition:__   
+
+- __Usage Notes:__ For metadata records that were migrated or generated through an automated process, enter a brief description of that process.  
+
+#### Record Creation Date  
+- __Definition:__   
+
+- __Usage Notes:__ For original metadata records, enter the date of creation of the record using W3CDTF encoding, YYYY-MM-DD. Use an encoding attribute with value "w3cdtf".  
+
+#### Record Change Date  
+- __Definition:__   
+
+- __Usage Notes:__ Enter the date that record was modified using W3CDTF encoding, YYYY-MM-DD. Use an encoding attribute with value "w3cdtf".  
+
+#### Language of Cataloging  
+- __Definition:__   
+
+- __Usage Notes:__ Use the ISO alpha-3 encoding for the language used in cataloging the record. Use a type attribute with value "code" and an authority attribute with value "iso639-2b".  
 
 [Back to Contents](#contents)  
 
