@@ -13,9 +13,16 @@
     
     <xsl:template match="@*|*">
         <xsl:copy>
+            <xsl:call-template name="intro"/>
             <xsl:call-template name="toc"/>
             <xsl:apply-templates select="@*|*" />
         </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template name="intro">
+        <xsl:text>## Introduction  &#xa;</xsl:text>
+        <xsl:text>_Insert introductory text about this document here._</xsl:text>
+        <xsl:text>  &#xa;&#xa;</xsl:text>
     </xsl:template>
     
     <xsl:template name="toc">
@@ -37,7 +44,8 @@
         <xsl:call-template name="About"/>
         <xsl:call-template name="Usage"/>    
         <xsl:apply-templates select="subelements"/>    
-        <xsl:apply-templates select="attributes"/>    
+        <xsl:apply-templates select="attributes"/>
+        <xsl:text>[Back to Contents](#contents)  &#xa;&#xa;</xsl:text>
     </xsl:template>
     
     <xsl:template name="About">
