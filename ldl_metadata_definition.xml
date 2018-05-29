@@ -690,13 +690,13 @@
     <element name="Physical Location" category="metaSetAccess" obligation="required" repeatable="no" controlled="yes">
         <defaultLabel>Physical Location</defaultLabel>
         <encoding>mods:mods/mods:location/mods:physicalLocation</encoding>
-        <definition ref="http://www.loc.gov/standards/mods//userguide/location.html">The institution or repository that holds the resource or where it is available.</definition>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/location.html#physicallocation">The institution or repository that holds the resource or where it is available.</definition>
         <mapping schema="marc">852</mapping>
         <mapping schema="dc">none</mapping>
         <governingStandard/>
         <content>
             <type>choice</type>
-            <vocabulary authority="local"/>
+            <vocabulary authority="LDL"/>
         </content>
         <instruction>Select the name of the institution or repository that holds the physical resource from the locally-controlled list.</instruction>
         <usageNote>If the physical resource is housed at a different institution from the LDC member institution providing it to the LDL, consult a metadata librarian for guidance.</usageNote>
@@ -713,13 +713,13 @@
     <element name="OCLC Member Symbol" category="metaSetAccess" obligation="required if applicable" repeatable="no" controlled="yes">
         <defaultLabel>OCLC Member Symbol</defaultLabel>
         <encoding>mods:mods/mods:location/mods:physicalLocation</encoding>
-        <definition ref="http://www.loc.gov/standards/mods//userguide/location.html">The institution or repository that holds the resource or where it is available.</definition>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/location.html#physicallocation">[An encoded reference for] the institution or repository that holds the resource or where it is available.</definition>
         <mapping schema="marc">852</mapping>
         <mapping schema="dc">none</mapping>
         <governingStandard/>
         <content>
             <type>choice</type>
-            <vocabulary authority="local"/>
+            <vocabulary authority="OCLC Member Directory" ref="https://www.oclc.org/en/contacts/libraries.html"/>
         </content>
         <instruction>Select the OCLC Member Symbol of the institution or repository that holds the physical resource from the locally-controlled list.</instruction>
         <usageNote>If the physical resource is housed at a different institution from the LDC member institution providing it to the LDL, consult a metadata librarian for guidance.</usageNote>
@@ -739,17 +739,18 @@
     </element>
     
     <element name="Institution Web Site" category="metaSetAccess" obligation="required" repeatable="no" controlled="yes">
-        <defaultLabel>Institution Web Site</defaultLabel>
+        <defaultLabel>[not displayed]</defaultLabel>
         <encoding>mods:mods/mods:location/mods:url</encoding>
-        <definition ref="http://www.loc.gov/standards/mods//userguide/location.html">Contains the Uniform Resource Location of the resource; an electronic location from which the resource is available.</definition>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/location.html#url">Contains the Uniform Resource Location of the resource; an electronic location from which the resource is available.</definition>
         <mapping schema="marc">856u</mapping>
         <mapping schema="dc">dc:identifier</mapping>
         <governingStandard/>
         <content>
             <type>choice</type>
-            <vocabulary authority="local"/>
+            <vocabulary authority="LDL"/>
         </content>
         <instruction>Select the URL for the home page of the institution or repository that holds the physical resource from the locally-controlled list.</instruction>
+        <usageNote>In the LDL display, this value will be the hyperlinked URL associated with the text in the Physical Location field.</usageNote>
         <usageNote>If the physical resource is housed at a different institution from the LDC member institution providing it to the LDL, consult a metadata librarian for guidance.</usageNote>
         <usageNote>Enter the URL only; any helper text will cause the MODS record to fail validation.</usageNote>
         <enrichment/>
@@ -757,6 +758,51 @@
             <spreadsheet/>
             <webform/>
             <xml>A displayLabel attribute with value "Institution Web Site" should be used on the `&lt;url&gt;` element.</xml>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+    </element>
+    
+    <element name="Sublocation" category="metaSetAccess" obligation="optional" repeatable="yes" controlled="no">
+        <defaultLabel>Sublocation</defaultLabel>
+        <encoding>mods:mods/mods:location/mods:holdingSimple/mods:copyInformation/mods:subLocation</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/location.html#sublocation">Department, division, or section of an institution holding a copy of the resource.</definition>
+        <mapping schema="marc">852</mapping>
+        <mapping schema="dc">none</mapping>
+        <governingStandard/>
+        <content>
+            <type>text</type>
+            <vocabulary authority="local"/>
+        </content>
+        <instruction>Enter the name of the department, buidling, collection, or other sublocation that holds the physical resource as applicable.</instruction>
+        <usageNote>Use names from an institutionally-controlled list as available.</usageNote>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml/>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+    </element>
+    
+    <element name="Shelf Location" category="metaSetAccess" obligation="optional" repeatable="yes" controlled="yes">
+        <defaultLabel>Shelf Location</defaultLabel>
+        <encoding>mods:mods/mods:location/mods:shelfLocator</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/location.html#shelflocator">Shelfmark or other shelving designation that indicates the location identifier for a copy.</definition>
+        <mapping schema="marc">852</mapping>
+        <mapping schema="dc">none</mapping>
+        <governingStandard/>
+        <content>
+            <type>text</type>
+        </content>
+        <instruction>Enter shelving information for the physical resource to assist in locating the original.</instruction>
+        <usageNote/>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml/>
         </inputGuidance>
         <example/>
         <legacyVariation collection="[collection namespace]"/>

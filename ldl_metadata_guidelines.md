@@ -1,30 +1,35 @@
 # LDL Metadata Fields  
 
+## Introduction  
+_Insert introductory text about this document here._  
+
 ## Contents  
-[MODS](#mods)  
-[Title](#title)  
-[Title Part](#title-part)  
-[Place of Origin](#place-of-origin)  
-[Publisher](#publisher)  
-[Date](#date)  
-[Date Captured](#date-captured)  
-[Abstract](#abstract)  
-[Note](#note)  
-[Type of Resource](#type-of-resource)  
-[Genre](#genre)  
-[Form](#form)  
-[Physical Description Note](#physical-description-note)  
-[Extent](#extent)  
-[Internet Media Type](#internet-media-type)  
-[Digital Origin](#digital-origin)  
-[Language](#language)  
-[Digital Collection](#digital-collection)  
-[Relation](#relation)  
-[Repository Collection](#repository-collection)  
-[Repository Collection Guide](#repository-collection-guide)  
-[Physical Location](#physical-location)  
-[OCLC Member Symbol](#oclc-member-symbol)  
-[Institution Web Site](#institution-web-site)  
+1. [MODS](#mods)  
+1. [Title](#title)  
+1. [Title Part](#title-part)  
+1. [Place of Origin](#place-of-origin)  
+1. [Publisher](#publisher)  
+1. [Date](#date)  
+1. [Date Captured](#date-captured)  
+1. [Abstract](#abstract)  
+1. [Note](#note)  
+1. [Type of Resource](#type-of-resource)  
+1. [Genre](#genre)  
+1. [Form](#form)  
+1. [Physical Description Note](#physical-description-note)  
+1. [Extent](#extent)  
+1. [Internet Media Type](#internet-media-type)  
+1. [Digital Origin](#digital-origin)  
+1. [Language](#language)  
+1. [Digital Collection](#digital-collection)  
+1. [Relation](#relation)  
+1. [Repository Collection](#repository-collection)  
+1. [Repository Collection Guide](#repository-collection-guide)  
+1. [Physical Location](#physical-location)  
+1. [OCLC Member Symbol](#oclc-member-symbol)  
+1. [Institution Web Site](#institution-web-site)  
+1. [Sublocation](#sublocation)  
+1. [Shelf Location](#shelf-location)  
 - - -
 ## MODS  
 ### About  
@@ -51,6 +56,8 @@
 | xsi:schemaLocation | http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd | required |  
 | xlink | http://www.w3.org/1999/xlink | required |  
 | version | 3.7 | required |  
+
+[Back to Contents](#contents)  
 
 - - -
 ## Title  
@@ -105,12 +112,16 @@
 | type | abbreviated; alternative; translated; uniform | required if applicable |  
 | displayLabel | [uncontrolled; if omitted, the default label will be used] | optional |  
 
+[Back to Contents](#contents)  
+
 - - -
 ## Title Part  
 ### About  
   
 ### Usage  
   
+[Back to Contents](#contents)  
+
 - - -
 ## Place of Origin  
 ### About  
@@ -140,6 +151,8 @@
 | --- | --- | --- |  
 | type | text | required |  
 
+[Back to Contents](#contents)  
+
 - - -
 ## Publisher  
 ### About  
@@ -161,6 +174,8 @@
 - __Examples:__  
     -   
   
+[Back to Contents](#contents)  
+
 - - -
 ## Date  
 ### About  
@@ -196,6 +211,8 @@
 | point | start; end | required if applicable |  
 | qualifier | approximate; inferred; questionable | required if applicable |  
 
+[Back to Contents](#contents)  
+
 - - -
 ## Date Captured  
 ### About  
@@ -224,6 +241,8 @@
 | encoding | w3cdtf [recommended] | optional |  
 | qualifier | approximate; inferred; questionable | required if applicable |  
 
+[Back to Contents](#contents)  
+
 - - -
 ## Abstract  
 ### About  
@@ -251,6 +270,8 @@
 | Attribute | Values | Obligation |  
 | --- | --- | --- |  
 | displayLabel | [uncontrolled; if omitted, the default label will be used; other suggested values are "Summary" or "Scope and Content"] | optional |  
+
+[Back to Contents](#contents)  
 
 - - -
 ## Note  
@@ -284,6 +305,8 @@
 | type | [uncontrolled; if omitted, "content" will be used; select from MODS list of note types.] | required |  
 | displayLabel | [uncontrolled; if omitted, the default label will be used; other suggested values are "Summary" or "Scope and Content"] | optional |  
 
+[Back to Contents](#contents)  
+
 - - -
 ## Type of Resource  
 ### About  
@@ -315,6 +338,8 @@
 | --- | --- | --- |  
 | collection | yes | required if applicable |  
 
+[Back to Contents](#contents)  
+
 - - -
 ## Genre  
 ### About  
@@ -344,6 +369,8 @@
 | Attribute | Values | Obligation |  
 | --- | --- | --- |  
 | authority | aat; lcgft; lcsh; local | required |  
+
+[Back to Contents](#contents)  
 
 - - -
 ## Form  
@@ -375,6 +402,8 @@
 | type | material; technique | optional |  
 | authority | aat; local | required |  
 
+[Back to Contents](#contents)  
+
 - - -
 ## Physical Description Note  
 ### About  
@@ -404,6 +433,8 @@
 | type | [uncontrolled; if omitted, "medium" will be used; other suggested values are "physical details", "condition," or "technique"] | required |  
 | displayLabel | [uncontrolled; if omitted, the value of the type attribute will be used] | optional |  
 
+[Back to Contents](#contents)  
+
 - - -
 ## Extent  
 ### About  
@@ -425,6 +456,8 @@
 - __Examples:__  
     -   
   
+[Back to Contents](#contents)  
+
 - - -
 ## Internet Media Type  
 ### About  
@@ -449,6 +482,8 @@
 - __Examples:__  
     -   
   
+[Back to Contents](#contents)  
+
 - - -
 ## Digital Origin  
 ### About  
@@ -473,6 +508,8 @@
 - __Examples:__  
     -   
   
+[Back to Contents](#contents)  
+
 - - -
 ## Language  
 ### About  
@@ -520,6 +557,8 @@
 | type | text; code | required |  
 | authority | iso639-2b | required if applicable |  
 
+[Back to Contents](#contents)  
+
 - - -
 ## Digital Collection  
 ### About  
@@ -541,6 +580,8 @@
 - __Examples:__  
     -   
   
+[Back to Contents](#contents)  
+
 - - -
 ## Relation  
 ### About  
@@ -564,6 +605,8 @@
 - __Examples:__  
     -   
   
+[Back to Contents](#contents)  
+
 - - -
 ## Repository Collection  
 ### About  
@@ -585,6 +628,8 @@
 - __Examples:__  
     -   
   
+[Back to Contents](#contents)  
+
 - - -
 ## Repository Collection Guide  
 ### About  
@@ -606,12 +651,14 @@
 - __Examples:__  
     -   
   
+[Back to Contents](#contents)  
+
 - - -
 ## Physical Location  
 ### About  
 - __LDL Default Label:__ Physical Location  
 - __MODS Element:__ mods/location/physicalLocation  
-- __Definition:__ The institution or repository that holds the resource or where it is available. ([source](http://www.loc.gov/standards/mods//userguide/location.html))  
+- __Definition:__ The institution or repository that holds the resource or where it is available. ([source](http://www.loc.gov/standards/mods//userguide/location.html#physicallocation))  
 - __Obligation:__ required  
 - __Repeatable:__ no  
 - __Controlled:__ yes  
@@ -622,18 +669,20 @@
 ### Usage  
 - __Instructions:__ Select the name of the institution or repository that holds the physical resource from the locally-controlled list.  
 - __Type:__ choice  
-- __Authority:__ local  
+- __Authority:__ LDL  
 - __Usage Notes:__  
     - If the physical resource is housed at a different institution from the LDC member institution providing it to the LDL, consult a metadata librarian for guidance.  
 - __Examples:__  
     -   
   
+[Back to Contents](#contents)  
+
 - - -
 ## OCLC Member Symbol  
 ### About  
 - __LDL Default Label:__ OCLC Member Symbol  
 - __MODS Element:__ mods/location/physicalLocation  
-- __Definition:__ The institution or repository that holds the resource or where it is available. ([source](http://www.loc.gov/standards/mods//userguide/location.html))  
+- __Definition:__ [An encoded reference for] the institution or repository that holds the resource or where it is available. ([source](http://www.loc.gov/standards/mods//userguide/location.html#physicallocation))  
 - __Obligation:__ required if applicable  
 - __Repeatable:__ no  
 - __Controlled:__ yes  
@@ -644,7 +693,7 @@
 ### Usage  
 - __Instructions:__ Select the OCLC Member Symbol of the institution or repository that holds the physical resource from the locally-controlled list.  
 - __Type:__ choice  
-- __Authority:__ local  
+- __Authority:__ [OCLC Member Directory](https://www.oclc.org/en/contacts/libraries.html)  
 - __Usage Notes:__  
     - If the physical resource is housed at a different institution from the LDC member institution providing it to the LDL, consult a metadata librarian for guidance.  
 - __Examples:__  
@@ -656,12 +705,14 @@
 | --- | --- | --- |  
 | authority | oclcorg | required |  
 
+[Back to Contents](#contents)  
+
 - - -
 ## Institution Web Site  
 ### About  
-- __LDL Default Label:__ Institution Web Site  
+- __LDL Default Label:__ [not displayed]  
 - __MODS Element:__ mods/location/url  
-- __Definition:__ Contains the Uniform Resource Location of the resource; an electronic location from which the resource is available. ([source](http://www.loc.gov/standards/mods//userguide/location.html))  
+- __Definition:__ Contains the Uniform Resource Location of the resource; an electronic location from which the resource is available. ([source](http://www.loc.gov/standards/mods//userguide/location.html#url))  
 - __Obligation:__ required  
 - __Repeatable:__ no  
 - __Controlled:__ yes  
@@ -672,11 +723,61 @@
 ### Usage  
 - __Instructions:__ Select the URL for the home page of the institution or repository that holds the physical resource from the locally-controlled list.  
 - __Type:__ choice  
-- __Authority:__ local  
+- __Authority:__ LDL  
 - __Usage Notes:__  
+    - In the LDL display, this value will be the hyperlinked URL associated with the text in the Physical Location field.  
     - If the physical resource is housed at a different institution from the LDC member institution providing it to the LDL, consult a metadata librarian for guidance.  
     - Enter the URL only; any helper text will cause the MODS record to fail validation.  
 - __Examples:__  
     -   
   
+[Back to Contents](#contents)  
+
+- - -
+## Sublocation  
+### About  
+- __LDL Default Label:__ Sublocation  
+- __MODS Element:__ mods/location/holdingSimple/copyInformation/subLocation  
+- __Definition:__ Department, division, or section of an institution holding a copy of the resource. ([source](http://www.loc.gov/standards/mods//userguide/location.html#sublocation))  
+- __Obligation:__ optional  
+- __Repeatable:__ yes  
+- __Controlled:__ no  
+- __Governing Standard:__   
+- __MARC:__ 852  
+- __DC:__ none  
+  
+### Usage  
+- __Instructions:__ Enter the name of the department, buidling, collection, or other sublocation that holds the physical resource as applicable.  
+- __Type:__ text  
+- __Authority:__ local  
+- __Usage Notes:__  
+    - Use names from an institutionally-controlled list as available.  
+- __Examples:__  
+    -   
+  
+[Back to Contents](#contents)  
+
+- - -
+## Shelf Location  
+### About  
+- __LDL Default Label:__ Shelf Location  
+- __MODS Element:__ mods/location/shelfLocator  
+- __Definition:__ Shelfmark or other shelving designation that indicates the location identifier for a copy. ([source](http://www.loc.gov/standards/mods//userguide/location.html#shelflocator))  
+- __Obligation:__ optional  
+- __Repeatable:__ yes  
+- __Controlled:__ yes  
+- __Governing Standard:__   
+- __MARC:__ 852  
+- __DC:__ none  
+  
+### Usage  
+- __Instructions:__ Enter shelving information for the physical resource to assist in locating the original.  
+- __Type:__ text  
+- __Usage Notes:__  
+    -   
+- __Examples:__  
+    -   
+  
+[Back to Contents](#contents)  
+
 - - -

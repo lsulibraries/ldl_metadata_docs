@@ -28,7 +28,7 @@
     <xsl:template name="toc">
         <xsl:text>## Contents  &#xa;</xsl:text>
         <xsl:for-each select="element">
-            <xsl:text>[</xsl:text>
+            <xsl:text>1. [</xsl:text>
             <xsl:value-of select="@name"/>
             <xsl:text>](#</xsl:text>
             <xsl:value-of select="replace(lower-case(@name),' ','-')"/>
