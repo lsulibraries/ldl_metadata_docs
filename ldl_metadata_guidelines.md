@@ -1,7 +1,9 @@
 # LDL Metadata Fields  
 
 ## Introduction  
-_Insert introductory text about this document here._  
+_Insert introductory text about this document here._ 
+ - **Terminology:** _Field_ is used as a generic descriptor; _Element_ is used specifically for the MODS encoding of a field. 
+ - Element definitions come from MODS Version 3 User Guide except where the usage of the field is customized for LDL description.  
 
 ## Contents  
 1. [MODS](#mods)  
@@ -531,9 +533,9 @@ _Insert introductory text about this document here._
     - The Language field is not recommended for resources that do not have a language component (such as photographs).  
     - "English"/"eng" as a Language value is not to be omitted and/or understood as a default.  
 - __Examples:__  
-    - `<language><languageTerm type="text">English</languageTerm><languageTerm type="code" authority="iso639-2b">eng</languageTerm></language>`  
-    - `<language><languageTerm type="text">French</languageTerm><languageTerm type="code" authority="iso639-2b">fre</languageTerm></language>`  
-    - `<language><languageTerm type="text">Spanish</languageTerm><languageTerm type="code" authority="iso639-2b">spa</languageTerm></language>`  
+    - `<language> <languageTerm type="text">English</languageTerm> <languageTerm type="code" authority="iso639-2b">eng</languageTerm> </language>`  
+    - `<language> <languageTerm type="text">French</languageTerm> <languageTerm type="code" authority="iso639-2b">fre</languageTerm> </language>`  
+    - `<language> <languageTerm type="text">Spanish</languageTerm> <languageTerm type="code" authority="iso639-2b">spa</languageTerm> </language>`  
   
 ### Subelements  
 
@@ -753,7 +755,7 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     - Use names from an institutionally-controlled list as available.  
 - __Examples:__  
-    -   
+    - `<location> <holdingSimple> <copyInformation> <subLocation>McNeese Archives</subLocation> </copyInformation> </holdingSimple> </location>`  
   
 [Back to Contents](#contents)  
 
@@ -776,7 +778,7 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     -   
 - __Examples:__  
-    -   
+    - `<location> <shelfLocator>Manuscripts Number 600, Box 4, Folder 12</shelfLocator> </location>`  
   
 [Back to Contents](#contents)  
 

@@ -21,7 +21,7 @@
     
     <xsl:template name="intro">
         <xsl:text>## Introduction  &#xa;</xsl:text>
-        <xsl:text>_Insert introductory text about this document here._</xsl:text>
+        <xsl:text>_Insert introductory text about this document here._ &#xa; - **Terminology:** _Field_ is used as a generic descriptor; _Element_ is used specifically for the MODS encoding of a field. &#xa; - Element definitions come from MODS Version 3 User Guide except where the usage of the field is customized for LDL description.</xsl:text>
         <xsl:text>  &#xa;&#xa;</xsl:text>
     </xsl:template>
     

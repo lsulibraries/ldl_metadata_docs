@@ -575,9 +575,9 @@
             <webform/>
             <xml>`&lt;language&gt;` is a container element, which should have one or more `&lt;languageTerm&gt;` subelements within it.</xml>
         </inputGuidance>
-        <example>`&lt;language&gt;&lt;languageTerm type="text"&gt;English&lt;/languageTerm&gt;&lt;languageTerm type="code" authority="iso639-2b"&gt;eng&lt;/languageTerm&gt;&lt;/language&gt;`</example>
-        <example>`&lt;language&gt;&lt;languageTerm type="text"&gt;French&lt;/languageTerm&gt;&lt;languageTerm type="code" authority="iso639-2b"&gt;fre&lt;/languageTerm&gt;&lt;/language&gt;`</example>
-        <example>`&lt;language&gt;&lt;languageTerm type="text"&gt;Spanish&lt;/languageTerm&gt;&lt;languageTerm type="code" authority="iso639-2b"&gt;spa&lt;/languageTerm&gt;&lt;/language&gt;`</example>
+        <example>`&lt;language&gt; &lt;languageTerm type="text"&gt;English&lt;/languageTerm&gt; &lt;languageTerm type="code" authority="iso639-2b"&gt;eng&lt;/languageTerm&gt; &lt;/language&gt;`</example>
+        <example>`&lt;language&gt; &lt;languageTerm type="text"&gt;French&lt;/languageTerm&gt; &lt;languageTerm type="code" authority="iso639-2b"&gt;fre&lt;/languageTerm&gt; &lt;/language&gt;`</example>
+        <example>`&lt;language&gt; &lt;languageTerm type="text"&gt;Spanish&lt;/languageTerm&gt; &lt;languageTerm type="code" authority="iso639-2b"&gt;spa&lt;/languageTerm&gt; &lt;/language&gt;`</example>
         <legacyVariation collection="[collection namespace]"/>
         <subelements>
             <subelement name="Language Term" obligation="required" repeatable="yes" controlled="yes">
@@ -782,7 +782,7 @@
             <webform/>
             <xml/>
         </inputGuidance>
-        <example/>
+        <example>`&lt;location&gt; &lt;holdingSimple&gt; &lt;copyInformation&gt; &lt;subLocation&gt;McNeese Archives&lt;/subLocation&gt; &lt;/copyInformation&gt; &lt;/holdingSimple&gt; &lt;/location&gt;`</example>
         <legacyVariation collection="[collection namespace]"/>
     </element>
     
@@ -804,8 +804,142 @@
             <webform/>
             <xml/>
         </inputGuidance>
-        <example/>
+        <example>`&lt;location&gt; &lt;shelfLocator&gt;Manuscripts Number 600, Box 4, Folder 12&lt;/shelfLocator&gt; &lt;/location&gt;`</example>
         <legacyVariation collection="[collection namespace]"/>
     </element>
+    
+    <element name="Rights" category="metaSetAccess" obligation="required if applicable" repeatable="no" controlled="no">
+        <defaultLabel>Rights</defaultLabel>
+        <encoding>mods:mods/mods:accessCondition</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/accesscondition.html">Information about restrictions imposed on access to a resource.</definition>
+        <mapping schema="marc">540</mapping>
+        <mapping schema="dc">dc:rights</mapping>
+        <governingStandard>RDA 4.5</governingStandard>
+        <content>
+            <type>text</type>
+        </content>
+        <instruction>Enter the rights statement for accessing the resource.</instruction>
+        <usageNote>Either the legacy "Rights" field or the "Standardized Rights Statement" field is required, with the latter strongly recommended.</usageNote>
+        <usageNote/>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml>A displayLabel attribute with value "Rights" should be used on the `&lt;accessCondition&gt;` element.</xml>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <attributes>
+            <attribute name="type" obligation="required">
+                <value>use and reproduction</value>
+            </attribute>
+        </attributes>
+    </element>
+    
+    <element name="Standardized Rights Statement" category="metaSetAccess" obligation="required if applicable" repeatable="yes" controlled="yes">
+        <defaultLabel>Standardized Rights Statement</defaultLabel>
+        <encoding>mods:mods/mods:accessCondition</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/accesscondition.html">[A standardized license or statement] about restrictions imposed on access to a resource.</definition>
+        <mapping schema="marc">540</mapping>
+        <mapping schema="dc">dc:rights</mapping>
+        <governingStandard>RDA 4.5</governingStandard>
+        <content>
+            <type>text</type>
+            <type>URI</type>
+            <vocabulary authority="RightsStatements.org" ref="http://rightsstatements.org/page/1.0/?language=en"/>
+        </content>
+        <instruction>Select the applicable statement from RightsStatement.org; record the statement's URI in the "xlink:href" attribute, and the statement text as the field value. </instruction>
+        <usageNote>Either the legacy "Rights" field or the "Standardized Rights Statement" field is required, with the latter strongly recommended.</usageNote>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml>A displayLabel attribute with value "Standardized Rights Statement" should be used on the `&lt;accessCondition&gt;` element.</xml>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <attributes>
+            <attribute name="type" obligation="required">
+                <value>use and reproduction</value>
+            </attribute>
+            <attribute name="xlink:href" obligation="required">
+                <value>[URI of statement]</value>
+            </attribute>
+        </attributes>
+    </element>
+    
+    <element name="Contact Information" category="metaSetCore|metaSetContent|metaSetCarrier|metaSetAccess|metaSetCollection|metaSetAdmin" obligation="required|required if applicable|optional" repeatable="yes|no" controlled="yes|no">
+        <defaultLabel>Contact Information</defaultLabel>
+        <encoding>mods:mods/mods:accessCondition</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/accesscondition.html">Information about restrictions imposed on access to a resource.</definition>
+        <mapping schema="marc">540</mapping>
+        <mapping schema="dc">dc:contact</mapping>
+        <governingStandard/>
+        <content>
+            <type>text|choice|date...</type>
+            <vocabulary authority="[name]" ref="[uri]">
+                <enumeration inst="[institution code]" value="[value]"/>
+            </vocabulary>
+        </content>
+        <instruction/>
+        <usageNote/>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml/>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <subelements>
+            The following subelements are grouped together in the displayed metadata record.
+            <subelement name="[name]" obligation="required|required if applicable|optional" repeatable="yes|no" controlled="yes|no">
+                <encoding/>
+                <definition/>
+                <content>
+                    <type>text|choice|date...</type>
+                    <vocabulary authority="[name]" ref="[uri]">
+                        <enumeration inst="[institution code]" value="[value]"/>
+                    </vocabulary>
+                </content>
+                <usageNote/>
+            </subelement>
+        </subelements>
+        <attributes>
+            <attribute name="[name]" obligation="required|required if applicable|optional">
+                <value>list of literals with semicolon delimiting or [uncontrolled; if omitted, the default label will be used]</value>
+            </attribute>
+        </attributes>
+    </element>
+    
+    
+    <element name="Restriction on Access" category="metaSetAccess" obligation="required if applicable" repeatable="yes" controlled="no">
+        <defaultLabel>Restriction</defaultLabel>
+        <encoding>mods:mods/mods:accessCondition</encoding>
+        <definition ref="http://www.loc.gov/standards/mods//userguide/accesscondition.html">Information about restrictions imposed on access to a resource.</definition>
+        <mapping schema="marc">506</mapping>
+        <mapping schema="dc">dc:rights</mapping>
+        <governingStandard>RDA 4.5</governingStandard>
+        <content>
+            <type>text</type>
+        </content>
+        <instruction>Enter the rights statement for accessing the resource.</instruction>
+        <usageNote>Either the legacy "Rights" field or the "Standardized Rights Statement" field is required, with the latter strongly recommended.</usageNote>
+        <usageNote/>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml>A displayLabel attribute with value "Rights" should be used on the `&lt;accessCondition&gt;` element.</xml>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <attributes>
+            <attribute name="type" obligation="required">
+                <value>use and reproduction</value>
+            </attribute>
+        </attributes>
+    </element>
+    
     
 </elementList>
