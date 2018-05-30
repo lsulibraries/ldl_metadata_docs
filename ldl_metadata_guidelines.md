@@ -8,8 +8,6 @@ _Insert introductory text about this document here._
 ## Contents  
 1. [MODS](#mods)  
 1. [Title](#title)  
-1. [Title Part](#title-part)  
-1. [Part](#part)  
 1. [Identifier](#identifier)  
 1. [Place of Origin](#place-of-origin)  
 1. [Publisher](#publisher)  
@@ -122,22 +120,6 @@ _Insert introductory text about this document here._
 | type | abbreviated; alternative; translated; uniform | required if applicable |  
 | displayLabel | [uncontrolled; if omitted, the default label will be used] | optional |  
 
-[Back to Contents](#contents)  
-
-- - -
-## Title Part  
-### About  
-  
-### Usage  
-  
-[Back to Contents](#contents)  
-
-- - -
-## Part  
-### About  
-  
-### Usage  
-  
 [Back to Contents](#contents)  
 
 - - -

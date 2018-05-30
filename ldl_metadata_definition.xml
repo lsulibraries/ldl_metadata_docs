@@ -159,8 +159,8 @@
         </attributes>
     </element>
     
-    <element name="Title Part"/>
-    <element name="Part"/>
+   <!-- <element name="Title Part"/>
+    <element name="Part"/>-->
     
     <element name="Identifier" category="metaSetCore" obligation="required" repeatable="yes" controlled="no">
         <defaultLabel>Item Number</defaultLabel>
@@ -841,7 +841,7 @@
         <legacyVariation collection="[collection namespace]"/>
     </element>
     
-    <element name="Rights" category="metaSetAccess" obligation="required if applicable" repeatable="no" controlled="no">
+    <element name="Rights" category="metaSetAccess" obligation="required" repeatable="no" controlled="no">
         <defaultLabel>Rights</defaultLabel>
         <encoding>mods:mods/mods:accessCondition</encoding>
         <definition ref="http://www.loc.gov/standards/mods//userguide/accesscondition.html">Information about restrictions imposed on access to a resource.</definition>
