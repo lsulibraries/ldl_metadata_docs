@@ -1044,4 +1044,43 @@
         </subelements>
     </element>
     
+    <!-- The following set of fields are for use in spreadsheet metadata creation only. 
+        They are used to match records with content files in the CSV to MODS MIK toolchain. 
+        See https://github.com/MarcusBarnes/mik/wiki for additional information. -->
+    
+    <structuralData name="identifier">
+        <instruction>Enter a unique value for the record. Best practice is to use a sequential item
+            number per record, beginning at 1, numbering each line in order, 1, 2, 3,
+            4...</instruction>
+        <usageNote>Use for all rows / all items.</usageNote>
+        <usageNote>Compound children may build from the parent’s identifier; i.e. compound parent 25
+            may have compound children 26, 27, and 28, or it may have compound children 25_01,
+            25_02, 25_03 (the latter is preferred).</usageNote>
+    </structuralData>
+    
+    <structuralData name="child">
+        <instruction>Enter a secondary sequential item number, beginning at 01, per child item such
+            that each compound object has numbered children, 01, 02, 03...</instruction>
+        <usageNote>Use for compound child item rows only; leave blank for simple or compound parent
+            items.</usageNote>
+        <usageNote>Include leading zeros such that all children have the same number of digits in
+            their sequence.</usageNote>
+    </structuralData>
+    
+    <structuralData name="directory">
+        <instruction>Enter the folder name corresponding to the parent item in the input
+            directory.</instruction>
+        <usageNote>Use for compound parent and compound child item rows; leave blank for simple items.</usageNote>
+    </structuralData>
+    
+    <structuralData name="fileName">
+        <instruction>Enter the file name, including the extension, for the object described in the record.</instruction>
+        <usageNote>Use for simple and compound child item rows; leave blank for compound parents.</usageNote>
+    </structuralData>
+    
+    <structuralData name="fileCount">
+        <instruction>Enter the number of total content files constituting the object.</instruction>
+        <usageNote>Use for compound parent and simple item rows; leave blank for compound child items.</usageNote>
+    </structuralData>
+    
 </elementList>
