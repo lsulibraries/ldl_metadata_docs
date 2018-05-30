@@ -1012,31 +1012,31 @@ _Insert introductory text about this document here._
 | Language of Cataloging | mods/recordInfo/languageOfCataloging/languageTerm | required | yes | yes |  
   
 #### Record Content Source  
-- __Definition:__   
+- __Definition:__ The creator of the original MODS record.  
 
 - __Authority:__ local  
 
-- __Usage Notes:__ For original metadata records, enter the creator of the record in the format "institution_code/cataloger_initials", e.g. lsu/cmk. Use an authority attribute with value "local". Optional for records which have a Record Origin field.  
+- __Usage Notes:__ For original metadata records, enter the creator of the record in the format "institution_code/cataloger_initials", e.g. lsu/cmk. Uses an authority attribute with value "local". Optional for records which have a Record Origin field.  
 
 #### Record Origin  
-- __Definition:__   
+- __Definition:__ Shows the origin or provenance of the MODS record.  
 
 - __Usage Notes:__ For metadata records that were migrated or generated through an automated process, enter a brief description of that process.  
 
 #### Record Creation Date  
-- __Definition:__   
+- __Definition:__ The date on which the original MODS record was first created.  
 
-- __Usage Notes:__ For original metadata records, enter the date of creation of the record using W3CDTF encoding, YYYY-MM-DD. Use an encoding attribute with value "w3cdtf".  
+- __Usage Notes:__ Enter the date of creation of the record using W3CDTF encoding, YYYY-MM-DD. Uses an encoding attribute with value "w3cdtf".  
 
 #### Record Change Date  
-- __Definition:__   
+- __Definition:__ The date the original MODS record was last modified.  
 
-- __Usage Notes:__ Enter the date that record was modified using W3CDTF encoding, YYYY-MM-DD. Use an encoding attribute with value "w3cdtf".  
+- __Usage Notes:__ Enter the date that record was modified using W3CDTF encoding, YYYY-MM-DD. Uses an encoding attribute with value "w3cdtf".  
 
 #### Language of Cataloging  
-- __Definition:__   
+- __Definition:__ The language of the text of the cataloging in the MODS record.  
 
-- __Usage Notes:__ Use the ISO alpha-3 encoding for the language used in cataloging the record. Use a type attribute with value "code" and an authority attribute with value "iso639-2b".  
+- __Usage Notes:__ Use the ISO alpha-3 encoding for the language used in cataloging the record. Uses a type attribute with value "code" and an authority attribute with value "iso639-2b".  
 
 [Back to Contents](#contents)  
 

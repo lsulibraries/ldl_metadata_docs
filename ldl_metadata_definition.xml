@@ -1004,16 +1004,16 @@
         <subelements>
             <subelement name="Record Content Source" obligation="required if applicable" repeatable="yes" controlled="yes">
                 <encoding>mods:mods/mods:recordInfo/mods:recordContentSource</encoding>
-                <definition></definition>
+                <definition>The creator of the original MODS record.</definition>
                 <content>
                     <type>text</type>
                     <vocabulary authority="local"/>
                 </content>
-                <usageNote>For original metadata records, enter the creator of the record in the format "institution_code/cataloger_initials", e.g. lsu/cmk. Use an authority attribute with value "local". Optional for records which have a Record Origin field.</usageNote>
+                <usageNote>For original metadata records, enter the creator of the record in the format "institution_code/cataloger_initials", e.g. lsu/cmk. Uses an authority attribute with value "local". Optional for records which have a Record Origin field.</usageNote>
             </subelement>
             <subelement name="Record Origin" obligation="required if applicable" repeatable="no" controlled="no">
                 <encoding>mods:mods/mods:recordInfo/mods:recordOrigin</encoding>
-                <definition></definition>
+                <definition>Shows the origin or provenance of the MODS record.</definition>
                 <content>
                     <type>text</type>
                 </content>
@@ -1021,25 +1021,25 @@
             </subelement>
             <subelement name="Record Creation Date" obligation="required" repeatable="no" controlled="no">
                 <encoding>mods:mods/mods:recordInfo/mods:recordCreationDate</encoding>
-                <definition></definition>
+                <definition>The date on which the original MODS record was first created.</definition>
                 <content>
                     <type>date</type>
                 </content>
-                <usageNote>For original metadata records, enter the date of creation of the record using W3CDTF encoding, YYYY-MM-DD. Use an encoding attribute with value "w3cdtf".</usageNote>
+                <usageNote>Enter the date of creation of the record using W3CDTF encoding, YYYY-MM-DD. Uses an encoding attribute with value "w3cdtf".</usageNote>
             </subelement>
             <subelement name="Record Change Date" obligation="required if applicable" repeatable="yes" controlled="no">
                 <encoding>mods:mods/mods:recordInfo/mods:recordChangeDate</encoding>
-                <definition></definition>
+                <definition>The date the original MODS record was last modified.</definition>
                 <content>
                     <type>date</type>
                 </content>
-                <usageNote>Enter the date that record was modified using W3CDTF encoding, YYYY-MM-DD. Use an encoding attribute with value "w3cdtf".</usageNote>
+                <usageNote>Enter the date that record was modified using W3CDTF encoding, YYYY-MM-DD. Uses an encoding attribute with value "w3cdtf".</usageNote>
             </subelement>
             <subelement name="Language of Cataloging" obligation="required" repeatable="yes" controlled="yes">
                 <encoding>mods:mods/mods:recordInfo/mods:languageOfCataloging/mods:languageTerm</encoding>
-                <definition></definition>
-                <content></content>
-                <usageNote>Use the ISO alpha-3 encoding for the language used in cataloging the record. Use a type attribute with value "code" and an authority attribute with value "iso639-2b".</usageNote>
+                <definition>The language of the text of the cataloging in the MODS record.</definition>
+                <content>text</content>
+                <usageNote>Use the ISO alpha-3 encoding for the language used in cataloging the record. Uses a type attribute with value "code" and an authority attribute with value "iso639-2b".</usageNote>
             </subelement>
         </subelements>
     </element>
