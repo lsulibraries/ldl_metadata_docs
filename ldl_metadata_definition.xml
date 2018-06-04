@@ -389,7 +389,7 @@
         <governingStandard>MODS ver. 3</governingStandard>
         <content>
             <type>choice</type>
-            <vocabulary authority="MODS TypeOfResource Values" ref="http://www.loc.gov/standards/mods//userguide/typeofresource.html">
+            <vocabulary authority="MODS TypeOfResource Terms" ref="http://www.loc.gov/standards/mods//userguide/typeofresource.html">
                 <enumeration value="text"/>
                 <enumeration value="cartographic"/>
                 <enumeration value="notated music"/>
@@ -403,7 +403,7 @@
                 <enumeration value="mixed material"/>
             </vocabulary>
         </content>
-        <instruction>Select an authorized MODS value characterizing the resource’s format.</instruction>
+        <instruction>Select an authorized MODS Type of Resource term characterizing the resource’s format.</instruction>
         <usageNote>Use all lowercase letters without punctuation.</usageNote>
         <usageNote>Use 'collection' attribute to distinguish collection-level records.</usageNote>
         <inputGuidance>
@@ -462,9 +462,10 @@
             <type>text</type>
             <vocabulary authority="aat" ref="http://www.getty.edu/research/tools/vocabularies/aat/"/>
         </content>
-        <instruction>Enter a generic term for the form of the original resource.</instruction>
+        <instruction>Enter a controlled vocabulary term for the general physical form of the original resource.</instruction>
         <usageNote>Choose applicable terms from the Getty Art and Architecture Thesaurus (AAT), particularly terms denoted as "...by internal form". Other vocabularies, including local ones, may be used with consultation from a metadata librarian.</usageNote>
         <usageNote>The Form field should be used to describe the physical characteristics of the resource rather than its content, which would be Genre.</usageNote>
+        <usageNote>Use of controlled terms is strongly encouraged for description; enter physical details that cannot be described using controlled vocabulary in the Physical Description Note field.</usageNote>
         <enrichment/>
         <inputGuidance>
             <spreadsheet/>
@@ -484,7 +485,7 @@
     </element>
 
     <element name="Physical Description Note" category="metaSetCarrier" obligation="optional" repeatable="yes" controlled="no">
-        <defaultLabel>Medium</defaultLabel>
+        <defaultLabel>Physical Description Note</defaultLabel>
         <encoding>mods:mods/mods:physicalDescription/mods:note</encoding>
         <definition ref="http://www.loc.gov/standards/mods//userguide/physicaldescription.html#note">General textual information about the physical description of a resource.</definition>
         <mapping schema="marc">340</mapping>
@@ -493,9 +494,10 @@
         <content>
             <type>text</type>
         </content>
-        <instruction>Enter a description of the medium/media used in the creation of the physical resource, or (changing the Type attribute) other details about the physical object not captured in controlled fields.</instruction>
+        <instruction>Enter an uncontrolled, detailed description of the medium/media used in the creation of the physical resource, or (changing the Type attribute) other details about the physical object not captured in controlled fields.</instruction>
         <usageNote>The type attribute designates the type of note, with the default usage of this field in the LDL being type="medium". Select from MODS list of note types at http://www.loc.gov/standards/mods/mods-notes.html. Other note types present in the LDL include "condition", "marks", "technique", and "physical details".</usageNote>
-        <usageNote>Terminology may be drawn from AAT, but this field is not controlled or faceted. Use the Form field to enter controlled vocabulary terms.</usageNote>
+        <usageNote>Use when information that is important for understanding the resource cannot be recorded using controlled vocabulary terms. Use the Form field to enter controlled vocabulary terms.</usageNote>
+        <usageNote>Terminology may be drawn from AAT, but this field is not controlled or faceted.</usageNote>
         <enrichment/>
         <inputGuidance>
             <spreadsheet/>
@@ -1070,17 +1072,21 @@
     <structuralData name="directory">
         <instruction>Enter the folder name corresponding to the parent item in the input
             directory.</instruction>
-        <usageNote>Use for compound parent and compound child item rows; leave blank for simple items.</usageNote>
+        <usageNote>Use for compound parent and compound child item rows; leave blank for simple
+            items.</usageNote>
     </structuralData>
     
     <structuralData name="fileName">
-        <instruction>Enter the file name, including the extension, for the object described in the record.</instruction>
-        <usageNote>Use for simple and compound child item rows; leave blank for compound parents.</usageNote>
+        <instruction>Enter the file name, including the extension, for the object described in the
+            record.</instruction>
+        <usageNote>Use for simple and compound child item rows; leave blank for compound
+            parents.</usageNote>
     </structuralData>
     
     <structuralData name="fileCount">
         <instruction>Enter the number of total content files constituting the object.</instruction>
-        <usageNote>Use for compound parent and simple item rows; leave blank for compound child items.</usageNote>
+        <usageNote>Use for compound parent and simple item rows; leave blank for compound child
+            items.</usageNote>
     </structuralData>
     
 </elementList>

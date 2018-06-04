@@ -353,9 +353,9 @@ _Insert introductory text about this document here._
 - __DC:__ dc:type  
   
 ### Usage  
-- __Instructions:__ Select an authorized MODS value characterizing the resource’s format.  
+- __Instructions:__ Select an authorized MODS Type of Resource term characterizing the resource’s format.  
 - __Type:__ choice  
-- __Authority:__ [MODS TypeOfResource Values](http://www.loc.gov/standards/mods//userguide/typeofresource.html)  
+- __Authority:__ [MODS TypeOfResource Terms](http://www.loc.gov/standards/mods//userguide/typeofresource.html)  
 - __Values:__ text; cartographic; notated music; sound recording; sound recording-musical; sound recording-nonmusical; still image; moving image; three dimensional object; software, multimedia; mixed material  
 - __Usage Notes:__  
     - Use all lowercase letters without punctuation.  
@@ -418,12 +418,13 @@ _Insert introductory text about this document here._
 - __DC:__ dc:format  
   
 ### Usage  
-- __Instructions:__ Enter a generic term for the form of the original resource.  
+- __Instructions:__ Enter a controlled vocabulary term for the general physical form of the original resource.  
 - __Type:__ text  
 - __Authority:__ [aat](http://www.getty.edu/research/tools/vocabularies/aat/)  
 - __Usage Notes:__  
     - Choose applicable terms from the Getty Art and Architecture Thesaurus (AAT), particularly terms denoted as "...by internal form". Other vocabularies, including local ones, may be used with consultation from a metadata librarian.  
     - The Form field should be used to describe the physical characteristics of the resource rather than its content, which would be Genre.  
+    - Use of controlled terms is strongly encouraged for description; enter physical details that cannot be described using controlled vocabulary in the Physical Description Note field.  
 - __Examples:__  
     -   
   
@@ -439,7 +440,7 @@ _Insert introductory text about this document here._
 - - -
 ## Physical Description Note  
 ### About  
-- __LDL Default Label:__ Medium  
+- __LDL Default Label:__ Physical Description Note  
 - __MODS Element:__ mods/physicalDescription/note  
 - __Definition:__ General textual information about the physical description of a resource. ([source](http://www.loc.gov/standards/mods//userguide/physicaldescription.html#note))  
 - __Obligation:__ optional  
@@ -450,11 +451,12 @@ _Insert introductory text about this document here._
 - __DC:__ dc:format  
   
 ### Usage  
-- __Instructions:__ Enter a description of the medium/media used in the creation of the physical resource, or (changing the Type attribute) other details about the physical object not captured in controlled fields.  
+- __Instructions:__ Enter an uncontrolled, detailed description of the medium/media used in the creation of the physical resource, or (changing the Type attribute) other details about the physical object not captured in controlled fields.  
 - __Type:__ text  
 - __Usage Notes:__  
     - The type attribute designates the type of note, with the default usage of this field in the LDL being type="medium". Select from MODS list of note types at http://www.loc.gov/standards/mods/mods-notes.html. Other note types present in the LDL include "condition", "marks", "technique", and "physical details".  
-    - Terminology may be drawn from AAT, but this field is not controlled or faceted. Use the Form field to enter controlled vocabulary terms.  
+    - Use when information that is important for understanding the resource cannot be recorded using controlled vocabulary terms. Use the Form field to enter controlled vocabulary terms.  
+    - Terminology may be drawn from AAT, but this field is not controlled or faceted.  
 - __Examples:__  
     -   
   
@@ -818,7 +820,7 @@ _Insert introductory text about this document here._
 - __LDL Default Label:__ Rights  
 - __MODS Element:__ mods/accessCondition  
 - __Definition:__ Information about restrictions imposed on access to a resource. ([source](http://www.loc.gov/standards/mods//userguide/accesscondition.html))  
-- __Obligation:__ required if applicable  
+- __Obligation:__ required  
 - __Repeatable:__ no  
 - __Controlled:__ no  
 - __Governing Standard:__ RDA 4.5  
