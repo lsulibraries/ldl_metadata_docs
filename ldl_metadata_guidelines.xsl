@@ -15,7 +15,7 @@
         <xsl:copy>
             <xsl:call-template name="intro"/>
             <xsl:call-template name="toc"/>
-            <xsl:apply-templates select="@*|*" />
+            <xsl:apply-templates select="element" />
         </xsl:copy>
     </xsl:template>
     
