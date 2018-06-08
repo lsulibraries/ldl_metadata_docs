@@ -142,7 +142,7 @@ _Insert introductory text about this document here._
 - __Type:__ text  
 - __Usage Notes:__  
     - The value of the required Type attribute will be the field display label.  
-    - Use when the resource being described was created or published as a standalone portion of a larger work, such as an issue of a periodical, a volume or episode in a series, etc. If the object described was only published within a larger entity (such as an article in a journal or a poem in an anthology), use `<relatedItem type="host"><part>` instead to show the location of the part within the host item. Consult a metadata librarian for project specific guidance.  
+    - Use when the resource being described was created or published as a standalone portion of a larger work, such as an issue of a periodical, a volume or episode in a series, etc. If the object described was only published within a larger entity (such as an article in a journal, a poem in an anthology, or a track on an album), use `<relatedItem type="host"><part>` instead to show the location of the part within the host item. Consult a metadata librarian for project specific guidance.  
 - __Examples:__  
     -   
   
@@ -195,7 +195,7 @@ _Insert introductory text about this document here._
 - __Type:__ text  
 - __Usage Notes:__  
     - The value of the required Unit attribute will be the field display label.  
-    - Use when the resource being described was created or published as a standalone portion of a larger work, such as an issue of a periodical, a volume or episode in a series, etc. If the object described was only published within a larger entity (such as an article in a journal or a poem in an anthology), use `<relatedItem type="host"><part>` instead to show the location of the part within the host item. Consult a metadata librarian for project specific guidance.  
+    - Use when the resource being described was created or published as a standalone portion of a larger work, such as an issue of a periodical, a volume or episode in a series, etc. If the object described was only published within a larger entity (such as an article in a journal, a poem in an anthology, or a track on an album), use `<relatedItem type="host"><part>` instead to show the location of the part within the host item. Consult a metadata librarian for project specific guidance.  
 - __Examples:__  
     -   
   
@@ -773,9 +773,31 @@ _Insert introductory text about this document here._
 - __Type:__ text  
 - __Usage Notes:__  
     - Use this field when the name of the digital collection differs markedly from the repository collection, or when a digital collection is composed of materials from multiple repository collections.  
+    - Use this field with one or more Part Name subelements to record archival arrangement within the repository collection.  
 - __Examples:__  
     -   
   
+### Subelements  
+
+| Subelement | Encoding | Obligation | Repeatable | Controlled |  
+| --- | --- | --- | --- | --- |  
+| Part Number | mods/relatedItem[@type="host"]/titleInfo[@type="alternative]"/partNumber | optional | yes | no |  
+| Part Name | mods/relatedItem[@type="host"]/titleInfo[@type="alternative]"/partName | optional | yes | no |  
+  
+#### Part Number  
+- __Definition:__ A part or section number of a title.  
+
+- __Usage Notes:__ For archival arrangement, enter the level of arrangement and numeration, for example, "Series I" or "Folder 3".  
+
+- __Usage Notes:__ Repeat the Part Number subelement for each level of arrangement being recorded, i.e. record Series, Subseries, Box, and Folder each as a separate Part Number subelement.  
+
+#### Part Name  
+- __Definition:__ A part or section name of a title.  
+
+- __Usage Notes:__ For archival arrangement, enter the name/title of the division in the preceding Part Number subelement, if applicable.  
+
+- __Usage Notes:__ Repeat the Part Name subelement for each level of arrangement being recorded.  
+
 [Back to Contents](#contents)  
 
 - - -

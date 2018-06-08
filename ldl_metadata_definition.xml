@@ -173,7 +173,7 @@
         </content>
         <instruction>Enter volume, issue number, or other physical part of a resource by specifying the type and enumeration of the physical division.</instruction>
         <usageNote>The value of the required Type attribute will be the field display label.</usageNote>
-        <usageNote>Use when the resource being described was created or published as a standalone portion of a larger work, such as an issue of a periodical, a volume or episode in a series, etc. If the object described was only published within a larger entity (such as an article in a journal or a poem in an anthology), use `&lt;relatedItem type="host"&gt;&lt;part&gt;` instead to show the location of the part within the host item. Consult a metadata librarian for project specific guidance.</usageNote>
+        <usageNote>Use when the resource being described was created or published as a standalone portion of a larger work, such as an issue of a periodical, a volume or episode in a series, etc. If the object described was only published within a larger entity (such as an article in a journal, a poem in an anthology, or a track on an album), use `&lt;relatedItem type="host"&gt;&lt;part&gt;` instead to show the location of the part within the host item. Consult a metadata librarian for project specific guidance.</usageNote>
         <inputGuidance>
             <spreadsheet/>
             <webform/>
@@ -226,7 +226,7 @@
         </content>
         <instruction>Enter pages, minutes, or other measurements of the part within the whole by specifying the unit and enumeration of the physical division.</instruction>
         <usageNote>The value of the required Unit attribute will be the field display label.</usageNote>
-        <usageNote>Use when the resource being described was created or published as a standalone portion of a larger work, such as an issue of a periodical, a volume or episode in a series, etc. If the object described was only published within a larger entity (such as an article in a journal or a poem in an anthology), use `&lt;relatedItem type="host"&gt;&lt;part&gt;` instead to show the location of the part within the host item. Consult a metadata librarian for project specific guidance.</usageNote>
+        <usageNote>Use when the resource being described was created or published as a standalone portion of a larger work, such as an issue of a periodical, a volume or episode in a series, etc. If the object described was only published within a larger entity (such as an article in a journal, a poem in an anthology, or a track on an album), use `&lt;relatedItem type="host"&gt;&lt;part&gt;` instead to show the location of the part within the host item. Consult a metadata librarian for project specific guidance.</usageNote>
         <inputGuidance>
             <spreadsheet/>
             <webform/>
@@ -805,14 +805,35 @@
         </content>
         <instruction>Enter the title of the repository collection.</instruction>
         <usageNote>Use this field when the name of the digital collection differs markedly from the repository collection, or when a digital collection is composed of materials from multiple repository collections.</usageNote>
+        <usageNote>Use this field with one or more Part Name subelements to record archival arrangement within the repository collection.</usageNote>
         <enrichment/>
         <inputGuidance>
             <spreadsheet/>
             <webform/>
-            <xml>A displayLabel attribute with value "Repository Collection" should be used on the `&lt;titleInfo&gt;` element.</xml>
+            <xml>A displayLabel attribute with value "Repository Collection" should be used on the `&lt;titleInfo&gt;` element. Note that if using `&lt;partName&gt;` and `&lt;partNumber&gt;` subelements, these are sibling elements to `&lt;title&gt;` within the `&lt;titleInfo&gt;` wrapper.</xml>
         </inputGuidance>
         <example/>
         <legacyVariation collection="[collection namespace]"/>
+        <subelements>
+            <subelement name="Part Number" obligation="optional" repeatable="yes" controlled="no">
+                <encoding>mods:mods/mods:relatedItem[@type="host"]/mods:titleInfo[@type="alternative]"/mods:partNumber</encoding>
+                <definition>A part or section number of a title.</definition>
+                <content>
+                    <type>text</type>
+                </content>
+                <usageNote>For archival arrangement, enter the level of arrangement and numeration, for example, "Series I" or "Folder 3".</usageNote>
+                <usageNote>Repeat the Part Number subelement for each level of arrangement being recorded, i.e. record Series, Subseries, Box, and Folder each as a separate Part Number subelement.</usageNote>
+            </subelement>
+            <subelement name="Part Name" obligation="optional" repeatable="yes" controlled="no">
+                <encoding>mods:mods/mods:relatedItem[@type="host"]/mods:titleInfo[@type="alternative]"/mods:partName</encoding>
+                <definition>A part or section name of a title.</definition>
+                <content>
+                    <type>text</type>
+                </content>
+                <usageNote>For archival arrangement, enter the name/title of the division in the preceding Part Number subelement, if applicable.</usageNote>
+                <usageNote>Repeat the Part Name subelement for each level of arrangement being recorded.</usageNote>
+            </subelement>
+        </subelements>
     </element>
     
     <element name="Repository Collection Guide" category="metaSetCollection" obligation="optional" repeatable="yes" controlled="yes">
