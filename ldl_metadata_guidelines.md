@@ -8,6 +8,8 @@ _Insert introductory text about this document here._
 ## Contents  
 1. [MODS](#mods)  
 1. [Title](#title)  
+1. [Part Detail](#part-detail)  
+1. [Part Extent](#part-extent)  
 1. [Identifier](#identifier)  
 1. [Place of Origin](#place-of-origin)  
 1. [Publisher](#publisher)  
@@ -119,6 +121,118 @@ _Insert introductory text about this document here._
 | --- | --- | --- |  
 | type | abbreviated; alternative; translated; uniform | required if applicable |  
 | displayLabel | [uncontrolled; if omitted, the default label will be used] | optional |  
+
+[Back to Contents](#contents)  
+
+- - -
+## Part Detail  
+### About  
+- __LDL Default Label:__ [Value of "Type" Attribute]  
+- __MODS Element:__ mods/part/detail  
+- __Definition:__ Contains numbering and type of designation of the part in relation to the host/parent item in which a host item resides. ([source](https://www.loc.gov/standards/mods/userguide/part.html#detail))  
+- __Obligation:__ required if applicable  
+- __Repeatable:__ yes  
+- __Controlled:__ no  
+- __Governing Standard:__   
+- __MARC:__ none  
+- __DC:__ none  
+  
+### Usage  
+- __Instructions:__ Enter volume, issue number, or other physical part of a resource by specifying the type and enumeration of the physical division.  
+- __Type:__ text  
+- __Usage Notes:__  
+    - The value of the required Type attribute will be the field display label.  
+    - Use when the resource being described was created or published as a standalone portion of a larger work, such as an issue of a periodical, a volume or episode in a series, etc. If the object described was only published within a larger entity (such as an article in a journal or a poem in an anthology), use `<relatedItem type="host"><part>` instead to show the location of the part within the host item. Consult a metadata librarian for project specific guidance.  
+- __Examples:__  
+    -   
+  
+### Subelements  
+
+| Subelement | Encoding | Obligation | Repeatable | Controlled |  
+| --- | --- | --- | --- | --- |  
+| Number | mods/part/detail/number | required if applicable | no | no |  
+| Caption | mods/part/detail/caption | optional | no | no |  
+| Title | mods/part/detail/title | required if applicable | no | no |  
+  
+#### Number  
+- __Definition:__ Contains the actual number within the part.  
+
+- __Usage Notes:__ Enter only the number of the part.  
+
+#### Caption  
+- __Definition:__ Contains the caption describing the enumeration within a part.  
+
+- __Usage Notes:__ Enter a caption to display in front of the part number, such as "vol." or "no.". A space will be inserted between the Caption and the Number.  
+
+#### Title  
+- __Definition:__ Contains the title of the part.  
+
+- __Usage Notes:__ Enter the title of the part, if it is different than the core title of the resource.  
+
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| type | volume; issue; chapter; section; paragraph; track [other values as needed] | required |  
+
+[Back to Contents](#contents)  
+
+- - -
+## Part Extent  
+### About  
+- __LDL Default Label:__ [Value of "Unit" Attribute]  
+- __MODS Element:__ mods/part/extent  
+- __Definition:__ Contains the measured units making up the part. ([source](https://www.loc.gov/standards/mods/userguide/part.html#extent))  
+- __Obligation:__ required if applicable  
+- __Repeatable:__ yes  
+- __Controlled:__ no  
+- __Governing Standard:__   
+- __MARC:__ none  
+- __DC:__ none  
+  
+### Usage  
+- __Instructions:__ Enter pages, minutes, or other measurements of the part within the whole by specifying the unit and enumeration of the physical division.  
+- __Type:__ text  
+- __Usage Notes:__  
+    - The value of the required Unit attribute will be the field display label.  
+    - Use when the resource being described was created or published as a standalone portion of a larger work, such as an issue of a periodical, a volume or episode in a series, etc. If the object described was only published within a larger entity (such as an article in a journal or a poem in an anthology), use `<relatedItem type="host"><part>` instead to show the location of the part within the host item. Consult a metadata librarian for project specific guidance.  
+- __Examples:__  
+    -   
+  
+### Subelements  
+
+| Subelement | Encoding | Obligation | Repeatable | Controlled |  
+| --- | --- | --- | --- | --- |  
+| Start | mods/part/extent/start | required if applicable | no | no |  
+| End | mods/part/extent/end | required if applicable | no | no |  
+| Total | mods/part/extent/total | required if applicable | no | no |  
+| List | mods/part/extent/list | required if applicable | no | no |  
+  
+#### Start  
+- __Definition:__ Contains the beginning unit of the extent within a part.  
+
+- __Usage Notes:__ Enter the first number of the range of units indicated by the "Unit" attribute, for example the first page number.  
+
+#### End  
+- __Definition:__ Contains the ending unit of the extent within a part.  
+
+- __Usage Notes:__ Enter the last number of the range of units indicated by the "Unit" attribute, for example the last page number.  
+
+#### Total  
+- __Definition:__ Contains the total number of units within a part, rather than specific units.  
+
+- __Usage Notes:__ Enter the total number of units indicated by the "Unit" attribute, for example "5" to indicate a total of 5 pages.  
+
+#### List  
+- __Definition:__ Contains a textual listing of the units within a part.  
+
+- __Usage Notes:__ Enter a textual description of units, rather than number alone, indicated by the "Unit" attribute, for example "pp. 5-9".  
+
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| unit | page [other values as needed] | required |  
 
 [Back to Contents](#contents)  
 

@@ -159,8 +159,121 @@
         </attributes>
     </element>
     
-   <!-- <element name="Title Part"/>
-    <element name="Part"/>-->
+   <!-- <element name="Title Part"/> -->
+
+    <element name="Part Detail" category="metaSetCore" obligation="required if applicable" repeatable="yes" controlled="no">
+        <defaultLabel>[Value of "Type" Attribute]</defaultLabel>
+        <encoding>mods:mods/mods:part/mods:detail</encoding>
+        <definition ref="https://www.loc.gov/standards/mods/userguide/part.html#detail">Contains numbering and type of designation of the part in relation to the host/parent item in which a host item resides.</definition>
+        <mapping schema="marc">none</mapping>
+        <mapping schema="dc">none</mapping>
+        <governingStandard/>
+        <content>
+            <type>text</type>
+        </content>
+        <instruction>Enter volume, issue number, or other physical part of a resource by specifying the type and enumeration of the physical division.</instruction>
+        <usageNote>The value of the required Type attribute will be the field display label.</usageNote>
+        <usageNote>Use when the resource being described was created or published as a standalone portion of a larger work, such as an issue of a periodical, a volume or episode in a series, etc. If the object described was only published within a larger entity (such as an article in a journal or a poem in an anthology), use `&lt;relatedItem type="host"&gt;&lt;part&gt;` instead to show the location of the part within the host item. Consult a metadata librarian for project specific guidance.</usageNote>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml>Wrap multiple `&lt;detail&gt;` subelements within a single `&lt;part&gt;` top level element.</xml>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <subelements>
+            <subelement name="Number" obligation="required if applicable" repeatable="no" controlled="no">
+                <encoding>mods:mods/mods:part/mods:detail/mods:number</encoding>
+                <definition>Contains the actual number within the part.</definition>
+                <content>
+                    <type>number</type>
+                </content>
+                <usageNote>Enter only the number of the part.</usageNote>
+            </subelement>
+            <subelement name="Caption" obligation="optional" repeatable="no" controlled="no">
+                <encoding>mods:mods/mods:part/mods:detail/mods:caption</encoding>
+                <definition>Contains the caption describing the enumeration within a part.</definition>
+                <content>
+                    <type>text</type>
+                </content>
+                <usageNote>Enter a caption to display in front of the part number, such as "vol." or "no.". A space will be inserted between the Caption and the Number.</usageNote>
+            </subelement>
+            <subelement name="Title" obligation="required if applicable" repeatable="no" controlled="no">
+                <encoding>mods:mods/mods:part/mods:detail/mods:title</encoding>
+                <definition>Contains the title of the part.</definition>
+                <content>
+                    <type>text</type>
+                </content>
+                <usageNote>Enter the title of the part, if it is different than the core title of the resource.</usageNote>
+            </subelement>
+        </subelements>
+        <attributes>
+            <attribute name="type" obligation="required">
+                <value>volume; issue; chapter; section; paragraph; track [other values as needed]</value>
+            </attribute>
+        </attributes>
+    </element>
+    
+    <element name="Part Extent" category="metaSetCore" obligation="required if applicable" repeatable="yes" controlled="no">
+        <defaultLabel>[Value of "Unit" Attribute]</defaultLabel>
+        <encoding>mods:mods/mods:part/mods:extent</encoding>
+        <definition ref="https://www.loc.gov/standards/mods/userguide/part.html#extent">Contains the measured units making up the part.</definition>
+        <mapping schema="marc">none</mapping>
+        <mapping schema="dc">none</mapping>
+        <governingStandard/>
+        <content>
+            <type>text</type>
+        </content>
+        <instruction>Enter pages, minutes, or other measurements of the part within the whole by specifying the unit and enumeration of the physical division.</instruction>
+        <usageNote>The value of the required Unit attribute will be the field display label.</usageNote>
+        <usageNote>Use when the resource being described was created or published as a standalone portion of a larger work, such as an issue of a periodical, a volume or episode in a series, etc. If the object described was only published within a larger entity (such as an article in a journal or a poem in an anthology), use `&lt;relatedItem type="host"&gt;&lt;part&gt;` instead to show the location of the part within the host item. Consult a metadata librarian for project specific guidance.</usageNote>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml>Wrap multiple `&lt;extent&gt;` subelements within a single `&lt;part&gt;` top level element.</xml>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <subelements>
+            <subelement name="Start" obligation="required if applicable" repeatable="no" controlled="no">
+                <encoding>mods:mods/mods:part/mods:extent/mods:start</encoding>
+                <definition>Contains the beginning unit of the extent within a part.</definition>
+                <content>
+                    <type>number</type>
+                </content>
+                <usageNote>Enter the first number of the range of units indicated by the "Unit" attribute, for example the first page number.</usageNote>
+            </subelement>
+            <subelement name="End" obligation="required if applicable" repeatable="no" controlled="no">
+                <encoding>mods:mods/mods:part/mods:extent/mods:end</encoding>
+                <definition>Contains the ending unit of the extent within a part.</definition>
+                <content>
+                    <type>number</type>
+                </content>
+                <usageNote>Enter the last number of the range of units indicated by the "Unit" attribute, for example the last page number.</usageNote>
+            </subelement>
+            <subelement name="Total" obligation="required if applicable" repeatable="no" controlled="no">
+                <encoding>mods:mods/mods:part/mods:extent/mods:total</encoding>
+                <definition>Contains the total number of units within a part, rather than specific units.</definition>
+                <content>
+                    <type>number</type>
+                </content>
+                <usageNote>Enter the total number of units indicated by the "Unit" attribute, for example "5" to indicate a total of 5 pages.</usageNote>
+            </subelement>
+            <subelement name="List" obligation="required if applicable" repeatable="no" controlled="no">
+                <encoding>mods:mods/mods:part/mods:extent/mods:list</encoding>
+                <definition>Contains a textual listing of the units within a part.</definition>
+                <content>
+                    <type>text</type>
+                </content>
+                <usageNote>Enter a textual description of units, rather than number alone, indicated by the "Unit" attribute, for example "pp. 5-9".</usageNote>
+            </subelement>
+        </subelements>
+        <attributes>
+            <attribute name="unit" obligation="required">
+                <value>page [other values as needed]</value>
+            </attribute>
+        </attributes>
+    </element>
     
     <element name="Identifier" category="metaSetCore" obligation="required" repeatable="yes" controlled="no">
         <defaultLabel>Item Number</defaultLabel>
@@ -376,7 +489,7 @@
             </attribute>
         </attributes>
     </element>
-
+    
     <element name="Type of Resource" category="metaSetCarrier" obligation="required" repeatable="yes"
         controlled="yes">
         <defaultLabel>Type of Resource</defaultLabel>
