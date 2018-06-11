@@ -159,8 +159,6 @@
         </attributes>
     </element>
     
-   <!-- <element name="Title Part"/> -->
-
     <element name="Part Detail" category="metaSetCore" obligation="required if applicable" repeatable="yes" controlled="no">
         <defaultLabel>[Value of "Type" Attribute]</defaultLabel>
         <encoding>mods:mods/mods:part/mods:detail</encoding>
@@ -1133,9 +1131,7 @@
             <webform/>
             <xml>`&lt;recordInfo&gt;` is a container element, which should have one or more subelements within it.</xml>
         </inputGuidance>
-        <example>`&lt;recordInfo&gt; &lt;languageTerm type="text"&gt;English&lt;/languageTerm&gt; &lt;languageTerm type="code" authority="iso639-2b"&gt;eng&lt;/languageTerm&gt; &lt;/language&gt;`</example>
-        <example>`&lt;recordInfo&gt; &lt;languageTerm type="text"&gt;French&lt;/languageTerm&gt; &lt;languageTerm type="code" authority="iso639-2b"&gt;fre&lt;/languageTerm&gt; &lt;/language&gt;`</example>
-        <example>`&lt;recordInfo&gt; &lt;languageTerm type="text"&gt;Spanish&lt;/languageTerm&gt; &lt;languageTerm type="code" authority="iso639-2b"&gt;spa&lt;/languageTerm&gt; &lt;/language&gt;`</example>
+        <example>`&lt;recordInfo&gt; &lt;languageOfCataloging&gt; &lt;languageTerm type="code" authority="iso639-2b"&gt;eng&lt;/languageTerm&gt; &lt;/languageOfCataloging&gt; &lt;/recordInfo&gt;`</example>
         <legacyVariation collection="[collection namespace]"/>
         <subelements>
             <subelement name="Record Content Source" obligation="required if applicable" repeatable="yes" controlled="yes">
@@ -1175,7 +1171,7 @@
                 <encoding>mods:mods/mods:recordInfo/mods:languageOfCataloging/mods:languageTerm</encoding>
                 <definition>The language of the text of the cataloging in the MODS record.</definition>
                 <content>text</content>
-                <usageNote>Use the ISO alpha-3 encoding for the language used in cataloging the record. Uses a type attribute with value "code" and an authority attribute with value "iso639-2b".</usageNote>
+                <usageNote>Use the ISO alpha-3 encoding for the language used in cataloging the record. Note that this does not pertain to the language of the resource itself. Uses a type attribute with value "code" and an authority attribute with value "iso639-2b".</usageNote>
             </subelement>
         </subelements>
     </element>

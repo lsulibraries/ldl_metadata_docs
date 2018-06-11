@@ -1117,9 +1117,7 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     - All records should have either a Record Origin or Record Content Source subfield within Record Info.  
 - __Examples:__  
-    - `<recordInfo> <languageTerm type="text">English</languageTerm> <languageTerm type="code" authority="iso639-2b">eng</languageTerm> </language>`  
-    - `<recordInfo> <languageTerm type="text">French</languageTerm> <languageTerm type="code" authority="iso639-2b">fre</languageTerm> </language>`  
-    - `<recordInfo> <languageTerm type="text">Spanish</languageTerm> <languageTerm type="code" authority="iso639-2b">spa</languageTerm> </language>`  
+    - `<recordInfo> <languageOfCataloging> <languageTerm type="code" authority="iso639-2b">eng</languageTerm> </languageOfCataloging> </recordInfo>`  
   
 ### Subelements  
 
@@ -1156,7 +1154,7 @@ _Insert introductory text about this document here._
 #### Language of Cataloging  
 - __Definition:__ The language of the text of the cataloging in the MODS record.  
 
-- __Usage Notes:__ Use the ISO alpha-3 encoding for the language used in cataloging the record. Uses a type attribute with value "code" and an authority attribute with value "iso639-2b".  
+- __Usage Notes:__ Use the ISO alpha-3 encoding for the language used in cataloging the record. Note that this does not pertain to the language of the resource itself. Uses a type attribute with value "code" and an authority attribute with value "iso639-2b".  
 
 [Back to Contents](#contents)  
 
