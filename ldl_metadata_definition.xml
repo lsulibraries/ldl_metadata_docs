@@ -305,6 +305,145 @@
         </attributes>
     </element>
     
+    <element name="Name" category="metaSetCore" obligation="optional" repeatable="yes"
+        controlled="yes">
+        <defaultLabel>Name</defaultLabel>
+        <encoding>mods:mods/mods:name</encoding>
+        <definition ref="https://www.loc.gov/standards/mods/userguide/name.html">The name of a
+            person, organization, or event (conference, meeting, etc.) associated in some way with
+            the resource.</definition>
+        <mapping schema="marc">1XX, 7XX</mapping>
+        <mapping schema="dc">dc:creator, dc:contributor</mapping>
+        <governingStandard>RDA 19.2, 19.3, 20.2</governingStandard>
+        <instruction>Enter names of people associated with the creation of the resource under their
+            appropriate roles. Use authorized forms of names from LCNAF or VIAF when they exist. Use
+            controlled role terms from MARC Code List for Relators.</instruction>
+        <usageNote>Use of one or more Name fields is strongly recommended if a creator or
+            contributor is known. If no names associated with the resource can be determined, leave
+            the field blank; do not enter "Unknown" or any variant in a name field. Use a Content
+            Note instead to denote unknown responsibility for the resource.</usageNote>
+        <usageNote>Catalogers should use the "type" attribute with all names; most will be either "personal" or "corporate".</usageNote>
+        <usageNote>The displayed field label will use the value of a Display Label attribute if
+            given; or, the value of the Role subelement with Type attribute value "text"; or, the
+            default "Name" if neither of these is provided.</usageNote>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet>Column: "Name [type] (Role)" -- Enter the value of the Name Part subelement
+                in the field. In the column header, enter the value of the type attribute in square
+                brackets and the textual term for the role subelement in parentheses, for instance
+                "Name [personal] (Creator)". The code term for the role will be added in the
+                CSV-to-MODS transformation. For multiple names, each difference in role and/or type
+                requires adding a separate column in the spreadsheet. For multiple names with a
+                shared role and type, use a single field, separating names with a semicolon and a
+                space.</spreadsheet>
+            <webform/>
+            <xml>Most commonly, a `&lt;name&gt;` element will include one `&lt;namePart&gt;`
+                subelement, and one `&lt;role&gt;` subelement which contains a pair of
+                `&lt;roleTerm&gt;` subelements. Include an authority="marcrelator" attribute on each
+                `&lt;roleTerm&gt;` subelement.</xml>
+        </inputGuidance>
+        <example ref="http://louisianadigitallibrary.org/islandora/object/nicholls-p15140coll51%3A322">
+            &lt;name type="personal" displayLabel="Veteran"&gt;
+              &lt;namePart&gt;Benoit, Andrew&lt;/namePart&gt;
+              &lt;role&gt;
+                &lt;roleTerm type="code" authority="marcrelator"&gt;dpc&lt;/roleTerm&gt;
+                &lt;roleTerm type="text" authority="marcrelator"&gt;Depicted&lt;/roleTerm&gt;
+              &lt;/role&gt;
+              &lt;affiliation&gt;U.S. Army&lt;/affiliation&gt;
+              &lt;affiliation&gt;Unit: 1st Infantry&lt;/affiliation&gt;
+              &lt;description&gt;Rank: Private&lt;/description&gt;
+              &lt;description&gt;Date of Service: January 26, 1942 - February 1, 1945&lt;/description&gt;
+              &lt;description&gt;Location of Military Service: North Africa; Sicily&lt;/description&gt;
+            &lt;/name&gt;
+        </example>
+        <example ref="http://louisianadigitallibrary.org/islandora/object/mcneese-p16313coll74%3A166">
+            &lt;name type="personal"&gt;
+              &lt;namePart&gt;Tamang, Rashmi&lt;/namePart&gt;
+              &lt;role&gt;
+                &lt;roleTerm type="code" authority="marcrelator"&gt;aut&lt;/roleTerm&gt;
+                &lt;roleTerm type="text" authority="marcrelator"&gt;Author&lt;/roleTerm&gt;
+              &lt;/role&gt;
+            &lt;/name&gt;
+            &lt;name type="personal" displayLabel="Major Professor"&gt;
+              &lt;namePart&gt;Christian, Omar E.&lt;/namePart&gt;
+              &lt;role&gt;
+                &lt;roleTerm type="code" authority="marcrelator"&gt;dgs&lt;/roleTerm&gt;
+                &lt;roleTerm type="text" authority="marcrelator"&gt;Degree supervisor&lt;/roleTerm&gt;
+              &lt;/role&gt;
+            &lt;/name&gt;
+            &lt;name type="corporate" displayLabel="College"&gt;
+              &lt;namePart&gt;Science&lt;/namePart&gt;
+              &lt;role&gt;
+                &lt;roleTerm type="code" authority="marcrelator"&gt;dgg&lt;/roleTerm&gt;
+                &lt;roleTerm type="text" authority="marcrelator"&gt;Degree granting institution&lt;/roleTerm&gt;
+              &lt;/role&gt;
+            &lt;/name&gt;`
+        </example>
+        <legacyVariation collection="nicholls-p15140coll51">Veterans of Southeast Louisiana uses description and affiliation subelements to record biographical data about oral history interviewees.</legacyVariation>
+        <legacyVariation collection="mcneese-p16313coll74">McNeese State University Electronic Theses uses multiple roles related to theses and dissertations.</legacyVariation>
+        <subelements>
+            <subelement name="Name Part" obligation="required" repeatable="yes" controlled="yes">
+                <encoding>mods:mods/mods:name/mods:namePart</encoding>
+                <definition>Contains the name itself, in its authorized form if available.</definition>
+                <content>
+                    <type>text</type>
+                    <vocabulary authority="LC Name Authority File" ref="http://id.loc.gov/authorities/names.html"/>
+                    <vocabulary authority="Virtual International Authority File" ref="http://viaf.org/"/>
+                </content>
+                <usageNote>Enter the full name of the person or entity associated with the resource.
+                    Enclose the entire name in a single `&lt;namePart&gt;` element rather than
+                    parsing its parts. Use the authorized form including associated dates. If
+                    no authorized form is available, enter last name or family name first, followed
+                    by a comma, followed by first or given names.</usageNote>
+            </subelement>
+            <subelement name="Role Term" obligation="optional" repeatable="yes" controlled="yes">
+                <encoding>mods:mods/mods:name/mods:role/mods:roleTerm</encoding>
+                <definition>Designates the relationship (role) of the entity recorded in Name to the resource described in the record.</definition>
+                <content>
+                    <type>text</type>
+                    <type>code</type>
+                    <vocabulary authority="MARC Code List for Relators" ref="https://www.loc.gov/marc/relators/relaterm.html"/>
+                </content> 
+                <usageNote>Enter the authorized textual term from the MARC Relators list for the
+                    role that the entity performed with regards to the resource in a
+                    `&lt;roleTerm&gt;` field with type="text". Enter the corresponding authorized
+                    code from the MARC Relators list in a `&lt;roleTerm&gt;` field with
+                    type="code".</usageNote>
+                <usageNote>"Creator" (text) and "cre" (code) are used as a default. Other frequently used Role Terms
+                    in the LDL include: Contributor/ctb, Photographer/pht, Author/aut, Artist/art,
+                    Interviewer/ivr, Interviewee/ive. Consult the MARC Relators list for further
+                    information.</usageNote>
+            </subelement>
+            <subelement name="Affiliation" obligation="optional" repeatable="yes" controlled="no">
+                <encoding>mods:mods/mods:name/mods:affiliation</encoding>
+                <definition>The name of an organization, institution, etc. with which the entity was associated at the time that the resource was created.</definition>
+                <content>
+                    <type>text</type>
+                </content>
+                <usageNote>Optionally, record uncontrolled added data contextualizing the person or entity in the Name field.</usageNote>
+            </subelement>
+            <subelement name="Description" obligation="optional" repeatable="yes" controlled="no">
+                <encoding>mods:mods/mods:name/mods:description</encoding>
+                <definition>The name of an organization, institution, etc. with which the entity was associated at the time that the resource was created.</definition>
+                <content>
+                    <type>text</type>
+                </content>
+                <usageNote>Optionally, record uncontrolled added data contextualizing the person or entity in the Name field.</usageNote>
+            </subelement>
+        </subelements>
+        <attributes>
+            <attribute name="type" obligation="optional">
+                <value>personal; corporate; conference; family</value>
+            </attribute>
+            <attribute name="authority" obligation="required if applicable">
+                <value>naf; viaf; local</value>
+            </attribute>
+            <attribute name="displayLabel" obligation="optional">
+                <value>[uncontrolled; if omitted, the default label will be used]</value>
+            </attribute>
+        </attributes>
+    </element>
+    
     <element name="Place of Origin" category="metaSetCore" obligation="optional" repeatable="yes" controlled="no">
         <defaultLabel>Place of Origin</defaultLabel>
         <encoding>mods:mods/mods:originInfo/mods:place/mods:placeTerm</encoding>
@@ -1211,6 +1350,9 @@
             record.</instruction>
         <usageNote>Use for simple and compound child item rows; leave blank for compound
             parents.</usageNote>
+        <usageNote>Compound child files must be named such that the last segment of their file names
+            contain a sortable sequence string (01, 02, etc.), separated from the rest of the file
+            name with a hyphen ('-') delimiter.</usageNote>
     </structuralData>
     
     <structuralData name="fileCount">

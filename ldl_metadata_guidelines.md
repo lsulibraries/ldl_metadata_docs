@@ -11,6 +11,7 @@ _Insert introductory text about this document here._
 1. [Part Detail](#part-detail)  
 1. [Part Extent](#part-extent)  
 1. [Identifier](#identifier)  
+1. [Name](#name)  
 1. [Place of Origin](#place-of-origin)  
 1. [Publisher](#publisher)  
 1. [Date](#date)  
@@ -91,8 +92,6 @@ _Insert introductory text about this document here._
     - Contents of subelements `<nonSort>`, `<title>`, and `<subTitle>` will be concatenated in display, with a space automatically inserted between NonSort and Title, and a colon and space automatically inserted between Title and Subtitle.  
     - Titles must always appear first in an item's displayed metadata.  
     - The repository will order items within a collection alphabetically by their main title, using the ASCII values of the characters in the title. Capitalization and punctuation will change the filing order. Numbers will file alphabetically as well, meaning a collection of 12 items with titles such as "Photo 1", "Photo 2", etc. will fall in the order Photo 1, Photo 10, Photo 11, Photo 12, Photo 2, Photo 3, Photo 4, Photo 5, Photo 6, Photo 7, Photo 8, Photo 9. To avoid unintended sort order results in your collection, be consistent with the use of capitalization and punctuation, carefully consider how dates are used as portions of titles, and when using numbers in titles, add leading zeros so that all numbers have the same amount of digits (if there are fewer than 10 items, you can use 1-9; if there are between 10-99, use 01-09; if there are 100-999, use 001-099; etc.)  
-- __Examples:__  
-    -   
   
 ### Subelements  
 
@@ -143,8 +142,6 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     - The value of the required Type attribute will be the field display label.  
     - Use when the resource being described was created or published as a standalone portion of a larger work, such as an issue of a periodical, a volume or episode in a series, etc. If the object described was only published within a larger entity (such as an article in a journal, a poem in an anthology, or a track on an album), use `<relatedItem type="host"><part>` instead to show the location of the part within the host item. Consult a metadata librarian for project specific guidance.  
-- __Examples:__  
-    -   
   
 ### Subelements  
 
@@ -196,8 +193,6 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     - The value of the required Unit attribute will be the field display label.  
     - Use when the resource being described was created or published as a standalone portion of a larger work, such as an issue of a periodical, a volume or episode in a series, etc. If the object described was only published within a larger entity (such as an article in a journal, a poem in an anthology, or a track on an album), use `<relatedItem type="host"><part>` instead to show the location of the part within the host item. Consult a metadata librarian for project specific guidance.  
-- __Examples:__  
-    -   
   
 ### Subelements  
 
@@ -256,14 +251,128 @@ _Insert introductory text about this document here._
     - The local file name of the content file may be recorded in this field.  
     - The type attribute designates the type of identifer, with the default for local item number or file name as type="local". Select from Standard Identifier Source Codes at http://www.loc.gov/standards/sourcelist/standard-identifier.html.  
     - The Identifier field is repeatable with different display labels and/or types.  
-- __Examples:__  
-    -   
   
 ### Attributes  
 
 | Attribute | Values | Obligation |  
 | --- | --- | --- |  
 | type | [uncontrolled; if omitted, "local" will be used] | optional |  
+| displayLabel | [uncontrolled; if omitted, the default label will be used] | optional |  
+
+[Back to Contents](#contents)  
+
+- - -
+## Name  
+### About  
+- __LDL Default Label:__ Name  
+- __MODS Element:__ mods/name  
+- __Definition:__ The name of a person, organization, or event (conference, meeting, etc.) associated in some way with the resource. ([source](https://www.loc.gov/standards/mods/userguide/name.html))  
+- __Obligation:__ optional  
+- __Repeatable:__ yes  
+- __Controlled:__ yes  
+- __Governing Standard:__ RDA 19.2, 19.3, 20.2  
+- __MARC:__ 1XX, 7XX  
+- __DC:__ dc:creator, dc:contributor  
+  
+### Usage  
+- __Instructions:__ Enter names of people associated with the creation of the resource under their appropriate roles. Use authorized forms of names from LCNAF or VIAF when they exist. Use controlled role terms from MARC Code List for Relators.  
+- __Usage Notes:__  
+    - Use of one or more Name fields is strongly recommended if a creator or contributor is known. If no names associated with the resource can be determined, leave the field blank; do not enter "Unknown" or any variant in a name field. Use a Content Note instead to denote unknown responsibility for the resource.  
+    - Catalogers should use the "type" attribute with all names; most will be either "personal" or "corporate".  
+    - The displayed field label will use the value of a Display Label attribute if given; or, the value of the Role subelement with Type attribute value "text"; or, the default "Name" if neither of these is provided.  
+- __Examples:__  
+    - 
+            <name type="personal" displayLabel="Veteran">
+              <namePart>Benoit, Andrew</namePart>
+              <role>
+                <roleTerm type="code" authority="marcrelator">dpc</roleTerm>
+                <roleTerm type="text" authority="marcrelator">Depicted</roleTerm>
+              </role>
+              <affiliation>U.S. Army</affiliation>
+              <affiliation>Unit: 1st Infantry</affiliation>
+              <description>Rank: Private</description>
+              <description>Date of Service: January 26, 1942 - February 1, 1945</description>
+              <description>Location of Military Service: North Africa; Sicily</description>
+            </name>
+          
+    - 
+            <name type="personal">
+              <namePart>Tamang, Rashmi</namePart>
+              <role>
+                <roleTerm type="code" authority="marcrelator">aut</roleTerm>
+                <roleTerm type="text" authority="marcrelator">Author</roleTerm>
+              </role>
+            </name>
+            <name type="personal" displayLabel="Major Professor">
+              <namePart>Christian, Omar E.</namePart>
+              <role>
+                <roleTerm type="code" authority="marcrelator">dgs</roleTerm>
+                <roleTerm type="text" authority="marcrelator">Degree supervisor</roleTerm>
+              </role>
+            </name>
+            <name type="corporate" displayLabel="College">
+              <namePart>Science</namePart>
+              <role>
+                <roleTerm type="code" authority="marcrelator">dgg</roleTerm>
+                <roleTerm type="text" authority="marcrelator">Degree granting institution</roleTerm>
+              </role>
+            </name>`
+          
+  
+### Subelements  
+
+| Subelement | Encoding | Obligation | Repeatable | Controlled |  
+| --- | --- | --- | --- | --- |  
+| Name Part | mods/name/namePart | required | yes | yes |  
+| Role Term | mods/name/role/roleTerm | optional | yes | yes |  
+| Affiliation | mods/name/affiliation | optional | yes | no |  
+| Description | mods/name/description | optional | yes | no |  
+  
+#### Name Part  
+- __Definition:__ Contains the name itself, in its authorized form if available.  
+
+- __Authority:__ LC Name Authority File  
+
+- __Authority:__ Virtual International Authority File  
+
+- __Usage Notes:__ Enter the full name of the person or entity associated with the resource.
+                    Enclose the entire name in a single `<namePart>` element rather than
+                    parsing its parts. Use the authorized form including associated dates. If
+                    no authorized form is available, enter last name or family name first, followed
+                    by a comma, followed by first or given names.  
+
+#### Role Term  
+- __Definition:__ Designates the relationship (role) of the entity recorded in Name to the resource described in the record.  
+
+- __Authority:__ MARC Code List for Relators  
+
+- __Usage Notes:__ Enter the authorized textual term from the MARC Relators list for the
+                    role that the entity performed with regards to the resource in a
+                    `<roleTerm>` field with type="text". Enter the corresponding authorized
+                    code from the MARC Relators list in a `<roleTerm>` field with
+                    type="code".  
+
+- __Usage Notes:__ "Creator" (text) and "cre" (code) are used as a default. Other frequently used Role Terms
+                    in the LDL include: Contributor/ctb, Photographer/pht, Author/aut, Artist/art,
+                    Interviewer/ivr, Interviewee/ive. Consult the MARC Relators list for further
+                    information.  
+
+#### Affiliation  
+- __Definition:__ The name of an organization, institution, etc. with which the entity was associated at the time that the resource was created.  
+
+- __Usage Notes:__ Optionally, record uncontrolled added data contextualizing the person or entity in the Name field.  
+
+#### Description  
+- __Definition:__ The name of an organization, institution, etc. with which the entity was associated at the time that the resource was created.  
+
+- __Usage Notes:__ Optionally, record uncontrolled added data contextualizing the person or entity in the Name field.  
+
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| type | personal; corporate; conference; family | optional |  
+| authority | naf; viaf; local | required if applicable |  
 | displayLabel | [uncontrolled; if omitted, the default label will be used] | optional |  
 
 [Back to Contents](#contents)  
@@ -288,8 +397,6 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     - Use of Getty Thesaurus of Geographic Names (TGN) is encouraged.  
     - Places as subjects of a resource are recorded under Subject - Geographic.  
-- __Examples:__  
-    -   
   
 ### Attributes  
 
@@ -317,8 +424,6 @@ _Insert introductory text about this document here._
 - __Type:__ text  
 - __Usage Notes:__  
     - Uploading to the LDL is not considered formal publication; credit to the repository for making the resource available is implied under Source.  
-- __Examples:__  
-    -   
   
 [Back to Contents](#contents)  
 
@@ -345,8 +450,6 @@ _Insert introductory text about this document here._
     - For a date range, repeat the date* field and use the point attributes to mark the start and end point.  
     - When a date is uncertain or supplied, indicate this through the use of the qualifier attribute rather than inserting characters such as "ca.", brackets, or a question mark as part of the field contents.  
     - When only a decade is known, enter a date range for the entire decade and mark the date as questionable. When only a century is known, enter a date range for the entire century and mark the date as questionable. Do not enter "Unknown," "No date," or similar.  
-- __Examples:__  
-    -   
   
 ### Attributes  
 
@@ -377,8 +480,6 @@ _Insert introductory text about this document here._
 - __Type:__ date  
 - __Usage Notes:__  
     - Use a single date only.  
-- __Examples:__  
-    -   
   
 ### Attributes  
 
@@ -408,8 +509,6 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     - Incorporate keywords in order to provide additional access points for searching.  
     - It is recommended that different display labels are used if repeating the Abstract field.  
-- __Examples:__  
-    -   
   
 ### Attributes  
 
@@ -441,8 +540,6 @@ _Insert introductory text about this document here._
     - Use this space to transcribe anything handwritten, stamped, or printed on the image, mat, or case.  
     - Include any descriptive information accompanying the item and any pertinent information not represented in other fields.  
     - Notes relating to physical description should be recorded in a Physical Description Note.  
-- __Examples:__  
-    -   
   
 ### Attributes  
 
@@ -507,8 +604,6 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     - Choose applicable genre terms from the Getty Art and Architecture Thesaurus (AAT), particularly terms denoted as "genre". Other vocabularies, including local ones, may be used with consultation from a metadata librarian.  
     - The Genre field should be used to characterize the content of the resource rather than the resource itself or its physical characteristics, which would be Form.  
-- __Examples:__  
-    -   
   
 ### Attributes  
 
@@ -539,8 +634,6 @@ _Insert introductory text about this document here._
     - Choose applicable terms from the Getty Art and Architecture Thesaurus (AAT), particularly terms denoted as "...by internal form". Other vocabularies, including local ones, may be used with consultation from a metadata librarian.  
     - The Form field should be used to describe the physical characteristics of the resource rather than its content, which would be Genre.  
     - Use of controlled terms is strongly encouraged for description; enter physical details that cannot be described using controlled vocabulary in the Physical Description Note field.  
-- __Examples:__  
-    -   
   
 ### Attributes  
 
@@ -571,8 +664,6 @@ _Insert introductory text about this document here._
     - The type attribute designates the type of note, with the default usage of this field in the LDL being type="medium". Select from MODS list of note types at http://www.loc.gov/standards/mods/mods-notes.html. Other note types present in the LDL include "condition", "marks", "technique", and "physical details".  
     - Use when information that is important for understanding the resource cannot be recorded using controlled vocabulary terms. Use the Form field to enter controlled vocabulary terms.  
     - Terminology may be drawn from AAT, but this field is not controlled or faceted.  
-- __Examples:__  
-    -   
   
 ### Attributes  
 
@@ -601,8 +692,6 @@ _Insert introductory text about this document here._
 - __Type:__ text  
 - __Usage Notes:__  
     - Typically used to describe the original physical resource.  
-- __Examples:__  
-    -   
   
 [Back to Contents](#contents)  
 
@@ -627,8 +716,6 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     - The enumerated values cover present LDL standards. Contact a metadata librarian if using file types not listed.  
     - For objects containing multiple file types, use a separate `<internetMediaType>` field for each.  
-- __Examples:__  
-    -   
   
 [Back to Contents](#contents)  
 
@@ -653,8 +740,6 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     - Required for any repository object that has a content file. In other words, this field is not required for compound parent objects, but is required for compound child objects, as well as simple objects.  
     - Most LDL content will be "reformatted digital". Use "digitized other analog" only when the digital resource was created by digitizing an intermediate form other than microform, such as a photocopy, of the original. See MODS User Guide for more on the definitions of values.  
-- __Examples:__  
-    -   
   
 [Back to Contents](#contents)  
 
@@ -725,8 +810,6 @@ _Insert introductory text about this document here._
 - __Type:__ text  
 - __Usage Notes:__  
     - Use the full title as it appears in the collection level metadata. The value should be consistent throughout the collection.  
-- __Examples:__  
-    -   
   
 [Back to Contents](#contents)  
 
@@ -750,8 +833,6 @@ _Insert introductory text about this document here._
     - The format is: http://louisianadigitallibrary.org/islandora/object/[collection_namespace]:collection. The collection_namespace is the institution code (namespace prefix), hyphen, collection code (alias) for the collection.  
     - This value should be consistent throughout the collection.  
     - Enter the URL only; any helper text will cause the MODS record to fail validation.  
-- __Examples:__  
-    -   
   
 [Back to Contents](#contents)  
 
@@ -774,8 +855,6 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     - Use this field when the name of the digital collection differs markedly from the repository collection, or when a digital collection is composed of materials from multiple repository collections.  
     - Use this field with one or more Part Name subelements to record archival arrangement within the repository collection.  
-- __Examples:__  
-    -   
   
 ### Subelements  
 
@@ -818,8 +897,6 @@ _Insert introductory text about this document here._
 - __Type:__ url  
 - __Usage Notes:__  
     - Enter the URL only; any helper text will cause the MODS record to fail validation.  
-- __Examples:__  
-    -   
   
 [Back to Contents](#contents)  
 
@@ -842,8 +919,6 @@ _Insert introductory text about this document here._
 - __Authority:__ LDL  
 - __Usage Notes:__  
     - If the physical resource is housed at a different institution from the LDC member institution providing it to the LDL, consult a metadata librarian for guidance.  
-- __Examples:__  
-    -   
   
 [Back to Contents](#contents)  
 
@@ -866,8 +941,6 @@ _Insert introductory text about this document here._
 - __Authority:__ [OCLC Member Directory](https://www.oclc.org/en/contacts/libraries.html)  
 - __Usage Notes:__  
     - If the physical resource is housed at a different institution from the LDC member institution providing it to the LDL, consult a metadata librarian for guidance.  
-- __Examples:__  
-    -   
   
 ### Attributes  
 
@@ -898,8 +971,6 @@ _Insert introductory text about this document here._
     - In the LDL display, this value will be the hyperlinked URL associated with the text in the Physical Location field.  
     - If the physical resource is housed at a different institution from the LDC member institution providing it to the LDL, consult a metadata librarian for guidance.  
     - Enter the URL only; any helper text will cause the MODS record to fail validation.  
-- __Examples:__  
-    -   
   
 [Back to Contents](#contents)  
 
@@ -968,8 +1039,6 @@ _Insert introductory text about this document here._
 - __Type:__ text  
 - __Usage Notes:__  
     - Either the legacy "Rights" field or the "Standardized Rights Statement" field is required, with the latter strongly recommended.  
-- __Examples:__  
-    -   
   
 ### Attributes  
 
@@ -999,8 +1068,6 @@ _Insert introductory text about this document here._
 - __Authority:__ [RightsStatements.org](http://rightsstatements.org/page/1.0/?language=en)  
 - __Usage Notes:__  
     - Either the legacy "Rights" field or the "Standardized Rights Statement" field is required, with the latter strongly recommended.  
-- __Examples:__  
-    -   
   
 ### Attributes  
 
@@ -1030,8 +1097,6 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     - Include at least one of an institutional email address or a URL for a dedicated website pertaining to reproduction and reuse.  
     - This field may include other information instructing users how to make a request for reuse or reproduction.  
-- __Examples:__  
-    -   
   
 ### Attributes  
 
@@ -1059,8 +1124,6 @@ _Insert introductory text about this document here._
 - __Type:__ text  
 - __Usage Notes:__  
     - This may include IP range limitations and/or embargoed materials.  
-- __Examples:__  
-    -   
   
 ### Attributes  
 
@@ -1087,8 +1150,6 @@ _Insert introductory text about this document here._
 - __Instructions:__ Enter a formatted bibliographic citation for the collection or item.  
 - __Type:__ text  
 - __Usage Notes:__  
-    -   
-- __Examples:__  
     -   
   
 ### Attributes  
