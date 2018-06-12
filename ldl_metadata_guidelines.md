@@ -2,8 +2,11 @@
 
 ## Introduction  
 _Insert introductory text about this document here._ 
- - **Terminology:** _Field_ is used as a generic descriptor; _Element_ is used specifically for the MODS encoding of a field. 
- - Element definitions come from MODS Version 3 User Guide except where the usage of the field is customized for LDL description.  
+ 
+            - **Terminology:** _Field_ is used as a generic descriptor; _Element_ is used specifically for the MODS encoding of a field. 
+
+            - The contents of _Subelements_ within a Field will typically be displayed together.
+            - Element definitions come from MODS Version 3 User Guide except where the usage of the field is customized for LDL description.  
 
 ## Contents  
 1. [MODS](#mods)  
@@ -26,6 +29,8 @@ _Insert introductory text about this document here._
 1. [Internet Media Type](#internet-media-type)  
 1. [Digital Origin](#digital-origin)  
 1. [Language](#language)  
+1. [Contributing Repository](#contributing-repository)  
+1. [Source Note](#source-note)  
 1. [Digital Collection](#digital-collection)  
 1. [Relation](#relation)  
 1. [Repository Collection](#repository-collection)  
@@ -281,7 +286,7 @@ _Insert introductory text about this document here._
     - Catalogers should use the "type" attribute with all names; most will be either "personal" or "corporate".  
     - The displayed field label will use the value of a Display Label attribute if given; or, the value of the Role subelement with Type attribute value "text"; or, the default "Name" if neither of these is provided.  
 - __Examples:__  
-    - 
+```
             <name type="personal" displayLabel="Veteran">
               <namePart>Benoit, Andrew</namePart>
               <role>
@@ -294,8 +299,8 @@ _Insert introductory text about this document here._
               <description>Date of Service: January 26, 1942 - February 1, 1945</description>
               <description>Location of Military Service: North Africa; Sicily</description>
             </name>
-          
-    - 
+        ```  
+```
             <name type="personal">
               <namePart>Tamang, Rashmi</namePart>
               <role>
@@ -317,7 +322,7 @@ _Insert introductory text about this document here._
                 <roleTerm type="text" authority="marcrelator">Degree granting institution</roleTerm>
               </role>
             </name>
-          
+        ```  
   
 ### Subelements  
 
@@ -572,12 +577,12 @@ _Insert introductory text about this document here._
     - Use all lowercase letters without punctuation.  
     - Use 'collection' attribute to distinguish collection-level records.  
 - __Examples:__  
-    - 
+```
             <typeOfResource>still image</typeOfResource>
-          
-    - 
+        ```  
+```
             <typeOfResource collection="yes">mixed material</typeOfResource>
-          
+        ```  
   
 ### Attributes  
 
@@ -768,24 +773,24 @@ _Insert introductory text about this document here._
     - The Language field is not recommended for resources that do not have a language component (such as photographs).  
     - "English"/"eng" as a Language value is not to be omitted and/or understood as a default.  
 - __Examples:__  
-    - 
+```
             <language>
               <languageTerm type="text">English</languageTerm>
               <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
             </language>
-          
-    - 
+        ```  
+```
             <language>
               <languageTerm type="text">French</languageTerm>
               <languageTerm type="code" authority="iso639-2b">fre</languageTerm>
             </language>
-          
-    - 
+        ```  
+```
             <language>
               <languageTerm type="text">Spanish</languageTerm>
               <languageTerm type="code" authority="iso639-2b">spa</languageTerm>
             </language>
-          
+        ```  
   
 ### Subelements  
 
@@ -808,6 +813,57 @@ _Insert introductory text about this document here._
 | --- | --- | --- |  
 | type | text; code | required |  
 | authority | iso639-2b | required if applicable |  
+
+[Back to Contents](#contents)  
+
+- - -
+## Contributing Repository  
+### About  
+- __LDL Default Label:__ Contributing Repository  
+- __MODS Element:__ mods/name[@type="corporate"]/namePart  
+- __Definition:__ The LDC member contributing the resource to the LDL.  
+- __Obligation:__ required  
+- __Repeatable:__ yes  
+- __Controlled:__ yes  
+- __Governing Standard:__   
+- __MARC:__   
+- __DC:__   
+  
+### Usage  
+- __Instructions:__ Select the name of the LDC member institution contributing the digital resource from the locally-controlled list.  
+- __Type:__ choice  
+- __Authority:__ LDL  
+- __Usage Notes:__  
+    - The local authority file will draw this value from LCNAF authorities.  
+    - The Contributing Repository field is a Name field with the Role of "Repository"/"rps".  
+  
+[Back to Contents](#contents)  
+
+- - -
+## Source Note  
+### About  
+- __LDL Default Label:__ Source Note  
+- __MODS Element:__ mods/note[@type="ownership"]  
+- __Definition:__ Notes clarifying details of ownership of the resource.  
+- __Obligation:__ optional  
+- __Repeatable:__ yes  
+- __Controlled:__ no  
+- __Governing Standard:__   
+- __MARC:__   
+- __DC:__   
+  
+### Usage  
+- __Instructions:__ Enter notes about the source or ownership of the resource. Do not repeat the name of the LDC Contributing Repository providing the resource.  
+- __Type:__ text  
+- __Usage Notes:__  
+    - Use when information pertaining to the resource's ownership cannot be recorded using controlled vocabulary terms in a Name field with an appropriate Role designation.  
+  
+### Attributes  
+
+| Attribute | Values | Obligation |  
+| --- | --- | --- |  
+| type | ownership | required |  
+| displayLabel | [uncontrolled; if omitted, the default label will be used] | optional |  
 
 [Back to Contents](#contents)  
 
@@ -1013,7 +1069,7 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     - Use names from an institutionally-controlled list as available.  
 - __Examples:__  
-    - 
+```
             <location>
               <holdingSimple>
                 <copyInformation>
@@ -1021,7 +1077,7 @@ _Insert introductory text about this document here._
                 </copyInformation>
               </holdingSimple>
             </location>
-          
+        ```  
   
 [Back to Contents](#contents)  
 
@@ -1044,11 +1100,11 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     -   
 - __Examples:__  
-    - 
+```
             <location>
               <shelfLocator>Manuscripts Number 600, Box 4, Folder 12</shelfLocator>
             </location>
-          
+        ```  
   
 [Back to Contents](#contents)  
 
@@ -1209,13 +1265,13 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     - All records should have either a Record Origin or Record Content Source subfield within Record Info.  
 - __Examples:__  
-    - 
+```
             <recordInfo>
               <languageOfCataloging>
                 <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
               </languageOfCataloging>
             </recordInfo>
-          
+        ```  
   
 ### Subelements  
 

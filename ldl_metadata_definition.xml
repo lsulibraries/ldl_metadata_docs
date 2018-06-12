@@ -905,6 +905,62 @@
         </attributes>
     </element>
     
+    <element name="Contributing Repository" category="metaSetAccess" obligation="required" repeatable="yes"
+        controlled="yes">
+        <defaultLabel>Contributing Repository</defaultLabel>
+        <encoding>mods:mods/mods:name[@type="corporate"]/mods:namePart</encoding>
+        <definition>The LDC member contributing the resource to the LDL.</definition>
+        <mapping schema="marc"/>
+        <mapping schema="dc"/>
+        <governingStandard/>
+        <content>
+            <type>choice</type>
+            <vocabulary authority="LDL"/>
+        </content>
+        <instruction>Select the name of the LDC member institution contributing the digital resource from the locally-controlled list.</instruction>
+        <usageNote>The local authority file will draw this value from LCNAF authorities.</usageNote>
+        <usageNote>The Contributing Repository field is a Name field with the Role of "Repository"/"rps".</usageNote>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml>An authority attribute with value "naf" and a displayLabel attribute with value "Contributing Repository" should be used on the `&lt;name&gt;` element. Include `&lt;role&gt;&lt;roleTerm&gt;` subelements with values "Repository" (type="text") and "rps" (type="code").</xml>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+    </element>
+    
+    
+    <element name="Source Note" category="metaSetAccess" obligation="optional" repeatable="yes"
+        controlled="no">
+        <defaultLabel>Source Note</defaultLabel>
+        <encoding>mods:mods/mods:note[@type="ownership"]</encoding>
+        <definition>Notes clarifying details of ownership of the resource.</definition>
+        <mapping schema="marc"/>
+        <mapping schema="dc"/>
+        <governingStandard/>
+        <content>
+            <type>text</type>
+        </content>
+        <instruction>Enter notes about the source or ownership of the resource. Do not repeat the name of the LDC Contributing Repository providing the resource.</instruction>
+        <usageNote>Use when information pertaining to the resource's ownership cannot be recorded using controlled vocabulary terms in a Name field with an appropriate Role designation.</usageNote>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml/>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <attributes>
+            <attribute name="type" obligation="required">
+                <value>ownership</value>
+            </attribute>
+            <attribute name="displayLabel" obligation="optional">
+                <value>[uncontrolled; if omitted, the default label will be used]</value>
+            </attribute>
+        </attributes>
+    </element>
+    
     <element name="Digital Collection" category="metaSetCollection" obligation="required" repeatable="no" controlled="yes">
         <defaultLabel>Digital Collection</defaultLabel>
         <encoding>mods:mods/mods:relatedItem[@type="host"]/mods:titleInfo/mods:title</encoding>
