@@ -142,11 +142,11 @@
                 <xsl:text>  &#xa;</xsl:text>
             </xsl:for-each>
         </xsl:if>
-        <xsl:if test="example">
+        <xsl:if test="example != ''">
             <xsl:text>- __Examples:__  &#xa;</xsl:text>
             <xsl:for-each select="example">
                 <xsl:text>    - </xsl:text>
-                <xsl:value-of select="normalize-space(.)"/>
+                <xsl:value-of select="replace(.,'\r\n','&#xa;')"/>
                 <xsl:text>  &#xa;</xsl:text>
             </xsl:for-each>
         </xsl:if>
