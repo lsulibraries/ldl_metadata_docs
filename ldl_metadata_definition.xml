@@ -377,7 +377,7 @@
                 &lt;roleTerm type="code" authority="marcrelator"&gt;dgg&lt;/roleTerm&gt;
                 &lt;roleTerm type="text" authority="marcrelator"&gt;Degree granting institution&lt;/roleTerm&gt;
               &lt;/role&gt;
-            &lt;/name&gt;`
+            &lt;/name&gt;
         </example>
         <legacyVariation collection="nicholls-p15140coll51">Veterans of Southeast Louisiana uses description and affiliation subelements to record biographical data about oral history interviewees.</legacyVariation>
         <legacyVariation collection="mcneese-p16313coll74">McNeese State University Electronic Theses uses multiple roles related to theses and dissertations.</legacyVariation>
@@ -661,8 +661,12 @@
             <webform>Use the drop down menu provided.</webform>
             <xml/>
         </inputGuidance>
-        <example>`&lt;typeOfResource&gt;still image&lt;/typeOfResource&gt;`</example>
-        <example>`&lt;typeOfResource collection="yes"&gt;mixed material&lt;/typeOfResource&gt;`</example>
+        <example>
+            &lt;typeOfResource&gt;still image&lt;/typeOfResource&gt;
+        </example>
+        <example>
+            &lt;typeOfResource collection="yes"&gt;mixed material&lt;/typeOfResource&gt;
+        </example>
         <attributes>
             <attribute name="collection" obligation="required if applicable">
                 <value>yes</value>
@@ -860,9 +864,24 @@
             <webform/>
             <xml>`&lt;language&gt;` is a container element, which should have one or more `&lt;languageTerm&gt;` subelements within it.</xml>
         </inputGuidance>
-        <example>`&lt;language&gt; &lt;languageTerm type="text"&gt;English&lt;/languageTerm&gt; &lt;languageTerm type="code" authority="iso639-2b"&gt;eng&lt;/languageTerm&gt; &lt;/language&gt;`</example>
-        <example>`&lt;language&gt; &lt;languageTerm type="text"&gt;French&lt;/languageTerm&gt; &lt;languageTerm type="code" authority="iso639-2b"&gt;fre&lt;/languageTerm&gt; &lt;/language&gt;`</example>
-        <example>`&lt;language&gt; &lt;languageTerm type="text"&gt;Spanish&lt;/languageTerm&gt; &lt;languageTerm type="code" authority="iso639-2b"&gt;spa&lt;/languageTerm&gt; &lt;/language&gt;`</example>
+        <example>
+            &lt;language&gt;
+              &lt;languageTerm type="text"&gt;English&lt;/languageTerm&gt;
+              &lt;languageTerm type="code" authority="iso639-2b"&gt;eng&lt;/languageTerm&gt;
+            &lt;/language&gt;
+        </example>
+        <example>
+            &lt;language&gt;
+              &lt;languageTerm type="text"&gt;French&lt;/languageTerm&gt;
+              &lt;languageTerm type="code" authority="iso639-2b"&gt;fre&lt;/languageTerm&gt;
+            &lt;/language&gt;
+        </example>
+        <example>
+            &lt;language&gt;
+              &lt;languageTerm type="text"&gt;Spanish&lt;/languageTerm&gt;
+              &lt;languageTerm type="code" authority="iso639-2b"&gt;spa&lt;/languageTerm&gt;
+            &lt;/language&gt;
+        </example>
         <legacyVariation collection="[collection namespace]"/>
         <subelements>
             <subelement name="Language Term" obligation="required" repeatable="yes" controlled="yes">
@@ -1088,7 +1107,15 @@
             <webform/>
             <xml/>
         </inputGuidance>
-        <example>`&lt;location&gt; &lt;holdingSimple&gt; &lt;copyInformation&gt; &lt;subLocation&gt;McNeese Archives&lt;/subLocation&gt; &lt;/copyInformation&gt; &lt;/holdingSimple&gt; &lt;/location&gt;`</example>
+        <example>
+            &lt;location&gt;
+              &lt;holdingSimple&gt;
+                &lt;copyInformation&gt;
+                  &lt;subLocation&gt;McNeese Archives&lt;/subLocation&gt;
+                &lt;/copyInformation&gt;
+              &lt;/holdingSimple&gt;
+            &lt;/location&gt;
+        </example>
         <legacyVariation collection="[collection namespace]"/>
     </element>
     
@@ -1110,7 +1137,11 @@
             <webform/>
             <xml/>
         </inputGuidance>
-        <example>`&lt;location&gt; &lt;shelfLocator&gt;Manuscripts Number 600, Box 4, Folder 12&lt;/shelfLocator&gt; &lt;/location&gt;`</example>
+        <example>
+            &lt;location&gt;
+              &lt;shelfLocator&gt;Manuscripts Number 600, Box 4, Folder 12&lt;/shelfLocator&gt;
+            &lt;/location&gt;
+        </example>
         <legacyVariation collection="[collection namespace]"/>
     </element>
     
@@ -1270,7 +1301,13 @@
             <webform/>
             <xml>`&lt;recordInfo&gt;` is a container element, which should have one or more subelements within it.</xml>
         </inputGuidance>
-        <example>`&lt;recordInfo&gt; &lt;languageOfCataloging&gt; &lt;languageTerm type="code" authority="iso639-2b"&gt;eng&lt;/languageTerm&gt; &lt;/languageOfCataloging&gt; &lt;/recordInfo&gt;`</example>
+        <example>
+            &lt;recordInfo&gt;
+              &lt;languageOfCataloging&gt;
+                &lt;languageTerm type="code" authority="iso639-2b"&gt;eng&lt;/languageTerm&gt;
+              &lt;/languageOfCataloging&gt;
+            &lt;/recordInfo&gt;
+        </example>
         <legacyVariation collection="[collection namespace]"/>
         <subelements>
             <subelement name="Record Content Source" obligation="required if applicable" repeatable="yes" controlled="yes">

@@ -316,7 +316,7 @@ _Insert introductory text about this document here._
                 <roleTerm type="code" authority="marcrelator">dgg</roleTerm>
                 <roleTerm type="text" authority="marcrelator">Degree granting institution</roleTerm>
               </role>
-            </name>`
+            </name>
           
   
 ### Subelements  
@@ -572,8 +572,12 @@ _Insert introductory text about this document here._
     - Use all lowercase letters without punctuation.  
     - Use 'collection' attribute to distinguish collection-level records.  
 - __Examples:__  
-    - `<typeOfResource>still image</typeOfResource>`  
-    - `<typeOfResource collection="yes">mixed material</typeOfResource>`  
+    - 
+            <typeOfResource>still image</typeOfResource>
+          
+    - 
+            <typeOfResource collection="yes">mixed material</typeOfResource>
+          
   
 ### Attributes  
 
@@ -764,9 +768,24 @@ _Insert introductory text about this document here._
     - The Language field is not recommended for resources that do not have a language component (such as photographs).  
     - "English"/"eng" as a Language value is not to be omitted and/or understood as a default.  
 - __Examples:__  
-    - `<language> <languageTerm type="text">English</languageTerm> <languageTerm type="code" authority="iso639-2b">eng</languageTerm> </language>`  
-    - `<language> <languageTerm type="text">French</languageTerm> <languageTerm type="code" authority="iso639-2b">fre</languageTerm> </language>`  
-    - `<language> <languageTerm type="text">Spanish</languageTerm> <languageTerm type="code" authority="iso639-2b">spa</languageTerm> </language>`  
+    - 
+            <language>
+              <languageTerm type="text">English</languageTerm>
+              <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
+            </language>
+          
+    - 
+            <language>
+              <languageTerm type="text">French</languageTerm>
+              <languageTerm type="code" authority="iso639-2b">fre</languageTerm>
+            </language>
+          
+    - 
+            <language>
+              <languageTerm type="text">Spanish</languageTerm>
+              <languageTerm type="code" authority="iso639-2b">spa</languageTerm>
+            </language>
+          
   
 ### Subelements  
 
@@ -994,7 +1013,15 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     - Use names from an institutionally-controlled list as available.  
 - __Examples:__  
-    - `<location> <holdingSimple> <copyInformation> <subLocation>McNeese Archives</subLocation> </copyInformation> </holdingSimple> </location>`  
+    - 
+            <location>
+              <holdingSimple>
+                <copyInformation>
+                  <subLocation>McNeese Archives</subLocation>
+                </copyInformation>
+              </holdingSimple>
+            </location>
+          
   
 [Back to Contents](#contents)  
 
@@ -1017,7 +1044,11 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     -   
 - __Examples:__  
-    - `<location> <shelfLocator>Manuscripts Number 600, Box 4, Folder 12</shelfLocator> </location>`  
+    - 
+            <location>
+              <shelfLocator>Manuscripts Number 600, Box 4, Folder 12</shelfLocator>
+            </location>
+          
   
 [Back to Contents](#contents)  
 
@@ -1178,7 +1209,13 @@ _Insert introductory text about this document here._
 - __Usage Notes:__  
     - All records should have either a Record Origin or Record Content Source subfield within Record Info.  
 - __Examples:__  
-    - `<recordInfo> <languageOfCataloging> <languageTerm type="code" authority="iso639-2b">eng</languageTerm> </languageOfCataloging> </recordInfo>`  
+    - 
+            <recordInfo>
+              <languageOfCataloging>
+                <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
+              </languageOfCataloging>
+            </recordInfo>
+          
   
 ### Subelements  
 
