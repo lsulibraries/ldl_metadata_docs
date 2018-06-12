@@ -299,7 +299,8 @@ _Insert introductory text about this document here._
               <description>Date of Service: January 26, 1942 - February 1, 1945</description>
               <description>Location of Military Service: North Africa; Sicily</description>
             </name>
-        ```  
+          
+```
 ```
             <name type="personal">
               <namePart>Tamang, Rashmi</namePart>
@@ -322,7 +323,8 @@ _Insert introductory text about this document here._
                 <roleTerm type="text" authority="marcrelator">Degree granting institution</roleTerm>
               </role>
             </name>
-        ```  
+          
+```
   
 ### Subelements  
 
@@ -579,10 +581,12 @@ _Insert introductory text about this document here._
 - __Examples:__  
 ```
             <typeOfResource>still image</typeOfResource>
-        ```  
+          
+```
 ```
             <typeOfResource collection="yes">mixed material</typeOfResource>
-        ```  
+          
+```
   
 ### Attributes  
 
@@ -777,20 +781,20 @@ _Insert introductory text about this document here._
             <language>
               <languageTerm type="text">English</languageTerm>
               <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
-            </language>
-        ```  
+            </language>  
+```
 ```
             <language>
               <languageTerm type="text">French</languageTerm>
               <languageTerm type="code" authority="iso639-2b">fre</languageTerm>
-            </language>
-        ```  
+            </language>  
+```
 ```
             <language>
               <languageTerm type="text">Spanish</languageTerm>
               <languageTerm type="code" authority="iso639-2b">spa</languageTerm>
-            </language>
-        ```  
+            </language>  
+```
   
 ### Subelements  
 
@@ -1077,7 +1081,8 @@ _Insert introductory text about this document here._
                 </copyInformation>
               </holdingSimple>
             </location>
-        ```  
+          
+```
   
 [Back to Contents](#contents)  
 
@@ -1104,7 +1109,8 @@ _Insert introductory text about this document here._
             <location>
               <shelfLocator>Manuscripts Number 600, Box 4, Folder 12</shelfLocator>
             </location>
-        ```  
+          
+```
   
 [Back to Contents](#contents)  
 
@@ -1271,7 +1277,8 @@ _Insert introductory text about this document here._
                 <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
               </languageOfCataloging>
             </recordInfo>
-        ```  
+          
+```
   
 ### Subelements  
 

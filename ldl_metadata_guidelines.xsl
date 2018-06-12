@@ -150,8 +150,7 @@
             <xsl:for-each select="example">
                 <xsl:text>```</xsl:text>
                 <xsl:value-of select="replace(.,'\r\n','&#xa;')"/>
-                <xsl:text>```</xsl:text>
-                <xsl:text>  &#xa;</xsl:text>
+                <xsl:text>  &#xa;```&#xa;</xsl:text>
             </xsl:for-each>
         </xsl:if>
         <xsl:text>  &#xa;</xsl:text>

@@ -104,8 +104,8 @@
         </sub>
         <sub inst="lsu-sc">
             <officialName>LSU Libraries Special Collections</officialName>
-            <source>Louisiana State University Libraries, Special Collections ( http://www.lib.lsu.edu/special )</source>
-            <physicalLocation>Louisiana State University: LSU Libraries</physicalLocation>
+            <source>LSU Libraries. Special Collections ( http://www.lib.lsu.edu/special )</source>
+            <physicalLocation>LSU Libraries</physicalLocation>
             <department>Hill Memorial Library: Special Collections</department>
             <oclc>LUU</oclc>
             <institutionWebSite>http://lib.lsu.edu</institutionWebSite>
@@ -128,11 +128,11 @@
         </sub>
         <sub inst="lsu-ua">
             <officialName>LSU University Archives</officialName>
-            <source></source>
-            <physicalLocation/>
-            <department/>
-            <oclc/>
-            <institutionWebSite/>
+            <source>LSU Libraries. Special Collections ( http://www.lib.lsu.edu/special/archives )</source>
+            <physicalLocation>LSU Libraries</physicalLocation>
+            <department>Hill Memorial Library: Special Collections</department>
+            <oclc>LUU</oclc>
+            <institutionWebSite>http://lib.lsu.edu</institutionWebSite>
         </sub>
     </member>
     
