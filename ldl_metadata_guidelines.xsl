@@ -186,7 +186,7 @@
             <xsl:text>#### </xsl:text>
             <xsl:value-of select="@name"/>
             <xsl:text>  &#xa;</xsl:text>
-            <xsl:for-each select="definition|content/@type|content/vocabulary/@authority|usageNote">
+            <xsl:for-each select="definition|content/@type|content/vocabulary/@authority|instruction">
                 <xsl:text>- __</xsl:text>
                 <xsl:choose>
                     <xsl:when test="name() eq 'usageNote'">

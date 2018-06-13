@@ -77,12 +77,12 @@ _Insert introductory text about this document here._
 #### NonSort  
 - __Definition:__ Any initial article that should not be used for alphabetical arrangement or database searches.  
 
-- __Usage Notes:__ Use for articles or punctuation that fall at the beginning of the title. Do not duplicate the contents of `<nonSort>` within the `<title>` subelement.  
+- __Instruction:__ Use for articles or punctuation that fall at the beginning of the title. Do not duplicate the contents of `<nonSort>` within the `<title>` subelement.  
 
 #### SubTitle  
 - __Definition:__ The remainder of title information following the core title.  
 
-- __Usage Notes:__ A colon and space will be inserted automatically in the display, and do not need to be entered.  
+- __Instruction:__ A colon and space will be inserted automatically in the display, and do not need to be entered.  
 
 ### Attributes  
 
@@ -124,17 +124,17 @@ _Insert introductory text about this document here._
 #### Number  
 - __Definition:__ Contains the actual number within the part.  
 
-- __Usage Notes:__ Enter only the number of the part.  
+- __Instruction:__ Enter only the number of the part.  
 
 #### Caption  
 - __Definition:__ Contains the caption describing the enumeration within a part.  
 
-- __Usage Notes:__ Enter a caption to display in front of the part number, such as "vol." or "no.". A space will be inserted between the Caption and the Number.  
+- __Instruction:__ Enter a caption to display in front of the part number, such as "vol." or "no.". A space will be inserted between the Caption and the Number.  
 
 #### Title  
 - __Definition:__ Contains the title of the part.  
 
-- __Usage Notes:__ Enter the title of the part, if it is different than the core title of the resource.  
+- __Instruction:__ Enter the title of the part, if it is different than the core title of the resource.  
 
 ### Attributes  
 
@@ -176,22 +176,22 @@ _Insert introductory text about this document here._
 #### Start  
 - __Definition:__ Contains the beginning unit of the extent within a part.  
 
-- __Usage Notes:__ Enter the first number of the range of units indicated by the "Unit" attribute, for example the first page number.  
+- __Instruction:__ Enter the first number of the range of units indicated by the "Unit" attribute, for example the first page number.  
 
 #### End  
 - __Definition:__ Contains the ending unit of the extent within a part.  
 
-- __Usage Notes:__ Enter the last number of the range of units indicated by the "Unit" attribute, for example the last page number.  
+- __Instruction:__ Enter the last number of the range of units indicated by the "Unit" attribute, for example the last page number.  
 
 #### Total  
 - __Definition:__ Contains the total number of units within a part, rather than specific units.  
 
-- __Usage Notes:__ Enter the total number of units indicated by the "Unit" attribute, for example "5" to indicate a total of 5 pages.  
+- __Instruction:__ Enter the total number of units indicated by the "Unit" attribute, for example "5" to indicate a total of 5 pages.  
 
 #### List  
 - __Definition:__ Contains a textual listing of the units within a part.  
 
-- __Usage Notes:__ Enter a textual description of units, rather than number alone, indicated by the "Unit" attribute, for example "pp. 5-9".  
+- __Instruction:__ Enter a textual description of units, rather than number alone, indicated by the "Unit" attribute, for example "pp. 5-9".  
 
 ### Attributes  
 
@@ -305,26 +305,26 @@ _Insert introductory text about this document here._
 
 - __Authority:__ Virtual International Authority File  
 
-- __Usage Notes:__ Enter the full name of the person or entity associated with the resource. Enclose the entire name in a single `<namePart>` element rather than parsing its parts. Use the authorized form including associated dates. If no authorized form is available, enter last name or family name first, followed by a comma, followed by first or given names.  
+- __Instruction:__ Enter the full name of the person or entity associated with the resource. Enclose the entire name in a single `<namePart>` element rather than parsing its parts. Use the authorized form including associated dates. If no authorized form is available, enter last name or family name first, followed by a comma, followed by first or given names.  
 
 #### Role Term  
 - __Definition:__ Designates the relationship (role) of the entity recorded in Name to the resource described in the record.  
 
 - __Authority:__ MARC Code List for Relators  
 
-- __Usage Notes:__ Enter the authorized textual term from the MARC Relators list for the role that the entity performed with regards to the resource in a `<roleTerm>` field with type="text". Enter the corresponding authorized code from the MARC Relators list in a `<roleTerm>` field with type="code".  
+- __Instruction:__ Enter the authorized textual term from the MARC Relators list for the role that the entity performed with regards to the resource in a `<roleTerm>` field with type="text". Enter the corresponding authorized code from the MARC Relators list in a `<roleTerm>` field with type="code".  
 
-- __Usage Notes:__ "Creator" (text) and "cre" (code) are used as a default. Other frequently used Role Terms in the LDL include: Contributor/ctb, Photographer/pht, Author/aut, Artist/art, Interviewer/ivr, Interviewee/ive. Consult the MARC Relators list for further information.  
+- __Instruction:__ "Creator" (text) and "cre" (code) are used as a default. Other frequently used Role Terms in the LDL include: Contributor/ctb, Photographer/pht, Author/aut, Artist/art, Interviewer/ivr, Interviewee/ive. Consult the MARC Relators list for further information.  
 
 #### Affiliation  
 - __Definition:__ The name of an organization, institution, etc. with which the entity was associated at the time that the resource was created.  
 
-- __Usage Notes:__ Optionally, record uncontrolled added data contextualizing the person or entity in the Name field.  
+- __Instruction:__ Optionally, record uncontrolled added data contextualizing the person or entity in the Name field.  
 
 #### Description  
 - __Definition:__ The name of an organization, institution, etc. with which the entity was associated at the time that the resource was created.  
 
-- __Usage Notes:__ Optionally, record uncontrolled added data contextualizing the person or entity in the Name field.  
+- __Instruction:__ Optionally, record uncontrolled added data contextualizing the person or entity in the Name field.  
 
 ### Attributes  
 
@@ -726,6 +726,7 @@ _Insert introductory text about this document here._
     - For multiple languages present in a resource, repeat the `<language>` wrapper element, each with a pair of `<languageTerm>` subelements for text and code.  
     - The Language field is not recommended for resources that do not have a language component (such as photographs).  
     - "English"/"eng" as a Language value is not to be omitted and/or understood as a default.  
+    - All attributes below are applied to the `<languageTerm>` subelement.  
 - __Examples:__  
 ```
             <language>
@@ -757,9 +758,7 @@ _Insert introductory text about this document here._
 
 - __Authority:__ ISO 639-2  
 
-- __Usage Notes:__ All attributes below are applied to the `<languageTerm>` subelement.  
-
-- __Usage Notes:__ Use the type attribute on the `<languageTerm>` subelement to designate text and code values. The `<languageTerm>` subelement with attribute type="code" must have an authority attribute with the value "iso639-2b".  
+- __Instruction:__ Use the type attribute on the `<languageTerm>` subelement to designate text and code values. The `<languageTerm>` subelement with attribute type="code" must have an authority attribute with the value "iso639-2b".  
 
 ### Attributes  
 
@@ -895,16 +894,12 @@ _Insert introductory text about this document here._
 #### Part Number  
 - __Definition:__ A part or section number of a title.  
 
-- __Usage Notes:__ For archival arrangement, enter the level of arrangement and numeration, for example, "Series I" or "Folder 3".  
-
-- __Usage Notes:__ Repeat the Part Number subelement for each level of arrangement being recorded, i.e. record Series, Subseries, Box, and Folder each as a separate Part Number subelement.  
+- __Instruction:__ For archival arrangement, enter the level of arrangement and numeration, for example, "Series I" or "Folder 3". Repeat the Part Number subelement for each level of arrangement being recorded, i.e. record Series, Subseries, Box, and Folder each as a separate Part Number subelement.  
 
 #### Part Name  
 - __Definition:__ A part or section name of a title.  
 
-- __Usage Notes:__ For archival arrangement, enter the name/title of the division in the preceding Part Number subelement, if applicable.  
-
-- __Usage Notes:__ Repeat the Part Name subelement for each level of arrangement being recorded.  
+- __Instruction:__ For archival arrangement, enter the name/title of the division in the preceding Part Number subelement, if applicable. Repeat the Part Name subelement for each level of arrangement being recorded.  
 
 [Back to Contents](#contents)  
 
@@ -1242,27 +1237,27 @@ _Insert introductory text about this document here._
 
 - __Authority:__ local  
 
-- __Usage Notes:__ For original metadata records, enter the creator of the record in the format "institution_code/cataloger_initials", e.g. lsu/cmk. Uses an authority attribute with value "local". Optional for records which have a Record Origin field.  
+- __Instruction:__ For original metadata records, enter the creator of the record in the format "institution_code/cataloger_initials", e.g. lsu/cmk. Uses an authority attribute with value "local". Optional for records which have a Record Origin field.  
 
 #### Record Origin  
 - __Definition:__ Shows the origin or provenance of the MODS record.  
 
-- __Usage Notes:__ For metadata records that were migrated or generated through an automated process, enter a brief description of that process.  
+- __Instruction:__ For metadata records that were migrated or generated through an automated process, enter a brief description of that process.  
 
 #### Record Creation Date  
 - __Definition:__ The date on which the original MODS record was first created.  
 
-- __Usage Notes:__ Enter the date of creation of the record using W3CDTF encoding, YYYY-MM-DD. Uses an encoding attribute with value "w3cdtf".  
+- __Instruction:__ Enter the date of creation of the record using W3CDTF encoding, YYYY-MM-DD. Uses an encoding attribute with value "w3cdtf".  
 
 #### Record Change Date  
 - __Definition:__ The date the original MODS record was last modified.  
 
-- __Usage Notes:__ Enter the date that record was modified using W3CDTF encoding, YYYY-MM-DD. Uses an encoding attribute with value "w3cdtf".  
+- __Instruction:__ Enter the date that record was modified using W3CDTF encoding, YYYY-MM-DD. Uses an encoding attribute with value "w3cdtf".  
 
 #### Language of Cataloging  
 - __Definition:__ The language of the text of the cataloging in the MODS record.  
 
-- __Usage Notes:__ Use the ISO alpha-3 encoding for the language used in cataloging the record. Note that this does not pertain to the language of the resource itself. Uses a type attribute with value "code" and an authority attribute with value "iso639-2b".  
+- __Instruction:__ Use the ISO alpha-3 encoding for the language used in cataloging the record. Note that this does not pertain to the language of the resource itself. Uses a type attribute with value "code" and an authority attribute with value "iso639-2b".  
 
 [Back to Contents](#contents)  
 
