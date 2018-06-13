@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<document>
 <elementList>
     <!--
     <element name="[name]" category="metaSetCore|metaSetContent|metaSetCarrier|metaSetAccess|metaSetCollection|metaSetAdmin" obligation="required|required if applicable|optional" repeatable="yes|no" controlled="yes|no">
@@ -1407,11 +1407,11 @@
             </subelement>
         </subelements>
     </element>
-    
+</elementList>    
     <!-- The following set of fields are for use in spreadsheet metadata creation only. 
         They are used to match records with content files in the CSV to MODS MIK toolchain. 
         See https://github.com/MarcusBarnes/mik/wiki for additional information. -->
-    
+<structuralDataFields>    
     <structuralData name="identifier">
         <instruction>Enter a unique value for the record. Best practice is to use a sequential item
             number per record, beginning at 1, numbering each line in order, 1, 2, 3,
@@ -1453,5 +1453,14 @@
         <usageNote>Use for compound parent and simple item rows; leave blank for compound child
             items.</usageNote>
     </structuralData>
+</structuralDataFields>
     
-</elementList>
+    <aboutText>
+        <about type="terminology">_Field_ is used as a generic descriptor.</about>
+        <about type="terminology">_Element_ is used specifically for the MODS encoding of a field.</about>
+        <about>The contents of _Subelements_ within a Field will typically be displayed together.</about>
+        <about>Element definitions come from MODS Version 3 User Guide except where the usage of the field is customized for LDL description.</about>
+        <about>In the encoded examples, the mods: namespace prefix and root MODS element are omitted/implied.</about>
+    </aboutText>
+
+</document>

@@ -2,50 +2,15 @@
 
 ## Introduction  
 _Insert introductory text about this document here._ 
- 
-            - **Terminology:** _Field_ is used as a generic descriptor; _Element_ is used specifically for the MODS encoding of a field. 
-
-            - The contents of _Subelements_ within a Field will typically be displayed together.
-            - Element definitions come from MODS Version 3 User Guide except where the usage of the field is customized for LDL description.  
+- The contents of _Subelements_ within a Field will typically be displayed together.  
+- Element definitions come from MODS Version 3 User Guide except where the usage of the field is customized for LDL description.  
+- In the encoded examples, the mods: namespace prefix and root MODS element are omitted/implied.  
+- **Terminology:**: 
+    - _Field_ is used as a generic descriptor.  
+    - _Element_ is used specifically for the MODS encoding of a field.  
+  
 
 ## Contents  
-1. [MODS](#mods)  
-1. [Title](#title)  
-1. [Part Detail](#part-detail)  
-1. [Part Extent](#part-extent)  
-1. [Identifier](#identifier)  
-1. [Name](#name)  
-1. [Place of Origin](#place-of-origin)  
-1. [Publisher](#publisher)  
-1. [Date](#date)  
-1. [Date Captured](#date-captured)  
-1. [Abstract](#abstract)  
-1. [Note](#note)  
-1. [Type of Resource](#type-of-resource)  
-1. [Genre](#genre)  
-1. [Form](#form)  
-1. [Physical Description Note](#physical-description-note)  
-1. [Extent](#extent)  
-1. [Internet Media Type](#internet-media-type)  
-1. [Digital Origin](#digital-origin)  
-1. [Language](#language)  
-1. [Contributing Repository](#contributing-repository)  
-1. [Source Note](#source-note)  
-1. [Digital Collection](#digital-collection)  
-1. [Relation](#relation)  
-1. [Repository Collection](#repository-collection)  
-1. [Repository Collection Guide](#repository-collection-guide)  
-1. [Physical Location](#physical-location)  
-1. [OCLC Member Symbol](#oclc-member-symbol)  
-1. [Institution Web Site](#institution-web-site)  
-1. [Sublocation](#sublocation)  
-1. [Shelf Location](#shelf-location)  
-1. [Rights](#rights)  
-1. [Standardized Rights Statement](#standardized-rights-statement)  
-1. [Contact Information](#contact-information)  
-1. [Restriction on Access](#restriction-on-access)  
-1. [Preferred Citation](#preferred-citation)  
-1. [Record Info](#record-info)  
 - - -
 ## MODS  
 ### About  
@@ -299,8 +264,7 @@ _Insert introductory text about this document here._
               <description>Date of Service: January 26, 1942 - February 1, 1945</description>
               <description>Location of Military Service: North Africa; Sicily</description>
             </name>
-          
-```
+        ```
 ```
             <name type="personal">
               <namePart>Tamang, Rashmi</namePart>
@@ -323,8 +287,7 @@ _Insert introductory text about this document here._
                 <roleTerm type="text" authority="marcrelator">Degree granting institution</roleTerm>
               </role>
             </name>
-          
-```
+        ```
   
 ### Subelements  
 
@@ -342,27 +305,16 @@ _Insert introductory text about this document here._
 
 - __Authority:__ Virtual International Authority File  
 
-- __Usage Notes:__ Enter the full name of the person or entity associated with the resource.
-                    Enclose the entire name in a single `<namePart>` element rather than
-                    parsing its parts. Use the authorized form including associated dates. If
-                    no authorized form is available, enter last name or family name first, followed
-                    by a comma, followed by first or given names.  
+- __Usage Notes:__ Enter the full name of the person or entity associated with the resource. Enclose the entire name in a single `<namePart>` element rather than parsing its parts. Use the authorized form including associated dates. If no authorized form is available, enter last name or family name first, followed by a comma, followed by first or given names.  
 
 #### Role Term  
 - __Definition:__ Designates the relationship (role) of the entity recorded in Name to the resource described in the record.  
 
 - __Authority:__ MARC Code List for Relators  
 
-- __Usage Notes:__ Enter the authorized textual term from the MARC Relators list for the
-                    role that the entity performed with regards to the resource in a
-                    `<roleTerm>` field with type="text". Enter the corresponding authorized
-                    code from the MARC Relators list in a `<roleTerm>` field with
-                    type="code".  
+- __Usage Notes:__ Enter the authorized textual term from the MARC Relators list for the role that the entity performed with regards to the resource in a `<roleTerm>` field with type="text". Enter the corresponding authorized code from the MARC Relators list in a `<roleTerm>` field with type="code".  
 
-- __Usage Notes:__ "Creator" (text) and "cre" (code) are used as a default. Other frequently used Role Terms
-                    in the LDL include: Contributor/ctb, Photographer/pht, Author/aut, Artist/art,
-                    Interviewer/ivr, Interviewee/ive. Consult the MARC Relators list for further
-                    information.  
+- __Usage Notes:__ "Creator" (text) and "cre" (code) are used as a default. Other frequently used Role Terms in the LDL include: Contributor/ctb, Photographer/pht, Author/aut, Artist/art, Interviewer/ivr, Interviewee/ive. Consult the MARC Relators list for further information.  
 
 #### Affiliation  
 - __Definition:__ The name of an organization, institution, etc. with which the entity was associated at the time that the resource was created.  
@@ -581,12 +533,10 @@ _Insert introductory text about this document here._
 - __Examples:__  
 ```
             <typeOfResource>still image</typeOfResource>
-          
-```
+        ```
 ```
             <typeOfResource collection="yes">mixed material</typeOfResource>
-          
-```
+        ```
   
 ### Attributes  
 
@@ -781,20 +731,20 @@ _Insert introductory text about this document here._
             <language>
               <languageTerm type="text">English</languageTerm>
               <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
-            </language>  
-```
+            </language>
+        ```
 ```
             <language>
               <languageTerm type="text">French</languageTerm>
               <languageTerm type="code" authority="iso639-2b">fre</languageTerm>
-            </language>  
-```
+            </language>
+        ```
 ```
             <language>
               <languageTerm type="text">Spanish</languageTerm>
               <languageTerm type="code" authority="iso639-2b">spa</languageTerm>
-            </language>  
-```
+            </language>
+        ```
   
 ### Subelements  
 
@@ -1081,8 +1031,7 @@ _Insert introductory text about this document here._
                 </copyInformation>
               </holdingSimple>
             </location>
-          
-```
+        ```
   
 [Back to Contents](#contents)  
 
@@ -1109,8 +1058,7 @@ _Insert introductory text about this document here._
             <location>
               <shelfLocator>Manuscripts Number 600, Box 4, Folder 12</shelfLocator>
             </location>
-          
-```
+        ```
   
 [Back to Contents](#contents)  
 
@@ -1277,8 +1225,7 @@ _Insert introductory text about this document here._
                 <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
               </languageOfCataloging>
             </recordInfo>
-          
-```
+        ```
   
 ### Subelements  
 
