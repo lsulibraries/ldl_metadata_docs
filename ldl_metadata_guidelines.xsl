@@ -15,16 +15,24 @@
         <xsl:copy>
             <xsl:call-template name="intro"/>
             <xsl:call-template name="toc"/>
-            <xsl:apply-templates select="element" />
+            <xsl:apply-templates select="elementList/element" />
         </xsl:copy>
     </xsl:template>
     
     <xsl:template name="intro">
         <xsl:text>## Introduction  &#xa;</xsl:text>
-        <xsl:text>_Insert introductory text about this document here._ &#xa; 
-            - **Terminology:** _Field_ is used as a generic descriptor; _Element_ is used specifically for the MODS encoding of a field. &#xa;
-            - The contents of _Subelements_ within a Field will typically be displayed together.
-            - Element definitions come from MODS Version 3 User Guide except where the usage of the field is customized for LDL description.</xsl:text>
+        <xsl:text>_Insert introductory text about this document here._ &#xa;</xsl:text> 
+        <xsl:for-each select="aboutText/about[not(@type)]">
+            <xsl:text>- </xsl:text>
+            <xsl:value-of select="normalize-space(.)"/>
+            <xsl:text>  &#xa;</xsl:text>
+        </xsl:for-each>
+        <xsl:text>- **Terminology:**: &#xa;</xsl:text>
+        <xsl:for-each select="aboutText/about[@type='terminology']">
+            <xsl:text>    - </xsl:text>
+            <xsl:value-of select="normalize-space(.)"/>
+            <xsl:text>  &#xa;</xsl:text>
+        </xsl:for-each>
         <xsl:text>  &#xa;&#xa;</xsl:text>
     </xsl:template>
     
@@ -150,7 +158,7 @@
             <xsl:for-each select="example">
                 <xsl:text>```</xsl:text>
                 <xsl:value-of select="replace(.,'\r\n','&#xa;')"/>
-                <xsl:text>  &#xa;```&#xa;</xsl:text>
+                <xsl:text>```&#xa;</xsl:text>
             </xsl:for-each>
         </xsl:if>
         <xsl:text>  &#xa;</xsl:text>
@@ -189,7 +197,7 @@
                     </xsl:otherwise>
                 </xsl:choose>
                 <xsl:text>:__ </xsl:text>
-                <xsl:value-of select="."/>
+                <xsl:value-of select="normalize-space(.)"/>
                 <xsl:text>  &#xa;&#xa;</xsl:text>
             </xsl:for-each>
         </xsl:for-each>
