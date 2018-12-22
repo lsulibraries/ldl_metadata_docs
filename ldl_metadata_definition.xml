@@ -76,12 +76,12 @@
             <attribute name="xmlns:xsi" obligation="required">
                 <value>http://www.w3.org/2001/XMLSchema-instance</value>
             </attribute>
+            <attribute name="xmlns:xlink" obligation="required">
+                <value>http://www.w3.org/1999/xlink</value>
+            </attribute>
             <attribute name="xsi:schemaLocation" obligation="required">
                 <value>http://www.loc.gov/mods/v3
                     http://www.loc.gov/standards/mods/v3/mods-3-7.xsd</value>
-            </attribute>
-            <attribute name="xlink" obligation="required">
-                <value>http://www.w3.org/1999/xlink</value>
             </attribute>
             <attribute name="version" obligation="required">
                 <value>3.7</value>
@@ -97,7 +97,7 @@
             it or the work contained in it.</definition>
         <mapping schema="marc">245; also 210, 242, 246, 130, 240, 730, 740</mapping>
         <mapping schema="dc">dc:title</mapping>
-        <governingStandard>RDA 2.3</governingStandard>
+        <governingStandard>RDA 2.3; DACS 2.3</governingStandard>
         <content>
             <type>text</type>
         </content>
@@ -305,6 +305,30 @@
         </attributes>
     </element>
     
+    <element name="Contributing Repository" category="metaSetAccess" obligation="required" repeatable="yes"
+        controlled="yes">
+        <defaultLabel>Contributing Repository</defaultLabel>
+        <encoding>mods:mods/mods:name[@type="corporate"]/mods:namePart</encoding>
+        <definition>The LDC member contributing the resource to the LDL.</definition>
+        <mapping schema="marc"/>
+        <mapping schema="dc"/>
+        <governingStandard/>
+        <content>
+            <type>choice</type>
+            <vocabulary authority="LDL"/>
+        </content>
+        <instruction>Select the name of the LDC member institution contributing the digital resource from the locally-controlled list.</instruction>
+        <usageNote>The local authority file will draw this value from LCNAF authorities.</usageNote>
+        <usageNote>The Contributing Repository field is a Name field with the Role of "Repository"/"rps".</usageNote>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml>An authority attribute with value "naf" and a displayLabel attribute with value "Contributing Repository" should be used on the `&lt;name&gt;` element. Include `&lt;role&gt;&lt;roleTerm&gt;` subelements with values "Repository" (type="text") and "rps" (type="code").</xml>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+    </element>
+    
     <element name="Name" category="metaSetCore" obligation="optional" repeatable="yes"
         controlled="yes">
         <defaultLabel>Name</defaultLabel>
@@ -508,7 +532,7 @@
         </content>
         <instruction>For formally published materials, enter the date of publication as a dateIssued element. For unpublished materials, enter the date for the creation of resource as a dateCreated element. Use the W3C date format YYYY-MM-DD for complete dates, or YYYY-MM or YYYY for partial dates (W3CDTF).</instruction>
         <usageNote>At least one instance of either dateIssued or dateCreated is required. Exactly one date* field should have a keyDate="yes" attribute. For a date range, it is recommended that the start date has the keyDate attribute.</usageNote>
-        <usageNote>If distinct dates of creation and publication exist for the resource, use both dateCreated and dateIssued. In this case, it is recommended that the publication date has the keyDate attribute</usageNote>
+        <usageNote>If distinct dates of creation and publication exist for the resource, use both dateCreated and dateIssued. In this case, it is recommended that the publication date has the keyDate attribute.</usageNote>
         <usageNote>For a date range, repeat the date* field and use the point attributes to mark the start and end point.</usageNote>
         <usageNote>When a date is uncertain or supplied, indicate this through the use of the qualifier attribute rather than inserting characters such as "ca.", brackets, or a question mark as part of the field contents.</usageNote>
         <usageNote>When only a decade is known, enter a date range for the entire decade and mark the date as questionable. When only a century is known, enter a date range for the entire century and mark the date as questionable. Do not enter "Unknown," "No date," or similar.</usageNote>
@@ -561,6 +585,104 @@
             </attribute>
             <attribute name="qualifier" obligation="required if applicable">
                 <value>approximate; inferred; questionable</value>
+            </attribute>
+        </attributes>
+    </element>
+    
+    <element name="Subject" category="metaSetContent" obligation="optional" repeatable="yes" controlled="yes">
+        <defaultLabel>Subject</defaultLabel>
+        <encoding>mods:mods/mods:subject</encoding>
+        <definition ref="https://www.loc.gov/standards/mods/userguide/subject.html">A term or phrase representing the primary topic(s) on which a work is focused.</definition>
+        <mapping schema="marc"/>
+        <mapping schema="dc"/>
+        <governingStandard/>
+        <content>
+            <type>text|choice|date...</type>
+            <vocabulary authority="[name]" ref="[uri]">
+                <enumeration inst="[institution code]" value="[value]"/>
+            </vocabulary>
+        </content>
+        <instruction/>
+        <usageNote/>
+        <enrichment/>
+        <inputGuidance>
+            <spreadsheet/>
+            <webform/>
+            <xml/>
+        </inputGuidance>
+        <example/>
+        <legacyVariation collection="[collection namespace]"/>
+        <subelements>
+            <subelement name="Topic" obligation="optional" repeatable="yes" controlled="yes">
+                <encoding/>
+                <definition/>
+                <content>
+                    <type>text|choice|date...</type>
+                    <vocabulary authority="[name]" ref="[uri]">
+                        <enumeration inst="[institution code]" value="[value]"/>
+                    </vocabulary>
+                </content>
+                <usageNote/>
+            </subelement>
+            <subelement name="Geographic" obligation="optional" repeatable="yes" controlled="yes">
+                <encoding/>
+                <definition/>
+                <content>
+                    <type>text|choice|date...</type>
+                    <vocabulary authority="[name]" ref="[uri]">
+                        <enumeration inst="[institution code]" value="[value]"/>
+                    </vocabulary>
+                </content>
+                <usageNote/>
+            </subelement>
+            <subelement name="Hierarchical Geographic" obligation="optional" repeatable="yes" controlled="yes">
+                <encoding/>
+                <definition/>
+                <content>
+                    <type>text|choice|date...</type>
+                    <vocabulary authority="[name]" ref="[uri]">
+                        <enumeration inst="[institution code]" value="[value]"/>
+                    </vocabulary>
+                </content>
+                <usageNote/>
+            </subelement>
+            <subelement name="Temporal" obligation="optional" repeatable="yes" controlled="yes">
+                <encoding/>
+                <definition/>
+                <content>
+                    <type>text|choice|date...</type>
+                    <vocabulary authority="[name]" ref="[uri]">
+                        <enumeration inst="[institution code]" value="[value]"/>
+                    </vocabulary>
+                </content>
+                <usageNote>If the type of subject string is unknown, Topic is used.</usageNote>
+            </subelement>
+            <subelement name="Genre" obligation="optional" repeatable="yes" controlled="yes">
+                <encoding/>
+                <definition/>
+                <content>
+                    <type>text|choice|date...</type>
+                    <vocabulary authority="[name]" ref="[uri]">
+                        <enumeration inst="[institution code]" value="[value]"/>
+                    </vocabulary>
+                </content>
+                <usageNote/>
+            </subelement>
+            <subelement name="Name" obligation="optional" repeatable="yes" controlled="yes">
+                <encoding/>
+                <definition/>
+                <content>
+                    <type>text|choice|date...</type>
+                    <vocabulary authority="[name]" ref="[uri]">
+                        <enumeration inst="[institution code]" value="[value]"/>
+                    </vocabulary>
+                </content>
+                <usageNote/>
+            </subelement>
+        </subelements>
+        <attributes>
+            <attribute name="[name]" obligation="required|required if applicable|optional">
+                <value>list of literals with semicolon delimiting or [uncontrolled; if omitted, the default label will be used]</value>
             </attribute>
         </attributes>
     </element>
@@ -905,30 +1027,6 @@
         </attributes>
     </element>
     
-    <element name="Contributing Repository" category="metaSetAccess" obligation="required" repeatable="yes"
-        controlled="yes">
-        <defaultLabel>Contributing Repository</defaultLabel>
-        <encoding>mods:mods/mods:name[@type="corporate"]/mods:namePart</encoding>
-        <definition>The LDC member contributing the resource to the LDL.</definition>
-        <mapping schema="marc"/>
-        <mapping schema="dc"/>
-        <governingStandard/>
-        <content>
-            <type>choice</type>
-            <vocabulary authority="LDL"/>
-        </content>
-        <instruction>Select the name of the LDC member institution contributing the digital resource from the locally-controlled list.</instruction>
-        <usageNote>The local authority file will draw this value from LCNAF authorities.</usageNote>
-        <usageNote>The Contributing Repository field is a Name field with the Role of "Repository"/"rps".</usageNote>
-        <inputGuidance>
-            <spreadsheet/>
-            <webform/>
-            <xml>An authority attribute with value "naf" and a displayLabel attribute with value "Contributing Repository" should be used on the `&lt;name&gt;` element. Include `&lt;role&gt;&lt;roleTerm&gt;` subelements with values "Repository" (type="text") and "rps" (type="code").</xml>
-        </inputGuidance>
-        <example/>
-        <legacyVariation collection="[collection namespace]"/>
-    </element>
-    
     
     <element name="Source Note" category="metaSetAccess" obligation="optional" repeatable="yes"
         controlled="no">
@@ -1202,7 +1300,7 @@
     <element name="Rights" category="metaSetAccess" obligation="required" repeatable="no" controlled="no">
         <defaultLabel>Rights</defaultLabel>
         <encoding>mods:mods/mods:accessCondition</encoding>
-        <definition ref="http://www.loc.gov/standards/mods//userguide/accesscondition.html">Information about restrictions imposed on access to a resource.</definition>
+        <definition ref="http://www.loc.gov/standards/mods/userguide/accesscondition.html">Information about restrictions imposed on access to a resource.</definition>
         <mapping schema="marc">540</mapping>
         <mapping schema="dc">dc:rights</mapping>
         <governingStandard>RDA 4.5</governingStandard>

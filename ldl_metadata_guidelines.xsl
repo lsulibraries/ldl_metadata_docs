@@ -188,14 +188,7 @@
             <xsl:text>  &#xa;</xsl:text>
             <xsl:for-each select="definition|content/@type|content/vocabulary/@authority|instruction">
                 <xsl:text>- __</xsl:text>
-                <xsl:choose>
-                    <xsl:when test="name() eq 'usageNote'">
-                        <xsl:text>Usage Notes</xsl:text>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="concat(upper-case(substring(name(),1,1)),substring(name(),2))"/>
-                    </xsl:otherwise>
-                </xsl:choose>
+                <xsl:value-of select="concat(upper-case(substring(name(),1,1)),substring(name(),2))"/>
                 <xsl:text>:__ </xsl:text>
                 <xsl:value-of select="normalize-space(.)"/>
                 <xsl:text>  &#xa;&#xa;</xsl:text>
